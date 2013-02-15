@@ -36,6 +36,9 @@
 ###
 # Helpers
 ###
+require "active_support/all"
+
+activate :bourbon
 
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
