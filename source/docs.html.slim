@@ -2,15 +2,27 @@
 title: "Emblem.js API Docs"
 ---
 
+body.docs
+  #container
+    #background
+    table cellpadding="0" cellspacing="0"
+      thead
+        tr
+          th.docs
+            h1 Emblem.js
+            p
+              | docs coming soon...
+          th.code
 
-#container
-  #background
-  table cellpadding="0" cellspacing="0"
-    thead
-      tr
-        th.docs
-          h1 Emblem.js
-          p
-            | docs coming soon...
-        th.code
 
+      tbody
+        tr
+          td.docs
+            h2 Syntax
+
+        - data.syntax.each do |syntax|
+          tr
+            td.docs
+              == syntax["docs"]
+            td.code
+              == slim_highlight(syntax["code"])

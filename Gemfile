@@ -7,6 +7,9 @@ gem "sass"
 gem "slim"
 gem "debugger"
 
+gem "textpow", :git => "git://github.com/railsjedi/textpow.git", :branch => "master"
+gem "ultraviolet"
+
 # setup guard
 gem "guard", ">= 1.0.0"
 gem "guard-coffeescript", ">= 0.4.0"
