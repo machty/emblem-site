@@ -101,6 +101,117 @@
     / Some comment
     / Another comment
 
+# Plain Text
+-
+  docs: |
+    ### Plain Text
+
+    To output content without an element wrapper, start the line with pipe `|`.
+
+    Plain text can include handlebars output tags `{{}}`.
+
+  emblem: |
+    | Some content
+
+    p
+      | Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      | sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      | Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+      | nisi ut aliquip ex ea commodo consequat.
+
+    span.name Your name is {{name}}
+
+  html: |
+    Some content
+
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+      nisi ut aliquip ex ea commodo consequat.
+    </p>
+
+    <span class="name">Your name is {{name}}.</span>
+
+# Handlebars Expressions
+-
+  docs: |
+    ### Handlebars Expressions
+
+    To output a handlebars expression, use `=` before expression.
+
+  emblem: |
+    h1 = name
+    p
+      = intro
+      = highlight name
+
+  html: |
+    <h1>{{name}}</h1>
+    <p>
+      {{intro}}
+      {{hightlight name}}
+    </p>
+
+
+# Handlebars Unescaped Expressions
+-
+  docs: |
+    ### Unescaped Expressions
+
+    By default Handlebars html escapes output from expressions. To include html without escaping, use `==` which will output Handlebars "triple-stash" expressions `{{{}}}`.
+
+  emblem: |
+    body
+      == outlet
+
+  html: |
+    <body>
+      {{{outlet}}}
+    </body>
+
+
+# Handlebars Flow Statements
+-
+  docs: |
+    ### Handlebars Flow Statements
+
+    You can start handlebars flow statements at the beginning of a line, and indent underneath to create a block.
+
+    This works for all built in handlebars helpers (`if`, `unless`, `with`, `each`). Learn more about them [here](http://handlebarsjs.com/).
+
+  emblem: |
+    if loggedIn
+      | Hello
+
+    ul
+      each person in people
+        li = person
+
+  html: |
+    {{#if loggedIn}}
+      Hello
+    {{/if}}
+
+    <ul>
+      {{#each person in people}}
+        <li>{{person}}</li>
+      {{/each}}
+    </ul>
+
+
+# Bind Attr
+-
+  docs: |
+    ### Title
+
+    description
+
+  emblem: |
+    Emblem
+
+  html: |
+    Html result
 
 
 # Title
