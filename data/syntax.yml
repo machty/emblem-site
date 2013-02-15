@@ -1,3 +1,4 @@
+# Tags
 -
   docs: |
     ### Tags
@@ -10,6 +11,8 @@
   html: |
     <h1>Welcome to Emblem</h1>
 
+
+# Indentation Wrapping
 -
   docs: |
     ### Indentation Wrapping
@@ -30,9 +33,11 @@
       </ul>
     </footer>
 
+
+# Css Classes
 -
   docs: |
-    ### Classes
+    ### Css Classes
 
     CSS classes can added to elements by using a (`.`) with the class name afterwards. You can place this after an element name (`div` is the default tag name).
 
@@ -41,17 +46,19 @@
   emblem: |
     .title Title
 
-    h1.logo My app
+    h1.logo Law Blog
 
     button.btn.btn-large Submit
 
   html: |
     <div class="title">Title</div>
 
-    <h1 class="logo">My App</h1>
+    <h1 class="logo">Law Blog</h1>
 
     <button class="btn btn-large">Submit</button>
 
+
+# IDs
 -
   docs: |
     ### IDs
@@ -68,6 +75,35 @@
 
     <span id="name">Bob Lablah</span>
 
+
+# HTML Attributes
+-
+  docs: |
+    ### HTML Attributes
+
+    HTML attributes can be added right after the element, using `key="value"` pairs.
+
+  emblem: |
+    button.close data-dismiss="modal" x
+
+  html: |
+    <button class="close" data-dismiss="dropdown">x</a>
+
+
+# Comments
+-
+  docs: |
+    ### Comments
+
+    Start a line with `/` to add a comment. These lines will be ignored completely.
+
+  emblem: |
+    / Some comment
+    / Another comment
+
+
+
+# Title
 -
   docs: |
     ### Title
