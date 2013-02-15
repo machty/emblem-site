@@ -10,5 +10,12 @@
 # Ignore the build directory
 /build
 
+# Ignore the site directory
+/build
+
 # Ignore Sass' cache
 /.sass-cache
+
+bin
+bundler
+gh-pages
