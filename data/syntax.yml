@@ -97,9 +97,13 @@
 
     Start a line with `/` to add a comment. These lines will be ignored completely.
 
+    You can also use multiple comments by indenting your comment underneath.
+
   emblem: |
     / Some comment
-    / Another comment
+
+    / A long long
+      multiline comment
 
 # Plain Text
 -
@@ -200,29 +204,46 @@
     </ul>
 
 
-# Bind Attr
+# Ember Attributes
 -
   docs: |
-    ### Title
+    ### Expressions within attributes
 
-    description
+    To use expressions within the element attributes (often used in Ember with `bindAttr` and `action`), use the `{}` syntax after the element.
 
   emblem: |
-    Emblem
+    button{action "delete"} Delete
+
+    img{bindAttr src="logoUrl"} alt="logo"
 
   html: |
-    Html result
+    <button {{action "delete"}}>Delete</button>
 
+    <img {{bindAttr src="logoUrl"}} alt="logo">
 
-# Title
+# Ember Views
 -
   docs: |
-    ### Title
+    ### Ember Views
 
-    description
+    You can quickly and easily include an Ember.js view by starting a line with a capitalized letter. This will automatically wrap the line with a `{{view}}` helper.
 
   emblem: |
-    Emblem
+    .field
+      Ember.TextField valueBinding="firstName"
 
   html: |
-    Html result
+    <div class="field">
+      {{view Ember.TextField valueBinding="firstName"}}
+    </div>
+
+
+# # Title
+# -
+#   docs: |
+#     ### Title
+#     description
+#   emblem: |
+#     Emblem
+#   html: |
+#     Html result
