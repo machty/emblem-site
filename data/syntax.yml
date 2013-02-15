@@ -1,38 +1,81 @@
 -
   docs: |
-    <h3>HELLO</h3>
+    ### Tags
 
-  code: |
-    #main-container.padded.active
-      h1 Greetings, {{name}}
+    You can wrap content within an html element by just writing the element name at the beginning of a line.
 
-      / comment that doesn't get rendered
+  emblem: |
+    h1 Welcome to Emblem
 
-      if loggedIn
-        button click="logout" Log Out
-      else
-        button click="login" Log In
-
-      .text-container
-        each paragraphs
-          p == this
-
-      / Could also write the
-        .text-container = each paragraphs
-          p == this
-
+  html: |
+    <h1>Welcome to Emblem</h1>
 
 -
   docs: |
-    Docs2
+    ### Indentation Wrapping
 
-  code: |
-    Code2
+    To wrap one element in another, just indent and place the element below.
 
+  emblem: |
+    footer
+      ul
+        li Hello
+        li Goodbye
+
+  html: |
+    <footer>
+      <ul>
+        <li>Hello</li>
+        <li>Goodbye</li>
+      </ul>
+    </footer>
 
 -
   docs: |
-    Docs3
+    ### Classes
 
-  code: |
-    Code3
+    CSS classes can added to elements by using a (`.`) with the class name afterwards. You can place this after an element name (`div` is the default tag name).
+
+    You can chain multiple class names.
+
+  emblem: |
+    .title Title
+
+    h1.logo My app
+
+    button.btn.btn-large Submit
+
+  html: |
+    <div class="title">Title</div>
+
+    <h1 class="logo">My App</h1>
+
+    <button class="btn btn-large">Submit</button>
+
+-
+  docs: |
+    ### IDs
+
+    Element IDs can be added to elements by using `#` before the element id. Like CSS classes, you can provide an element name (`div` is the default tag name).
+
+  emblem: |
+    #page-content Content
+
+    span#name Bob Lablah
+
+  html: |
+    <div id="page-content">Content</div>
+
+    <span id="name">Bob Lablah</span>
+
+-
+  docs: |
+    ### Title
+
+    description
+
+  emblem: |
+    Emblem
+
+  html: |
+    Html result

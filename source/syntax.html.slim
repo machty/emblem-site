@@ -23,6 +23,13 @@ body.docs
         - data.syntax.each do |syntax|
           tr.syntax
             td.docs
-              == syntax["docs"]
+              == markdown syntax["docs"]
             td.code
-              == slim_highlight(syntax["code"])
+              - if syntax["emblem"].present?
+                .code-block.emblem
+                  label Emblem
+                  == highlight(syntax["emblem"], "slim")
+              - if syntax["html"].present?
+                .code-block.html
+                  label Handlebars
+                  == highlight(syntax["html"], "html")

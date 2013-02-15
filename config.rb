@@ -47,9 +47,16 @@ activate :bourbon
 require 'uv'
 Uv.syntax_path = File.expand_path("../syntax", __FILE__)
 helpers do
-  def slim_highlight(code)
-    # require 'ruby-debug';Debugger.settings[:autoeval] = true;debugger;puts "BREAKPOINT"
-    Uv.parse(code, 'xhtml', 'slim', false, 'blackboard')
+  def highlight(code, syntax = "slim")
+    Uv.parse(code, 'xhtml', syntax, false, 'blackboard')
+  end
+end
+
+require 'maruku'
+helpers do
+  def markdown(code)
+    doc = Maruku.new(code)
+    doc.to_html
   end
 end
 
