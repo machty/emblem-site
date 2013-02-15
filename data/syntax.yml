@@ -3,7 +3,23 @@
     <h3>HELLO</h3>
 
   code: |
-    Code1
+    #main-container.padded.active
+      h1 Greetings, {{name}}
+
+      / comment that doesn't get rendered
+
+      if loggedIn
+        button click="logout" Log Out
+      else
+        button click="login" Log In
+
+      .text-container
+        each paragraphs
+          p == this
+
+      / Could also write the
+        .text-container = each paragraphs
+          p == this
 
 
 -

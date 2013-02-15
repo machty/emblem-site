@@ -49,7 +49,7 @@ Uv.syntax_path = File.expand_path("../syntax", __FILE__)
 helpers do
   def slim_highlight(code)
     # require 'ruby-debug';Debugger.settings[:autoeval] = true;debugger;puts "BREAKPOINT"
-    Uv.parse(code, 'xhtml', 'slim', false, 'amy')
+    Uv.parse(code, 'xhtml', 'slim', false, 'blackboard')
   end
 end
 

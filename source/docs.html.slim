@@ -19,9 +19,10 @@ body.docs
         tr
           td.docs
             h2 Syntax
+          td.code
 
         - data.syntax.each do |syntax|
-          tr
+          tr.syntax
             td.docs
               == syntax["docs"]
             td.code

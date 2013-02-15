@@ -1,6 +1,23 @@
 //= require "docco"
+//= require "syntax"
 
 @import "mixins"
 
 body.landing
   padding: 0 50px
+
+body.docs
+  .code
+    background: #0C1021
+    pre
+      font-size: 18px
+      line-height: 1.3
+
+  tr.syntax
+    td.docs
+      border-top: 1px solid rgba(#000, 0.2)
+      +padding-vertical(20px)
+
+    td.code
+      +padding-vertical(20px)
+      border-top: 1px solid rgba(#fff, 0.2)
