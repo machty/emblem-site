@@ -1,9 +1,14 @@
 require "bundler/setup"
 require 'fileutils'
 
+def deploy_cmd(cmd)
+  puts "CMD: #{cmd}"
+  system cmd
+end
+
 desc "Build the website"
 task :build do
-  system "bundle exec middleman build"
+  deploy_cmd "bundle exec middleman build"
 end
 
 task :man do
@@ -18,24 +23,23 @@ task :deploy do |t, args|
     q.responses[:not_valid] = "Can't be empty."
   end
 
-  system "bundle exec middleman build"
+  deploy_cmd "bundle exec middleman build"
 
-  FileUtils.mkdir_p "site"
-  Dir.chdir "site" do
+  Dir.chdir "build" do
     # File.open("CNAME", "w") do |file|
     #   file.puts "emblemjs.com"
     # end
 
     unless File.exist?(".git")
-      system "git init"
-      system "git remote add github git@github.com:machty/emblem-site.git"
+      deploy_cmd "git init"
+      deploy_cmd "git remote add github git@github.com:machty/emblem-site.git"
     end
 
-    system "git fetch github"
-    system "git add -A"
-    system "git commit -m '#{message.gsub("'", "\\'")}'"
-    system "git rebase github/gh-pages"
-    system "git push github master:gh-pages"
+    deploy_cmd "git fetch github"
+    deploy_cmd "git add -A"
+    deploy_cmd "git commit -m '#{message.gsub("'", "\\'")}'"
+    deploy_cmd "git rebase github/gh-pages"
+    deploy_cmd "git push github master:gh-pages"
   end
 end
 
