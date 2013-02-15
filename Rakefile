@@ -1,4 +1,5 @@
 require "bundler/setup"
+require 'fileutils'
 
 desc "Build the website"
 task :build do
@@ -19,6 +20,7 @@ task :deploy do |t, args|
 
   system "bundle exec middleman build"
 
+  FileUtils.mkdir_p "site"
   Dir.chdir "site" do
     # File.open("CNAME", "w") do |file|
     #   file.puts "emblemjs.com"
@@ -26,7 +28,7 @@ task :deploy do |t, args|
 
     unless File.exist?(".git")
       system "git init"
-      system "git remote add github https://github.com/machty/emblem-site.git"
+      system "git remote add github git@github.com:machty/emblem-site.git"
     end
 
     system "git fetch github"

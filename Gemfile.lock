@@ -57,6 +57,7 @@ GEM
       guard (>= 1.1.0)
     haml (4.0.0)
       tilt
+    highline (1.6.15)
     hike (1.2.1)
     http_parser.rb (0.5.3)
     http_router (0.10.2)
@@ -157,7 +158,9 @@ DEPENDENCIES
   guard-coffeescript (>= 0.4.0)
   guard-livereload (>= 0.4.0)
   guard-shell
+  highline
   middleman
   middleman-bourbon
   rack-livereload (>= 0.3.4)
+  sass
   terminitor (>= 0.6.0)!
