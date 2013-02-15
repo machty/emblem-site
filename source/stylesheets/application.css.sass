@@ -3,11 +3,19 @@
 
 @import "mixins"
 
+body
+  h1.logo
+    font-size: 30px
+    a
+      text-decoration: none
+
 body.landing
   padding: 0 50px
 
 body.docs
-  .code
+  .logo
+    margin-bottom: 40px
+  .code, #background
     background: #0C1021
     pre
       font-size: 18px
