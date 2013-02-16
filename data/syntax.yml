@@ -1,4 +1,4 @@
-# Tags
+]# Tags
 -
   docs: |
     ### Tags
@@ -97,7 +97,7 @@
 
     Start a line with `/` to add a comment. These lines will be ignored completely.
 
-    You can also use multiple comments by indenting your comment underneath.
+    Multiline comments are supported by indenting your comment underneath.
 
   emblem: |
     / Some comment
@@ -112,6 +112,8 @@
 
     To output content without an element wrapper, start the line with pipe `|`.
 
+    Multiline plaintext content is supported by indenting underneath the `|`.
+
     Plain text can include handlebars output tags `{{}}`.
 
   emblem: |
@@ -119,9 +121,9 @@
 
     p
       | Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-      | sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      | Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-      | nisi ut aliquip ex ea commodo consequat.
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+        nisi ut aliquip ex ea commodo consequat.
 
     span.name Your name is {{name}}
 
