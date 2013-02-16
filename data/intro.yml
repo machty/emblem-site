@@ -1,0 +1,32 @@
+example: |
+
+  h1 This is Emblem.js
+  h2 Holy {{App.curse}}!
+
+  h3 It's a new templating language for Handlebars.js
+
+  p Features:
+
+  ul
+    li Compatible with Ember's auto-updating functionality
+    li Compiled in JS
+    li Indentation-based (like HAML, Slim, etc.)
+    li Full support for all Handlebars helpers, e.g. #each
+    ul
+      each App.things
+        li = name
+    li Drop-in extension/replacement for Handlebars.js
+
+  a click='doIt target="App"' href="#" Hello
+
+  .crazy-town
+    h1 class=App.isOn:awesome:asd Yeah
+
+  App.BlobView
+    p Hello
+    p Here is a subview
+
+  each App.things
+    App.ThingView contextBinding=this
+
+

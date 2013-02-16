@@ -3,12 +3,24 @@ title: "Emblem.js: an indented alternative to Handlebars syntax"
 ---
 
 body.landing
-  h1.logo
-    == link_to "Emblem.js", "./"
-  p
-    a href="http://machty.github.com/blog/2013/01/27/emblem-dot-js-indented-templating-targeting-handlebars-dot-js-and-ember-dot-js/"
-      | Introduction
-  p
-    a href="syntax.html" Syntax
-  p
-    a href="http://github.com/machty/emblem.js" Github Source
+  #container
+    #background
+
+  .intro
+    h1.logo
+      == link_to "Emblem.js", "./"
+    p
+      | a beautiful, indented, and fully compatible alternative to Handlebars.js
+
+    ul.nav
+      li
+        a href="http://machty.github.com/blog/2013/01/27/emblem-dot-js-indented-templating-targeting-handlebars-dot-js-and-ember-dot-js/"
+          | Introduction
+      li
+        a href="syntax.html" Syntax
+      li
+        a href="http://github.com/machty/emblem.js" Github Source
+
+  .intro-example
+
+    == highlight(data.intro["example"].to_s, "slim")
