@@ -26,9 +26,9 @@ task :deploy do |t, args|
   deploy_cmd "bundle exec middleman build"
 
   Dir.chdir "build" do
-    # File.open("CNAME", "w") do |file|
-    #   file.puts "emblemjs.com"
-    # end
+    File.open("CNAME", "w") do |file|
+      file.puts "emblemjs.com"
+    end
 
     unless File.exist?(".git")
       deploy_cmd "git init"
