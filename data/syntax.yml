@@ -34,10 +34,10 @@
     </footer>
 
 
-# Css Classes
+# CSS Classes
 -
   docs: |
-    ### Css Classes
+    ### CSS Classes
 
     CSS classes can added to elements by using a (`.`) with the class name afterwards. You can place this after an element name (`div` is the default tag name).
 
