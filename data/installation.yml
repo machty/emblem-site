@@ -1,8 +1,42 @@
 # Rails
 -
   docs: |
-    ### Rails
+    ### Ruby on Rails
+
+    To install Emblem on a Rails 3 project, just use add the following lines to your `Gemfile` and run `bundle`.
+
+    Define your templates in `app/assets/templates` with the file extension `.emblem`. These will be automatically compiled and made available as Ember templates.
+
+    For a working sample project, check out:<br>[github.com/machty/emblem-rails-demo](https://github.com/machty/emblem-rails-demo)
+
+  shell: |
+    # in your application's Gemfile
+    gem "emblem-rails"
+
+    # rebundle and restart your dev server
+    bundle
+
+    # now just create your .emblem files in app/assets/templates/
 
 
+# HTML / Javascript
+-
+  docs: |
+    ### Inline HTML / Javsacript
 
-  instructions: |
+    You can easily test Emblem in the browser (works great for sites like jsbin.com) by just including the Emblem compiler script and wrapping your Emblem templates with `<script type="text/x-emblem">`.
+
+    Your emblem script tags can also include `data-template-name` similar to inline Handlebars templates.
+
+    See a working JSBin [demo here](http://jsbin.com/ulegec/17/edit).
+
+  html: |
+
+    <script src="https://s3.amazonaws.com/machty/emblemtest/emblem.js"></script>
+
+    <script type="text/x-emblem" data-template-name="application">
+      h1 Welcome to my App
+      == outlet
+    </script>
+
+# Tool

@@ -19,7 +19,15 @@ body.docs
             h2 Installation Instructions
           td.code
 
-        tr.install
-          td.docs
-            p I can haz installation instructions?!
-          td.code
+        - data.installation.each do |installation|
+          tr.install
+            td.docs
+              == markdown installation["docs"]
+            td.code.install
+              - if installation["shell"].present?
+                .code-block
+                  == highlight(installation["shell"], "shell")
+
+              - if installation["html"].present?
+                .code-block.html
+                  == highlight(installation["html"], "html")
