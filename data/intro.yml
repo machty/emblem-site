@@ -1,7 +1,7 @@
 example: |
 
   h1 This is Emblem.js
-  h2 Holy {{App.curse}}!
+  h2 Holy {{curse}}!
 
   p It's a new templating language for Handlebars.js
 
@@ -14,17 +14,17 @@ example: |
     li Compiled in JS
     ul
       / handlebars syntax is first class
-      each App.things
+      each people
         li = name
 
   .crazy-town
     / easy, and natural Ember bindAttr support
-    h1 class=App.isOn:awesome:asd Yeah
+    h1 class=isOn:awesome:not-awesome Yeah
 
     / implicit Ember action handlers
-    a click='doIt target="App"' href="#" Hello
+    a click='doIt' href="#" Hello
 
-  with App.thing
+  with person
     / load Ember Views easily
     App.ThingView contextBinding=this
 
