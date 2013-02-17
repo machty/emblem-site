@@ -3,30 +3,34 @@ example: |
   h1 This is Emblem.js
   h2 Holy {{App.curse}}!
 
-  h3 It's a new templating language for Handlebars.js
+  p It's a new templating language for Handlebars.js
 
-  p Features:
-
+  h3 Features:
   ul
+    li Indentation-based (like HAML, Slim, etc.)
+    li Drop-in extension/replacement for Handlebars.js
+    li Full support for all Handlebars helpers, e.g. #each
     li Compatible with Ember's auto-updating functionality
     li Compiled in JS
-    li Indentation-based (like HAML, Slim, etc.)
-    li Full support for all Handlebars helpers, e.g. #each
     ul
+      / handlebars syntax is first class
       each App.things
         li = name
-    li Drop-in extension/replacement for Handlebars.js
-
-  a click='doIt target="App"' href="#" Hello
 
   .crazy-town
+    / easy, and natural Ember bindAttr support
     h1 class=App.isOn:awesome:asd Yeah
 
+    / implicit Ember action handlers
+    a click='doIt target="App"' href="#" Hello
+
+  with App.thing
+    / load Ember Views easily
+    App.ThingView contextBinding=this
+
+  / an Ember View with content
   App.BlobView
     p Hello
     p Here is a subview
-
-  each App.things
-    App.ThingView contextBinding=this
 
 
