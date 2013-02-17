@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/railsjedi/textpow.git
-  revision: 25bff5b9c35b6845949420bbc99e2a364817dac4
+  revision: 96e4018e7a90a3c4adb28b73a65f658dfbe2f8d3
   branch: master
   specs:
     textpow (1.3.0)

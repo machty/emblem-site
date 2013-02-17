@@ -50,13 +50,13 @@ helpers do
   def highlight(code, syntax = "slim")
     path = syntax
 
-    # # this would be nice but textpow doesnt allow it
-    # case syntax
-    # when "slim"
-    #   path = File.expand_path("../syntax/source.slim.tmSyntax", __FILE__)
-    # when "hbs"
-    #   path = File.expand_path("../syntax/source.hbs.tmSyntax", __FILE__)
-    # end
+    # this would be nice but textpow doesnt allow it
+    case syntax
+    when "slim"
+      path = File.expand_path("../syntax/source.slim.tmSyntax", __FILE__)
+    when "hbs"
+      path = File.expand_path("../syntax/source.hbs.tmSyntax", __FILE__)
+    end
 
     Uv.parse(code, 'xhtml', path, false, 'blackboard')
   end
