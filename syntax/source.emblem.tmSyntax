@@ -4,7 +4,7 @@
 <dict>
   <key>fileTypes</key>
   <array>
-    <string>slim</string>
+    <string>emblem</string>
   </array>
   <key>foldingStartMarker</key>
   <string>^\s*([-%#\:\.\w\=].*)\s$</string>
@@ -13,7 +13,7 @@
   <key>keyEquivalent</key>
   <string>^~S</string>
   <key>name</key>
-  <string>Ruby Slim</string>
+  <string>Emblem.js</string>
   <key>patterns</key>
   <array>
     <dict>
@@ -24,13 +24,13 @@
         <key>2</key>
         <dict>
           <key>name</key>
-          <string>constant.language.name.javascript.filter.slim</string>
+          <string>constant.language.name.javascript.filter.emblem</string>
         </dict>
       </dict>
       <key>end</key>
       <string>^(?!(\1\s)|\s*$)</string>
       <key>name</key>
-      <string>text.javascript.filter.slim</string>
+      <string>text.javascript.filter.emblem</string>
       <key>patterns</key>
       <array>
         <dict>
@@ -47,13 +47,13 @@
         <key>2</key>
         <dict>
           <key>name</key>
-          <string>constant.language.name.coffeescript.filter.slim</string>
+          <string>constant.language.name.coffeescript.filter.emblem</string>
         </dict>
       </dict>
       <key>end</key>
       <string>^(?!(\1\s)|\s*$)</string>
       <key>name</key>
-      <string>text.coffeescript.filter.slim</string>
+      <string>text.coffeescript.filter.emblem</string>
       <key>patterns</key>
       <array>
         <dict>
@@ -68,13 +68,13 @@
         <key>1</key>
         <dict>
           <key>name</key>
-          <string>punctuation.definition.prolog.slim</string>
+          <string>punctuation.definition.prolog.emblem</string>
         </dict>
       </dict>
       <key>match</key>
       <string>^(! )($|\s.*)</string>
       <key>name</key>
-      <string>meta.prolog.slim</string>
+      <string>meta.prolog.emblem</string>
     </dict>
     <dict>
       <key>captures</key>
@@ -82,13 +82,13 @@
         <key>1</key>
         <dict>
           <key>name</key>
-          <string>punctuation.section.comment.slim</string>
+          <string>punctuation.section.comment.emblem</string>
         </dict>
       </dict>
       <key>match</key>
       <string>^ *(/)\s*\S.*$\n?</string>
       <key>name</key>
-      <string>comment.line.slash.slim</string>
+      <string>comment.line.slash.emblem</string>
     </dict>
     <dict>
       <key>begin</key>
@@ -98,18 +98,18 @@
         <key>2</key>
         <dict>
           <key>name</key>
-          <string>punctuation.section.comment.slim</string>
+          <string>punctuation.section.comment.emblem</string>
         </dict>
       </dict>
       <key>end</key>
       <string>^(?!\1  )</string>
       <key>name</key>
-      <string>comment.block.slim</string>
+      <string>comment.block.emblem</string>
       <key>patterns</key>
       <array>
         <dict>
           <key>include</key>
-          <string>text.slim</string>
+          <string>text.emblem</string>
         </dict>
       </array>
     </dict>
@@ -146,7 +146,7 @@
         <key>0</key>
         <dict>
           <key>name</key>
-          <string>entity.name.tag.slim</string>
+          <string>entity.name.tag.emblem</string>
         </dict>
       </dict>
       <key>end</key>
@@ -159,7 +159,7 @@
           <key>end</key>
           <string>\}|$|^(?!.*\|\s*$)</string>
           <key>name</key>
-          <string>meta.section.attributes.slim</string>
+          <string>meta.section.attributes.emblem</string>
           <key>patterns</key>
           <array>
             <dict>
@@ -178,7 +178,7 @@
           <key>end</key>
           <string>\]|$|^(?!.*\|\s*$)</string>
           <key>name</key>
-          <string>meta.section.object.slim</string>
+          <string>meta.section.object.emblem</string>
           <key>patterns</key>
           <array>
             <dict>
@@ -199,7 +199,7 @@
           <key>match</key>
           <string>/</string>
           <key>name</key>
-          <string>punctuation.terminator.tag.slim</string>
+          <string>punctuation.terminator.tag.emblem</string>
         </dict>
       </array>
     </dict>
@@ -209,7 +209,7 @@
         <key>1</key>
         <dict>
           <key>name</key>
-          <string>meta.escape.slim</string>
+          <string>meta.escape.emblem</string>
         </dict>
       </dict>
       <key>match</key>
@@ -242,7 +242,7 @@
         <key>1</key>
         <dict>
           <key>name</key>
-          <string>punctuation.separator.continuation.slim</string>
+          <string>punctuation.separator.continuation.emblem</string>
         </dict>
       </dict>
       <key>match</key>
@@ -255,7 +255,7 @@
       <key>end</key>
       <string>\)(?=( \w|$))</string>
       <key>name</key>
-      <string>source.ruby.embedded.slim</string>
+      <string>source.ruby.embedded.emblem</string>
       <key>patterns</key>
       <array>
         <dict>
@@ -271,7 +271,7 @@
       <key>end</key>
       <string>\](?=( \w|$))</string>
       <key>name</key>
-      <string>source.ruby.embedded.slim</string>
+      <string>source.ruby.embedded.emblem</string>
       <key>patterns</key>
       <array>
         <dict>
@@ -287,7 +287,7 @@
       <key>end</key>
       <string>\}(?=( \w|$))</string>
       <key>name</key>
-      <string>source.ruby.embedded.slim</string>
+      <string>source.ruby.embedded.emblem</string>
       <key>patterns</key>
       <array>
         <dict>
@@ -352,7 +352,7 @@
         <key>1</key>
         <dict>
           <key>name</key>
-          <string>entity.name.tag.slim</string>
+          <string>entity.name.tag.emblem</string>
         </dict>
       </dict>
       <key>end</key>
@@ -387,7 +387,7 @@
         <key>1</key>
         <dict>
           <key>name</key>
-          <string>entity.name.tag.slim</string>
+          <string>entity.name.tag.emblem</string>
         </dict>
       </dict>
       <key>end</key>
@@ -417,7 +417,7 @@
         <key>1</key>
         <dict>
           <key>name</key>
-          <string>entity.name.tag.slim</string>
+          <string>entity.name.tag.emblem</string>
         </dict>
       </dict>
       <key>end</key>
@@ -435,7 +435,7 @@
       <key>begin</key>
       <string>=='|='|==|=|-</string>
       <key>contentName</key>
-      <string>source.ruby.embedded.slim</string>
+      <string>source.ruby.embedded.emblem</string>
       <key>end</key>
       <string>((do|\{)( \|[^|]+\|)?)$|[^\\]$</string>
       <key>endCaptures</key>
@@ -452,7 +452,7 @@
         </dict>
       </dict>
       <key>name</key>
-      <string>meta.line.ruby.slim</string>
+      <string>meta.line.ruby.emblem</string>
       <key>patterns</key>
       <array>
         <dict>
@@ -626,8 +626,8 @@
     </dict>
   </dict>
   <key>scopeName</key>
-  <string>text.slim</string>
+  <string>text.emblem</string>
   <key>uuid</key>
-  <string>36302CC1-1E76-4910-B7B6-F1915EBBA0D3</string>
+  <string>36302CC1-1E77-4910-B7B6-F1915EBBA0D3</string>
 </dict>
 </plist>

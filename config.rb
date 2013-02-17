@@ -47,13 +47,13 @@ activate :bourbon
 require 'uv'
 Uv.syntax_path = File.expand_path("../syntax", __FILE__)
 helpers do
-  def highlight(code, syntax = "slim")
+  def highlight(code, syntax = "emblem")
     path = syntax
 
     # this would be nice but textpow doesnt allow it
     case syntax
-    when "slim"
-      path = File.expand_path("../syntax/source.slim.tmSyntax", __FILE__)
+    when "emblem"
+      path = File.expand_path("../syntax/source.emblem.tmSyntax", __FILE__)
     when "hbs"
       path = File.expand_path("../syntax/source.hbs.tmSyntax", __FILE__)
     end

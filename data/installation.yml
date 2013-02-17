@@ -46,3 +46,13 @@
 -
   docs: |
     ### Ember Tools
+
+    [Ember Tools](https://github.com/rpflorence/ember-tools) support coming soon!
+
+
+# Editors
+-
+  docs: |
+    ### Editor Support
+
+    Due to Emblem being pretty similar to Slim, you can just use
