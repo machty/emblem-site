@@ -41,18 +41,34 @@
     </script>
 
 
+# Brunch
+- docs: |
+    ### Brunch.io
+
+    Emblem is supported in [Brunch.io](http://brunch.io) via the [emblem-brunch](https://github.com/machty/emblem-brunch) plugin.
+
+  instructions: |
+    Add `"emblem-brunch": "x.y.z"` to `package.json` of your brunch app.
+
+    Pick a plugin version that corresponds to your minor (y) brunch version.
+
+    If you want to use git version of plugin, add
+    `"emblem-brunch": "git+https://github.com/machty/emblem-brunch.git"`.
+
 
 # Ember Tools
 -
   docs: |
     ### Ember Tools
 
+  instructions: |
     [Ember Tools](https://github.com/rpflorence/ember-tools) support coming soon!
 
-
-# Editors
+# MeteorJS
 -
   docs: |
-    ### Editor Support
+    ### MeteorJS
 
-    Due to Emblem being pretty similar to Slim, you can just use
+  instructions: |
+    [MeteorJS](https://meteor.com) support coming soon!
+

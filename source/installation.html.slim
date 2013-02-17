@@ -34,14 +34,15 @@ body.docs
                 .code-block.html
                   == highlight(installation["html"], "html")
 
-        tr.new-section
-          td.docs
-            h2 Editors
-          td.code
+              - if installation["instructions"].present?
+                .instructions
+                  == markdown installation["instructions"]
+
 
         tr.install
           td.docs
             == markdown data.editors["docs"]
 
           td.code.install
-            / TODO: editor icons
+            .code-block
+                == highlight(data.editors["shell"], "shell")
