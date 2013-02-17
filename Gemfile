@@ -7,7 +7,7 @@ gem "sass"
 gem "slim"
 gem "debugger"
 
-gem "textpow", :git => "git://github.com/railsjedi/textpow.git", :branch => "master"
+gem "textpow"
 gem "ultraviolet"
 
 # setup guard
