@@ -21,7 +21,7 @@ On OSX, you can also try `bundle exec terminitor start` to start both the server
 
 We currently have most of our docs in yml (for easy code highlighting support). The `docs` keys are formatted with `markdown`, `emblem` keys syntax highlighted with slim textmate bundle (using the `ultraviolet` gem), and the html is highlighted with the handlebars textmate bundle.
 
-To tweak the syntax highlighting, send me a pull request here: <https://github.com/railsjedi/textpow>. Forking textpow was the only way I could figure out how to easily add new syntaxes.
+To tweak the syntax highlighting, just update it in `syntax`
 
 
 ### Intro docs
