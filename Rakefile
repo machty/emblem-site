@@ -20,7 +20,7 @@ task :deploy do |t, args|
   message = "deploying #{Time.now.strftime('%b %e, %l:%M %p')}"
   puts message
 
-  FileUtil.rm_rf("./build")
+  FileUtils.rm_rf("./build")
   deploy_cmd "bundle exec middleman build"
   Dir.chdir "build" do
     File.open("CNAME", "w") do |file|
