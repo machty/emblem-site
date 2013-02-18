@@ -1,25 +1,27 @@
 example: |
 
-  h1 This is Emblem.js
-  h2 Holy {{curse}}!
+  p Introducting Emblem.js: a new templating language
+    that compiles to Handlebars.js
 
-  p It's a new templating language for Handlebars.js
-
-  h3 Features:
   ul
-    li Indentation-based (like HAML, Slim, etc.)
-    li Drop-in extension/replacement for Handlebars.js
-    li Full support for all Handlebars helpers, e.g. #each
-    li Compatible with Ember's auto-updating functionality
-    li Compiled in JS
-    ul
-      / handlebars syntax is first class
-      each people
-        li = name
+    li Indentation-based (like Slim, HAML, etc.)
+    li Compiles to Handlebars; full compatibility with
+       both custom and built-in Handlebars helpers
+    li Ember.js-friendly syntax and full compatibility
+       with auto-updating functionality.
 
-  .crazy-town
+  / Emblem is HTML5-aware; Render HTML if a line starts with 
+    known HTML tag, else invoke HB helper or perform property lookup.
+    These defaults are easily overridable when necesary.
+  ul
+    each people
+      li = name
+
+  section.ember-features
     / easy, and natural Ember bindAttr support
-    h1 class=isOn:awesome:not-awesome Yeah
+    h1 class=foo The class name of this element is bound to `foo`
+
+    p class=isActive:flashing:inactive A more complicated example
 
     / implicit Ember action handlers
     a click='doIt' href="#" Hello

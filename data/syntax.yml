@@ -146,6 +146,8 @@
   docs: |
     To output a handlebars expression, use `=` before expression.
 
+    NOTE: You have the option to omit the `=` unless the expression begins with a [known HTML5 tag name](https://developer.mozilla.org/en-US/docs/HTML/HTML5/HTML5_element_list).
+
   emblem: |
     h1 = name
     p
@@ -180,11 +182,9 @@
   title: Handlebars Block Helpers
 
   docs: |
-    Handlebars block statements are first class citizens and can be used at the beginning of a line, and indenting underneath to create a block.
+    Handlebars block statements follow a syntax similar to HTML5 elements.
 
-    This works for all built in handlebars helpers (`if`, `unless`, `with`, `each`), in addition to custom defined ones. Learn more [here](http://handlebarsjs.com/block_helpers.html).
-
-    To use a block helper with the same name as an HTML5 entity, you can explicitly use a handlebars block helper by starting the line with `=`.
+    To use a block helper with the same name as an HTML5 element, you can explicitly use a handlebars block helper by starting the line with `=`.
 
   emblem: |
     if loggedIn
