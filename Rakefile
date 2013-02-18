@@ -17,7 +17,7 @@ end
 
 desc "Deploy the website to github pages"
 task :deploy do |t, args|
-  message = "deploying #{Time.now.strftime('%b %e, %l:%M %p')}"
+  message = "deploying #{Time.now.strftime('%b %e, %l:%M %p %Z')}"
   puts message
 
   FileUtils.rm_rf("./build")
