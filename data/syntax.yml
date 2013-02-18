@@ -112,7 +112,7 @@
   docs: |
     To output content without an element wrapper, start the line with pipe `|`.
 
-    Multiline plaintext content is supported by indenting underneath the `|`.
+    Multiline plaintext content is supported by indenting underneath the tag or `|`.
 
     Plain text can include handlebars output tags `{{}}`.
 
