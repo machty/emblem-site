@@ -299,6 +299,16 @@
 
     <a {{bindAttr class="isActive"}} {{action "toggleHeader"}}>x</a>
 
+-
+  title: Anything wrong or missing here?
+
+  docs: |
+    These docs are [open source](https://github.com/machty/emblem-site), so help us tweak and refine them!
+
+    If you're feeling particularly lazy and want to just report an error, [Submit a docs issue](https://github.com/machty/emblem-site/issues/new?title=emblem.js%20plz%20help)
+    for some clarification on how Emblem.js can be used.
+
+
 
 # # Title
 # -
