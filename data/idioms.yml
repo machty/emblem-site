@@ -94,7 +94,7 @@
   html: |
     {{#each things}}
       <p>{{name}}</p>
-    {{/else}}
+    {{else}}
       <p>There are no things!</p>
     {{/each}}
 
