@@ -3,13 +3,19 @@
   docs: |
     ### Tags
 
-    You can wrap content within an html element by just writing the element name at the beginning of a line.
+    You can wrap content within an html5 element by just writing the element name at the beginning of a line.
+
+    This is supported for all valid html5 tags (list [here](https://developer.mozilla.org/en-US/docs/HTML/HTML5/HTML5_element_list).)
+
+    To use a non-html5 tag, just start the line with `%`.
 
   emblem: |
     h1 Welcome to Emblem
+    %blink buy it on Kozmo.com
 
   html: |
     <h1>Welcome to Emblem</h1>
+    <blink>buy it on Kozmo.com</blink>
 
 
 # Indentation Wrapping
@@ -177,14 +183,16 @@
     </body>
 
 
-# Handlebars Flow Statements
+# Handlebars Block Helpers
 -
   docs: |
-    ### Handlebars Flow Statements
+    ### Handlebars Block Helpers
 
-    You can start handlebars flow statements at the beginning of a line, and indent underneath to create a block.
+    Handlebars block statements are first class citizens and can be used at the beginning of a line, and indenting underneath to create a block.
 
-    This works for all built in handlebars helpers (`if`, `unless`, `with`, `each`). Learn more about them [here](http://handlebarsjs.com/).
+    This works for all built in handlebars helpers (`if`, `unless`, `with`, `each`), in addition to custom defined ones. Learn more about here [here](http://handlebarsjs.com/block_helpers.html).
+
+    To use a block helper with the same name as an HTML5 entity, you can explicitly use a handlebars block helper by starting the line with `=`.
 
   emblem: |
     if loggedIn
@@ -193,6 +201,12 @@
     ul
       each person in people
         li = person
+
+    list nav id="nav-bar" class="top"
+      a href="url" = title
+
+    = strong
+      = something
 
   html: |
     {{#if loggedIn}}
@@ -204,6 +218,15 @@
         <li>{{person}}</li>
       {{/each}}
     </ul>
+
+    {{list nav id="nav-bar" class="top"}}
+      <a href="{{url}}">{{title}}</a>
+    {{/list}}
+
+    {{#strong}}
+      {{something}}
+    {{/strong}}
+
 
 
 # Ember Attributes
