@@ -60,6 +60,11 @@ helpers do
 
     Uv.parse(code, 'xhtml', path, false, 'blackboard')
   end
+
+  def intro_emblem
+    example = File.read(File.expand_path("../data/intro.emblem", __FILE__))
+    highlight(example.to_s, "emblem")
+  end
 end
 
 require 'maruku'

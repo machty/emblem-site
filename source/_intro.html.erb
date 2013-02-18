@@ -1,0 +1,36 @@
+<%# Manually hacked up syntax example %>
+<pre class="blackboard"><span class="Entity">p </span>Introducing <span class="logo">Emblem.js</span>: a new templating language
+<span class="         ">  that </span>compiles to Handlebars.js
+
+<span class="Entity">ul</span>
+<span class="Entity">  li </span>Indentation-based (like Slim, HAML, etc.)
+<span class="Entity">  li </span>Compiles to Handlebars; full compatibility with
+<span class="      ">     both </span>custom and built-in Handlebars helpers
+<span class="Entity">  li </span>Ember.js-friendly syntax and full compatibility
+<span class="      ">     with </span>auto-updating functionality.
+
+<span class="Comment"><span class="Comment">/</span> Emblem is HTML5-aware; Render HTML if a line starts with</span>
+<span class="Comment">  known HTML tag, else invoke HB helper or perform property lookup.</span>
+<span class="Comment">  These defaults are easily overridable when necessary.</span>
+<span class="Entity">ul</span>
+<span class="Keyword">  each </span>person <span class="Keyword">in</span> people
+<span class="Entity">    li </span>= person.name
+
+<span class="Entity">section.ember-features</span>
+<span class="Comment">  <span class="Comment">/</span> easy, natural Ember bindAttr support</span>
+<span class="Entity">  h1 </span><span class="MetaTag">class</span><span class="Entity">=</span><span class="String">foo</span> The class name of this element is bound to `foo`
+
+<span class="Entity">  p </span><span class="MetaTag">class</span><span class="Entity">=</span><span class="String">isActive:flashing:inactive</span> A more complicated example
+
+<span class="Comment">  <span class="Comment">/</span> implicit Ember action handlers</span>
+<span class="Entity">  a </span><span class="MetaTag">click</span><span class="Entity">=</span><span class="String"><span class="String">'</span><span class="String">doIt</span><span class="String">'</span></span> <span class="MetaTag">href</span><span class="Entity">=</span><span class="String"><span class="String">"</span><span class="String">#</span><span class="String">"</span></span> Hello
+
+<span class="Keyword">with </span>person
+<span class="Comment">  <span class="Comment">/</span> render Ember Views easily with capitalization shorthand</span>
+<span class="Constant">  App.ThingView </span><span class="MetaTag">contextBinding</span><span class="Entity">=</span>this
+
+<span class="Comment"><span class="Comment">/</span> an Ember View with content</span>
+<span class="Constant">App.BlobView</span>
+<span class="Entity">  p </span>Hello
+<span class="Entity">  p </span>Here is a subview
+</pre>

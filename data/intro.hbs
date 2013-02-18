@@ -1,0 +1,34 @@
+<p>Introducing Emblem.js: a new templating language that compiles to Handlebars.js</p>
+
+<ul>
+  <li>Indentation-based (like Slim, HAML, etc.)</li>
+  <li>Compiles to Handlebars; full compatibility with both custom and built-in Handlebars helpers</li>
+  <li>Ember.js-friendly syntax and full compatibility with auto-updating functionality.</li>
+</ul>
+
+{{! Emblem is HTML5-aware; Render HTML if a line starts with known HTML tag, else invoke HB helper or perform property lookup. These defaults are easily overridable when necessary. }}
+<ul>
+  {{#each people}}
+    <li>{{name}}</li>
+  {{/each}}
+</ul>
+
+<section class="ember-features">
+  {{! easy, natural Ember bindAttr support }}
+  <h1 {{bindAttr class="foo"}}>The class name of this element is bound to `foo`</h1>
+  <p {{bindAttr class="isActive:flashing:inactive">A more complicated example</p>
+
+  {{! implicit Ember action handlers }}
+  <a href="#" {{action "doIt" on="click"}}>Hello</a>
+</section>
+
+{{#with person}}
+  {{! render Ember Views easily with capitalization shorthand }}
+  {{view App.ThingView contextBinding=this}}
+{{/with}}
+
+{{! an Ember View with content }}
+{{#view App.BlobView}}
+  <p>Hello</p>
+  <p>Here is a subview</p>
+{{/view}}
