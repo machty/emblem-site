@@ -54,6 +54,31 @@
     </ul>
 
 -
+  title: HTML Attribute Shorthand for Ember Helpers
+
+  docs: |
+    *\*when using with [Ember.js](http://emberjs.com)*
+
+    You can use `%`, `#`, and `.` to set hash values for `tagName`, `elementId`, and `class`, respectively, on a Handlebars helper invocation.
+
+    This is most helpful for the various `view` helpers that Ember provides.
+
+  emblem: |
+    .field
+      Ember.View%p#the-id.some-class
+        | Nested content
+
+      Ember.View %span#the-id.some-class
+        | Adding a space before % also works.
+
+  html: |
+    <div class="field">
+      {{#view Ember.View tagName="p" elementId="the-id" class="some-class"}}Nested content{{/view}}
+
+      {{#view Ember.View tagName="p" elementId="the-id" class="some-class"}}Adding a space before % also works.{{/view}}
+    </div>
+
+-
   title: each/else
 
   docs: |
@@ -78,4 +103,6 @@
 
   docs: |
     We'll be updating this section periodically as the patterns come in from the wild.
+
+    Know a great Emblem trick? [Submit one!](https://github.com/machty/emblem-site/issues/new?title=an%20awesome%20emblem.js%20trick&labels=website%20tweak)
 

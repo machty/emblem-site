@@ -224,9 +224,11 @@
 
 
 -
-  title: Ember Views
+  title: Views
 
   docs: |
+    *\*when using with [Ember.js](http://emberjs.com)*
+
     You can quickly and easily include an Ember.js view by starting a line with a capitalized letter. This will automatically wrap the line with a `{{view}}` helper.
 
   emblem: |
@@ -240,10 +242,12 @@
 
 
 -
-  title: Ember.js Implicit Bind Attributes
+  title: Implicit Bind Attributes
 
   docs: |
-    When using with [Ember.js](http://emberjs.com), Emblem.js makes binding expression attributes (vai `bindAttr`) clean and simple.
+    *\*when using with [Ember.js](http://emberjs.com)*
+
+    Emblem.js makes binding expression attributes (vai `bindAttr`) clean and simple.
 
 
   emblem: |
@@ -254,10 +258,10 @@
 
 
 -
-  title: Ember.js Implicit Event Handlers
+  title: Implicit Event Handlers
 
   docs: |
-    *when using with [Ember.js](http://emberjs.com)**
+    *\*when using with [Ember.js](http://emberjs.com)*
 
     Emblem.js makes handling expression attributes (such as `bindAttr` and `action`) clean and easy.
 
@@ -275,7 +279,7 @@
   title: Explicit Attribute Expressions
 
   docs: |
-    *when using with [Ember.js](http://emberjs.com)**
+    *\*when using with [Ember.js](http://emberjs.com)*
 
     To use expressions within the element attributes (often used in Ember with `bindAttr` and `action`), use the `{}` syntax after the element.
 
@@ -294,32 +298,6 @@
     <img {{bindAttr src="logoUrl"}} alt="logo">
 
     <a {{bindAttr class="isActive"}} {{action "toggleHeader"}}>x</a>
-
-
--
-  title: HTML Attribute Shorthand for Ember Helpers
-
-  docs: |
-    *when using Emblem.js with Ember.js**
-
-    You can use `%`, `#`, and `.` to set hash values for `tagName`, `elementId`, and `class`, respectively, on a Handlebars helper invocation.
-
-    This is most helpful for the various `view` helpers that Ember provides.
-
-  emblem: |
-    .field
-      Ember.View%p#the-id.some-class
-        | Nested content
-
-      Ember.View %span#the-id.some-class
-        | Adding a space before % also works.
-
-  html: |
-    <div class="field">
-      {{#view Ember.View tagName="p" elementId="the-id" class="some-class"}}Nested content{{/view}}
-
-      {{#view Ember.View tagName="p" elementId="the-id" class="some-class"}}Adding a space before % also works.{{/view}}
-    </div>
 
 
 # # Title
