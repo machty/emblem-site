@@ -39,7 +39,7 @@ task :deploy do |t, args|
     deploy_cmd "git add -A"
     deploy_cmd "git commit -m '#{message.gsub("'", "\\'")}'"
     deploy_cmd "git rebase github/gh-pages"
-    deploy_cmd "git push github master:gh-pages"
+    deploy_cmd "git push --force github master:gh-pages"
   end
 end
 
