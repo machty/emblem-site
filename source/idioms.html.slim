@@ -15,9 +15,16 @@ a#back href="./" ← back
         th.code
 
     tbody
-      tr
+      tr.docs-intro
         td.docs
           h2 Idioms
+          p
+            | Some tips/tricks and common patterns that you may find
+            |  useful while writing your Emblem.js templates.
+          p
+            | To see the basic syntax of Emblem.js,<br>see
+            |  the <a href="./syntax.html">Syntax</a> docs.
+
         td.code
 
       - data.idioms.each do |idioms|
@@ -35,9 +42,3 @@ a#back href="./" ← back
               .code-block.html
                 label Handlebars
                 == highlight(idioms["html"], "hbs")
-      tr.syntax
-        td.docs
-          p
-            | To see the basic syntax of Emblem.js, visit
-            |  the <a href="./syntax.html">Syntax</a> docs.
-        td.code
