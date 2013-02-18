@@ -2,7 +2,6 @@ source :rubygems
 
 gem "middleman"
 gem "middleman-bourbon"
-gem "highline"
 gem "sass"
 gem "slim"
 gem "debugger"
