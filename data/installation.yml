@@ -1,8 +1,7 @@
 # Rails
 -
+  title: Ruby on Rails
   docs: |
-    ### Ruby on Rails
-
     To install Emblem on a Rails 3 project, just use add the following lines to your `Gemfile` and run `bundle`.
 
     Define your templates in `app/assets/templates` with the file extension `.emblem`. These will be automatically compiled and made available as Ember templates.
@@ -21,9 +20,8 @@
 
 # HTML / Javascript
 -
+  title: Inline HTML / Javsacript
   docs: |
-    ### Inline HTML / Javsacript
-
     You can easily test Emblem in the browser (works great for sites like jsbin.com) by just including the Emblem compiler script and wrapping your Emblem templates with `<script type="text/x-emblem">`.
 
     Your emblem script tags can also include `data-template-name` similar to inline Handlebars templates.
@@ -42,9 +40,9 @@
 
 
 # Brunch
-- docs: |
-    ### Brunch.io
-
+-
+  title: Brunch.io
+  docs: |
     Emblem is supported in [Brunch.io](http://brunch.io) via the [emblem-brunch](https://github.com/machty/emblem-brunch) plugin.
 
   instructions: |
@@ -58,16 +56,16 @@
 
 # Ember Tools
 -
+  title: Ember Tools
   docs: |
-    ### Ember Tools
 
   instructions: |
     [Ember Tools](https://github.com/rpflorence/ember-tools) support coming soon!
 
 # MeteorJS
 -
+  title: MeteorJS
   docs: |
-    ### MeteorJS
 
   instructions: |
     [MeteorJS](https://meteor.com) support coming soon!

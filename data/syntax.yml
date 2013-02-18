@@ -126,6 +126,7 @@
         nisi ut aliquip ex ea commodo consequat.
 
     span.name Your name is {{name}}
+              and my name is {{author}}
 
   html: |
     Some content
@@ -137,7 +138,7 @@
       nisi ut aliquip ex ea commodo consequat.
     </p>
 
-    <span class="name">Your name is {{name}}.</span>
+    <span class="name">Your name is {{name}} and my name is {{author}}</span>
 
 -
   title: Handlebars Expressions

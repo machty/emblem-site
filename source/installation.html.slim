@@ -24,6 +24,8 @@ body.docs
         - data.installation.each do |installation|
           tr.install
             td.docs
+              a name="#{installation['title'].to_s.parameterize}"
+              h3 = installation["title"]
               == markdown installation["docs"]
             td.code.install
               - if installation["shell"].present?
@@ -41,6 +43,7 @@ body.docs
 
         tr.install
           td.docs
+            a name="editors"
             == markdown data.editors["docs"]
 
           td.code.install
