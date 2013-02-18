@@ -240,17 +240,43 @@
 
 
 -
-  title: Implicit Attribute Expressions
+  title: Ember.js Implicit Bind Attributes
+
   docs: |
+    When using with [Ember.js](http://emberjs.com), Emblem.js makes binding expression attributes (vai `bindAttr`) clean and simple.
+
 
   emblem: |
+    img src=logoUrl alt="Logo"
+
+  html: |
+    <img {{bindAttr src="logoUrl"}} alt="Logo">
 
 
+-
+  title: Ember.js Implicit Event Handlers
+
+  docs: |
+    *when using with [Ember.js](http://emberjs.com)**
+
+    Emblem.js makes handling expression attributes (such as `bindAttr` and `action`) clean and easy.
+
+  emblem: |
+    a click="toggleHeader" x
+
+    a click="toggleHeader this" x
+
+  html: |
+    <a {{action "toggleHeader" on="click"}}>x</a>
+
+    <a {{action "toggleHeader" this on="click"}}>x</a>
 
 -
   title: Explicit Attribute Expressions
 
   docs: |
+    *when using with [Ember.js](http://emberjs.com)**
+
     To use expressions within the element attributes (often used in Ember with `bindAttr` and `action`), use the `{}` syntax after the element.
 
     Multiple attribute expressions are also supported.
@@ -271,9 +297,11 @@
 
 
 -
-  title: HTML Attribute Shorthand for Ember-Handlebars Helpers
+  title: HTML Attribute Shorthand for Ember Helpers
 
   docs: |
+    *when using Emblem.js with Ember.js**
+
     You can use `%`, `#`, and `.` to set hash values for `tagName`, `elementId`, and `class`, respectively, on a Handlebars helper invocation.
 
     This is most helpful for the various `view` helpers that Ember provides.
