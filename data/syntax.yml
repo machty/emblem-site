@@ -116,7 +116,7 @@
 
     Multiline plaintext content is supported by indenting underneath the tag or `|`.
 
-    Plain text can include handlebars output tags `{{}}`.
+    Plain text can include handlebars output tags `{{}}` and `{{{}}}`. You can also use `#{}` as an alias for `{{}}`.
 
   emblem: |
     | Some content
@@ -128,7 +128,7 @@
         nisi ut aliquip ex ea commodo consequat.
 
     span.name Your name is {{name}}
-              and my name is {{author}}
+              and my name is #{author}
 
   html: |
     Some content
@@ -188,7 +188,7 @@
 
     To use a block helper with the same name as an HTML5 element, you can explicitly use a handlebars block helper by starting the line with `=`.
 
-    Block helpers with only text content and be succinctly written on a single line using a `|` pipe to separate the helper code from the text (see `linkTo` below).
+    Block helpers with only text content can be succinctly written on a single line using a `|` pipe to separate the helper code from the text.
 
   emblem: |
     ul
@@ -248,7 +248,7 @@
 
 
 -
-  title: Explicit Attriute Expressions
+  title: Explicit Attribute Expressions
 
   docs: |
     To use expressions within the element attributes (often used in Ember with `bindAttr` and `action`), use the `{}` syntax after the element.

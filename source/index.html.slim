@@ -2,31 +2,32 @@
 title: "a concise, indented alternative Handlebars syntax"
 ---
 
-body.landing
-  #container
-    #background
+#container
+  #background
 
-  .intro
-    h1.logo
-      == link_to "Emblem.js", "./"
-    p
-      | a concise, beautiful, and fully compatible<br>syntax alternative for <a href="http://handlebarsjs.com">Handlebars.js</a>
+.intro
+  h1.logo
+    == link_to "Emblem.js", "./"
+  p
+    | a concise, beautiful, and fully compatible<br>templating alternative for <a href="http://handlebarsjs.com">Handlebars.js</a>
 
-    ul.nav
-      li
-        a href="syntax.html" Syntax
-      li
-        a href="installation.html" Installation
+  ul.nav
+    li
+      a href="syntax.html" Syntax
 
-      li
-        a href="http://machty.github.com/blog/2013/01/27/emblem-dot-js-indented-templating-targeting-handlebars-dot-js-and-ember-dot-js/"
-          | About
+    li
+      a href="installation.html" Installation
 
-      li
-        a href="http://emblem-test.herokuapp.com/" Demo
-      li
-        a href="http://github.com/machty/emblem.js" Github Source
+    li
+      a href="idioms.html" Idioms
 
-  .intro-example
+    li
+      a href="http://machty.github.com/blog/2013/01/27/emblem-dot-js-indented-templating-targeting-handlebars-dot-js-and-ember-dot-js/"
+        | About
 
-    == highlight(data.intro["example"].to_s, "emblem")
+    li
+      a href="http://emblem-test.herokuapp.com/" Live Demo
+
+.intro-example
+
+  == highlight(data.intro["example"].to_s, "emblem")
