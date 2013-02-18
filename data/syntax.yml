@@ -1,8 +1,7 @@
-# Tags
 -
-  docs: |
-    ### Tags
+  title: Tags
 
+  docs: |
     You can wrap content within an html5 element by just writing the element name at the beginning of a line.
 
     This is supported for all valid html5 tags (list [here](https://developer.mozilla.org/en-US/docs/HTML/HTML5/HTML5_element_list).)
@@ -18,11 +17,10 @@
     <blink>buy it on Kozmo.com</blink>
 
 
-# Indentation Wrapping
 -
-  docs: |
-    ### Indentation Wrapping
+  title: Indentation Wrapping
 
+  docs: |
     To wrap one element in another, just indent and place the element below.
 
   emblem: |
@@ -40,11 +38,11 @@
     </footer>
 
 
-# CSS Classes
--
-  docs: |
-    ### CSS Classes
 
+-
+  title: CSS Classes
+
+  docs: |
     CSS classes can added to elements by using a (`.`) with the class name afterwards. You can place this after an element name (`div` is the default tag name).
 
     You can chain multiple class names.
@@ -64,11 +62,10 @@
     <button class="btn btn-large">Submit</button>
 
 
-# IDs
 -
-  docs: |
-    ### IDs
+  title: IDs
 
+  docs: |
     Element IDs can be added to elements by using `#` before the element id. Like CSS classes, you can provide an element name (`div` is the default tag name).
 
   emblem: |
@@ -82,11 +79,10 @@
     <span id="name">Bob Lablah</span>
 
 
-# HTML Attributes
 -
-  docs: |
-    ### HTML Attributes
+  title: HTML Attributes
 
+  docs: |
     HTML attributes can be added right after the element, using `key="value"` pairs.
 
   emblem: |
@@ -96,11 +92,10 @@
     <button class="close" data-dismiss="dropdown">x</a>
 
 
-# Comments
 -
-  docs: |
-    ### Comments
+  title: Comments
 
+  docs: |
     Start a line with `/` to add a comment. These lines will be ignored completely.
 
     Multiline comments are supported by indenting your comment underneath.
@@ -111,11 +106,10 @@
     / A long long
       multiline comment
 
-# Plain Text
 -
-  docs: |
-    ### Plain Text
+  title: Plain Text
 
+  docs: |
     To output content without an element wrapper, start the line with pipe `|`.
 
     Multiline plaintext content is supported by indenting underneath the `|`.
@@ -145,11 +139,10 @@
 
     <span class="name">Your name is {{name}}.</span>
 
-# Handlebars Expressions
 -
-  docs: |
-    ### Handlebars Expressions
+  title: Handlebars Expressions
 
+  docs: |
     To output a handlebars expression, use `=` before expression.
 
   emblem: |
@@ -166,11 +159,10 @@
     </p>
 
 
-# Handlebars Unescaped Expressions
 -
-  docs: |
-    ### Unescaped Expressions
+  title: Unescaped Expressions
 
+  docs: |
     By default Handlebars html escapes output from expressions. To include html without escaping, use `==` which will output Handlebars "triple-stash" expressions `{{{}}}`.
 
   emblem: |
@@ -183,11 +175,10 @@
     </body>
 
 
-# Handlebars Block Helpers
 -
-  docs: |
-    ### Handlebars Block Helpers
+  title: Handlebars Block Helpers
 
+  docs: |
     Handlebars block statements are first class citizens and can be used at the beginning of a line, and indenting underneath to create a block.
 
     This works for all built in handlebars helpers (`if`, `unless`, `with`, `each`), in addition to custom defined ones. Learn more about here [here](http://handlebarsjs.com/block_helpers.html).
@@ -229,11 +220,10 @@
 
 
 
-# Ember Attributes
 -
-  docs: |
-    ### Expressions within attributes
+  title: Expressions within attributes
 
+  docs: |
     To use expressions within the element attributes (often used in Ember with `bindAttr` and `action`), use the `{}` syntax after the element.
 
   emblem: |
@@ -246,11 +236,10 @@
 
     <img {{bindAttr src="logoUrl"}} alt="logo">
 
-# Ember Views
 -
-  docs: |
-    ### Ember Views
+  title: Ember Views
 
+  docs: |
     You can quickly and easily include an Ember.js view by starting a line with a capitalized letter. This will automatically wrap the line with a `{{view}}` helper.
 
   emblem: |

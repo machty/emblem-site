@@ -24,6 +24,8 @@ body.docs
         - data.syntax.each do |syntax|
           tr.syntax
             td.docs
+              a name="#{syntax['title'].to_s.parameterize}"
+              h3 = syntax["title"]
               == markdown syntax["docs"]
             td.code
               - if syntax["emblem"].present?
