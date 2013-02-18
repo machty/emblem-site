@@ -182,17 +182,18 @@
   title: Handlebars Block Helpers
 
   docs: |
-    Handlebars block statements follow a syntax similar to HTML5 elements.
+    Handlebars block statements follow a syntax similar to HTML5 elements, in that indented content on the lines below get wrapped in the block form of the helper.
 
     To use a block helper with the same name as an HTML5 element, you can explicitly use a handlebars block helper by starting the line with `=`.
 
-  emblem: |
-    if loggedIn
-      | Hello
+    Block helpers with only text content and be succinctly written on a single line using a `|` pipe to separate the helper code from the text (see `linkTo` below).
 
+  emblem: |
     ul
       each person in people
         li = person
+
+    linkTo "home" | Link Text
 
     list nav id="nav-bar" class="top"
       a href="url" = title
@@ -201,15 +202,15 @@
       = something
 
   html: |
-    {{#if loggedIn}}
-      Hello
-    {{/if}}
-
     <ul>
       {{#each person in people}}
         <li>{{person}}</li>
       {{/each}}
     </ul>
+
+    {{#linkTo "home"}}
+      Link Text
+    {{/if}}
 
     {{list nav id="nav-bar" class="top"}}
       <a href="{{url}}">{{title}}</a>
@@ -250,6 +251,29 @@
   html: |
     <div class="field">
       {{view Ember.TextField valueBinding="firstName"}}
+    </div>
+
+-
+  title: HTML Attribute Shorthand for Ember-Handlebars Helpers
+
+  docs: |
+    You can use `%`, `#`, and `.` to set hash values for `tagName`, `elementId`, and `class`, respectively, on a Handlebars helper invocation.
+
+    This is most helpful for the various `view` helpers that Ember provides.
+
+  emblem: |
+    .field
+      Ember.View%p#the-id.some-class
+        | Nested content
+
+      Ember.View %span#the-id.some-class
+        | Adding a space before % also works.
+
+  html: |
+    <div class="field">
+      {{#view Ember.View tagName="p" elementId="the-id" class="some-class"}}Nested content{{/view}}
+
+      {{#view Ember.View tagName="p" elementId="the-id" class="some-class"}}Adding a space before % also works.{{/view}}
     </div>
 
 
