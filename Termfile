@@ -1,3 +1,6 @@
+# opens 2 tabs in OSX terminal with:
+# bundle exec terminitor start
+
 setup do
   run "bundle install"
 end

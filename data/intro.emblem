@@ -18,7 +18,6 @@ ul
 section.ember-features
   / easy, natural Ember bindAttr support
   h1 class=foo The class name of this element is bound to `foo`
-
   p class=isActive:flashing:inactive A more complicated example
 
   / implicit Ember action handlers
