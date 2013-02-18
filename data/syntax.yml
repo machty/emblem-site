@@ -10,10 +10,12 @@
 
   emblem: |
     h1 Welcome to Emblem
+
     %blink buy it on Kozmo.com
 
   html: |
     <h1>Welcome to Emblem</h1>
+
     <blink>buy it on Kozmo.com</blink>
 
 
@@ -220,23 +222,6 @@
     {{/strong}}
 
 
-
--
-  title: Expressions within attributes
-
-  docs: |
-    To use expressions within the element attributes (often used in Ember with `bindAttr` and `action`), use the `{}` syntax after the element.
-
-  emblem: |
-    button{action "delete"} Delete
-
-    img{bindAttr src="logoUrl"} alt="logo"
-
-  html: |
-    <button {{action "delete"}}>Delete</button>
-
-    <img {{bindAttr src="logoUrl"}} alt="logo">
-
 -
   title: Ember Views
 
@@ -251,6 +236,38 @@
     <div class="field">
       {{view Ember.TextField valueBinding="firstName"}}
     </div>
+
+
+-
+  title: Implicit Attribute Expressions
+  docs: |
+
+  emblem: |
+
+
+
+-
+  title: Explicit Attriute Expressions
+
+  docs: |
+    To use expressions within the element attributes (often used in Ember with `bindAttr` and `action`), use the `{}` syntax after the element.
+
+    Multiple attribute expressions are also supported.
+
+  emblem: |
+    button{action "delete"} Delete
+
+    img{bindAttr src="logoUrl"} alt="logo"
+
+    a{bindAttr class="isActive"}{action 'toggleHeader'} x
+
+  html: |
+    <button {{action "delete"}}>Delete</button>
+
+    <img {{bindAttr src="logoUrl"}} alt="logo">
+
+    <a {{bindAttr class="isActive"}} {{action "toggleHeader"}}>x</a>
+
 
 
 # # Title
