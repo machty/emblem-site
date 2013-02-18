@@ -12,13 +12,13 @@ example: |
 
   / Emblem is HTML5-aware; Render HTML if a line starts with 
     known HTML tag, else invoke HB helper or perform property lookup.
-    These defaults are easily overridable when necesary.
+    These defaults are easily overridable when necessary.
   ul
     each people
       li = name
 
   section.ember-features
-    / easy, and natural Ember bindAttr support
+    / easy, natural Ember bindAttr support
     h1 class=foo The class name of this element is bound to `foo`
 
     p class=isActive:flashing:inactive A more complicated example
@@ -27,7 +27,7 @@ example: |
     a click='doIt' href="#" Hello
 
   with person
-    / load Ember Views easily
+    / render Ember Views easily with capitalization shorthand
     App.ThingView contextBinding=this
 
   / an Ember View with content

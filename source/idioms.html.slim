@@ -1,5 +1,5 @@
 ---
-title: "Syntax"
+title: "Idioms"
 ---
 
 a#back href="./" ← back
@@ -17,21 +17,21 @@ a#back href="./" ← back
     tbody
       tr
         td.docs
-          h2 Syntax
+          h2 Idioms
         td.code
 
-      - data.syntax.each do |syntax|
+      - data.idioms.each do |idioms|
         tr.syntax
           td.docs
-            a name="#{syntax['title'].to_s.parameterize}"
-            h3 = syntax["title"]
-            == markdown syntax["docs"]
+            a name="#{idioms['title'].to_s.parameterize}"
+            h3 = idioms["title"]
+            == markdown idioms["docs"]
           td.code
-            - if syntax["emblem"].present?
+            - if idioms["emblem"].present?
               .code-block.emblem
                 label Emblem
-                == highlight(syntax["emblem"], "emblem")
-            - if syntax["html"].present?
+                == highlight(idioms["emblem"], "emblem")
+            - if idioms["html"].present?
               .code-block.html
                 label Handlebars
-                == highlight(syntax["html"], "hbs")
+                == highlight(idioms["html"], "hbs")

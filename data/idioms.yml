@@ -1,0 +1,81 @@
+-
+  title: Lists (Block Expression Shorthand)
+
+  docs: |
+    Emblem allows you to use `=` shorthand with block expressions. Because of this, you can achieve pretty succinct list declarations.
+
+  emblem: |
+
+    ul
+      each items
+        li Item name: #{name}
+
+    / Shorter version:
+
+    ul = each items
+      li Item name: #{name}
+
+  html: |
+    <ul>
+      {{#each}}
+        <li>Item name: {{name}}
+      {{/each}}
+    </ul>
+
+-
+  title: linkTo (Text Content for Block Expressions)
+
+  docs: |
+    Some block helpers, such as Ember's `linkTo`, are often used with a small chunk of text as the content of the block. Emblem provides a shorthand in these instance: use a pipe '|' to separate a block helper declaration from its text content.
+
+    This plays nicely with the Block Expression Shorthand described above.
+
+  emblem: |
+
+    / The following three are equivalent
+    = linkTo "home"
+      | Home
+
+    = linkTo "home" | Home
+
+    linkTo "home" | Home
+
+    ul
+      li = linkTo "index" | Home
+      li = linkTo "about" | About Us
+
+
+  html: |
+    {{#linkTo "home"}}Home{{/linkTo}}
+
+    <ul>
+      <li>{{#linkTo "index"}}Home{{/linkTo}}</li>
+      <li>{{#linkTo "about"}}About Us{{/linkTo}}</li>
+    </ul>
+
+-
+  title: each/else
+
+  docs: |
+    This isn't strictly an Emblem pattern, but keep in mind that the `each` helper excepts an optional `else` portion that will be displayed when the list is empty or nonexistent.
+
+  emblem: |
+
+    each things
+      p = name
+    else
+      p There are no things!
+
+  html: |
+    {{#each things}}
+      <p>{{name}}</p>
+    {{/else}}
+      <p>There are no things!</p>
+    {{/each}}
+
+-
+  title: More on the way...
+
+  docs: |
+    We'll be updating this section periodically as the patterns come in from the wild.
+
