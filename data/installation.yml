@@ -12,6 +12,10 @@
     # Step 1: edit your application's Gemfile
     gem "emblem-rails"
 
+    # Step 1a: if you're using Ember 1.0.0-RC, which depends on Handlebars rc3,
+    # you must (for the time being) also add:
+    gem "barber-emblem", github: "machty/barber-emblem"
+
     # Step 2: rebundle and restart your dev server
     bundle
 
