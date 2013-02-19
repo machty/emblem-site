@@ -28,8 +28,6 @@
   docs: |
     Some block helpers, such as Ember's `linkTo`, are often used with a small chunk of text as the content of the block. Emblem provides a shorthand in these instance: use a pipe '|' to separate a block helper declaration from its text content.
 
-    This plays nicely with the Block Expression Shorthand described above.
-
   emblem: |
 
     / The following three are equivalent
