@@ -34,7 +34,7 @@
 
   html: |
     <!-- Step 1: Add Emblem.js -->
-    <script src="https://s3.amazonaws.com/machty/emblemtest/emblem.js"></script>
+    <script src="https://github.com/machty/emblem.js/raw/master/dist/emblem.js"></script>
 
     <!-- Step 2: define templates -->
     <script type="text/x-emblem" data-template-name="application">
