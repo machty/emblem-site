@@ -226,9 +226,9 @@
 -
   title: Views
 
-  docs: |
-    *\*when using with [Ember.js](http://emberjs.com)*
+  ember: true
 
+  docs: |
     You can quickly and easily include an Ember.js view by starting a line with a capitalized letter. This will automatically wrap the line with a `{{view}}` helper.
 
   emblem: |
@@ -244,9 +244,9 @@
 -
   title: Implicit Bind Attributes
 
-  docs: |
-    *\*when using with [Ember.js](http://emberjs.com)*
+  ember: true
 
+  docs: |
     Emblem.js makes binding expression attributes (vai `bindAttr`) clean and simple.
 
 
@@ -260,9 +260,9 @@
 -
   title: Implicit Event Handlers
 
-  docs: |
-    *\*when using with [Ember.js](http://emberjs.com)*
+  ember: true
 
+  docs: |
     Emblem.js makes handling expression attributes (such as `bindAttr` and `action`) clean and easy.
 
   emblem: |
@@ -278,9 +278,9 @@
 -
   title: Explicit Attribute Expressions
 
-  docs: |
-    *\*when using with [Ember.js](http://emberjs.com)*
+  ember: true
 
+  docs: |
     To use expressions within the element attributes (often used in Ember with `bindAttr` and `action`), use the `{}` syntax after the element.
 
     Multiple attribute expressions are also supported.

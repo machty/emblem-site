@@ -24,7 +24,11 @@ a#back href="../" ← back
         tr.syntax
           td.docs
             a name="#{syntax['title'].to_s.parameterize}"
-            h3 = syntax["title"]
+            h3 
+              = syntax["title"]
+              - if syntax['ember']
+                a.ember-link href="http://www.emberjs.com" Ember.js only
+
             == markdown syntax["docs"]
           td.code
             - if syntax["emblem"].present?
