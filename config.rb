@@ -50,13 +50,9 @@ helpers do
   def highlight(code, syntax = "emblem")
     path = syntax
 
-    # this would be nice but textpow doesnt allow it
-    case syntax
-    when "emblem"
-      path = File.expand_path("../syntax/source.emblem.tmSyntax", __FILE__)
-    when "hbs"
-      path = File.expand_path("../syntax/source.hbs.tmSyntax", __FILE__)
-    end
+    # first check for local syntax overrides...
+    localpath = File.expand_path("../syntax/source.#{syntax}.tmSyntax", __FILE__)
+    path = localpath if File.exists?(localpath)
 
     Uv.parse(code, 'xhtml', path, false, 'blackboard')
   end
