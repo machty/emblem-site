@@ -20,7 +20,7 @@
 
 # HTML / Javascript
 -
-  title: Inline HTML / Javsacript
+  title: Inline HTML / Javascript
   docs: |
     You can easily test Emblem in the browser (works great for sites like jsbin.com) by just including the Emblem compiler script and wrapping your Emblem templates with `<script type="text/x-emblem">`.
 
