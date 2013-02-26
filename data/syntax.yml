@@ -317,6 +317,33 @@
 
     <a {{bindAttr class="isActive"}} {{action "toggleHeader"}}>x</a>
 
+
+-
+  title: Vanilla Handlebars Partials
+
+  docs: |
+    To invoke partials with non-Emberized Handlebars, you can use the `>` syntax.
+
+    Note that you'll never really use this for Ember apps; rather, in those cases, you'd use the `partial` helper.
+
+    Also note that there's no good way to precompile partials other than to precompile them as templates and then run `Handlebars.partials = Handlebars.templates` before any rendering has taken place.
+
+    If you're not precompiling, and you want to directly register an Emblem template, you can use `Emblem.registerPartial`. 
+
+  emblem: |
+    > partialName
+
+    p Check out this partial: #{> partialName}
+
+    > partialName foo
+
+  html: |
+    {{>partialName}}
+
+    <p>Check out this partial: {{>partialName}}</p>
+
+    {{>partialName foo}}
+
 -
   title: Anything wrong or missing here?
 
