@@ -265,7 +265,7 @@
   ember: true
 
   docs: |
-    Emblem.js makes binding expression attributes (vai `bindAttr`) clean and simple.
+    Emblem.js makes binding expression attributes (via `bindAttr`) clean and simple.
 
 
   emblem: |
