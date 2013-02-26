@@ -87,12 +87,30 @@
   docs: |
     HTML attributes can be added right after the element, using `key="value"` pairs.
 
+    HTML attributes can also have mustaches embedded in them, though make sure to use the `unbound` helper in an Ember setting. Note the exclamation mark shorthand for setting an HTML attribute to an unbound property in an Ember setting.
+
   emblem: |
     button.close data-dismiss="modal" x
 
-  html: |
-    <button class="close" data-dismiss="dropdown">x</a>
+    / For Vanilla Handlebars mode only
+    button class="large {{foo}}" x
 
+    / For Ember Handlebars
+    button class="large {{unbound foo}}" x
+
+    / Shorthand for Ember
+    button class=foo! x
+
+
+
+  html: |
+    <button class="close" data-dismiss="dropdown">x</button>
+
+    <button class="large {{foo}}">x</button>
+
+    <button class="large {{unbound foo}}">x</button>
+
+    <button class="{{unbound foo}}">x</button>
 
 -
   title: Comments
