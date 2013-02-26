@@ -47,7 +47,7 @@
     <!-- Step 2: define templates -->
     <script type="text/x-emblem" data-template-name="application">
       h1 Welcome to my App
-      == outlet
+      = outlet
     </script>
 
 
@@ -57,14 +57,16 @@
   docs: |
     Emblem is supported in [Brunch.io](http://brunch.io) via the [emblem-brunch](https://github.com/machty/emblem-brunch) plugin.
 
+# Mimosa
+-
+  title: Mimosa
+  docs: |
+    Emblem is supported in [Mimosa](http://mimosajs.com/) since version 0.10.1.
+
   instructions: |
-    Add `"emblem-brunch": "x.y.z"` to `package.json` of your brunch app.
+    Follow [these instructions](http://mimosajs.com/started.html) to get started with Mimosa.
 
-    Pick a plugin version that corresponds to your minor (y) brunch version.
-
-    If you want to use git version of plugin, add
-    `"emblem-brunch": "git+https://github.com/machty/emblem-brunch.git"`.
-
+    Once you're setup, files ending in .emblem or .embl will be compiled as Emblem templates. If you've enabled Ember in your project, they'll be compiled as Ember-ized templates. 
 
 # Ember Tools
 -
