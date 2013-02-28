@@ -3,26 +3,19 @@
   title: Ruby on Rails
   docs: |
 
-    NOTE: The Handlebars-dependent gems are presently in the middle of a transition to a cleaner, less brittle pattern for handling JavaScript dependencies. In the meantime, please refer to [this Gemfile](https://github.com/machty/emblem-rails-demo/blob/master/Gemfile) as the definitive, guaranteed way to get Emblem up and running. We promise it'll all be easier soon...
-
     To install Emblem on a Rails 3 project, just use add the following lines to your `Gemfile` and run `bundle`.
 
-    Define your templates in `app/assets/templates` with the file extension `.emblem`. These will be automatically compiled and made available as Ember templates.
+    Define your templates in `app/assets/templates` with the file extension `.emblem`. These will be automatically compiled and made available as Ember templates. Templates with the `.raw.emblem` extension will be compiled as vanilla Handlebars templates.
 
     For a working sample project, check out:<br>[github.com/machty/emblem-rails-demo](https://github.com/machty/emblem-rails-demo)
 
   shell: |
     # Step 1: edit your application's Gemfile
+    gem 'ember-rails'
+    gem 'emblem-rails'
 
-    gem 'emblem-rails', '~> 0.0.8'
-    gem 'ember-rails', git: "git://github.com/machty/ember-rails.git", branch: "ember-source"
-
-    gem 'ember-source', '1.0.0.rc1.1'
-    gem 'handlebars-source', '1.0.0.rc3'
-
-    # pre4
-    #gem 'ember-source', '1.0.0.pre4.1'
-    #gem 'handlebars-source', '1.0.0.rc2'
+    # Optional, use the older pre4 version of ember (the default is rc1)
+    #gem 'ember-source', '1.0.0.pre4.2'
 
     # Step 2: rebundle and restart your dev server
     bundle
