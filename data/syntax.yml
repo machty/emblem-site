@@ -136,6 +136,8 @@
 
     Plain text can include handlebars output tags `{{}}` and `{{{}}}`. You can also use `#{}` as an alias for `{{}}`.
 
+    Use an apostrophe `'` instead of `|` to append a single trailing whitespace at the end of the text block.
+
   emblem: |
     | Some content
 
@@ -148,6 +150,9 @@
     span.name Your name is {{name}}
               and my name is #{author}
 
+    span
+      ' Trailing space
+
   html: |
     Some content
 
@@ -159,6 +164,8 @@
     </p>
 
     <span class="name">Your name is {{name}} and my name is {{author}}</span>
+
+    <span>Trailing space </span>
 
 -
   title: Handlebars Expressions
