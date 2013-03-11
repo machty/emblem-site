@@ -50,6 +50,18 @@
   docs: |
     Emblem is supported in [Brunch.io](http://brunch.io) via the [emblem-brunch](https://github.com/machty/emblem-brunch) plugin.
 
+  instructions: |
+    Follow [these instructions](https://github.com/machty/emblem-brunch) to get started with Grunt.
+
+# Grunt
+-
+  title: Grunt (and Yeoman)
+  docs: |
+    Emblem is supported in [Grunt](http://gruntjs.com) via the [grunt-emblem](https://github.com/wordofchristian/grunt-emblem) plugin.
+
+  instructions: |
+    Follow [these instructions](https://github.com/wordofchristian/grunt-emblem) to get started with Grunt.
+
 # Mimosa
 -
   title: Mimosa
