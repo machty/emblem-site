@@ -228,6 +228,11 @@
     = strong
       = something
 
+    if something
+      p Something!
+    else
+      p Something else!
+
   html: |
     <ul>
       {{#each person in people}}
@@ -246,6 +251,12 @@
     {{#strong}}
       {{something}}
     {{/strong}}
+
+    {{#if something}}
+      <p>Something!</p>
+    {{else}}
+      <p>Something else!</p>
+    {{/if}}
 
 
 -
