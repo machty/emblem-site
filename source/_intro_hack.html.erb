@@ -24,9 +24,8 @@
 <span class="Comment">  <span class="Comment">/</span> implicit Ember action handlers</span>
 <span class="Entity">  a </span><span class="MetaTag">click</span><span class="Entity">=</span><span class="String"><span class="String">"</span><span class="String">doIt</span><span class="String">"</span></span> <span class="MetaTag">href</span><span class="Entity">=</span><span class="String"><span class="String">"</span><span class="String">#</span><span class="String">"</span></span> Hello, how are you doing, <span class="Entity">#{</span><span class="MetaTag">name</span><span class="Entity">}</span>?
 
-<span class="Keyword">with </span>person
-<span class="Comment">  <span class="Comment">/</span> render Ember Views easily with capitalization shorthand</span>
-<span class="Constant">  App.ThingView </span><span class="MetaTag">contextBinding</span><span class="Entity">=</span><span class="String">this</span>
+<span class="Comment"><span class="Comment">/</span> condense nested content into a single line if that's how you roll</span>
+<span class="Entity">#footer</span>: <span class="Entity">ul.menu-items</span>: <span class="Keyword">each </span>menu_items: <span class="Entity">li</span>: <span class="Entity">a.menu-link</span> <span class="MetaTag">href</span><span class="Entity">=</span><span class="String">url</span>: <span class="Keyword">link_text</span>
 
 <span class="Keyword">if </span>something
 <span class="Entity">  p </span>something was true!

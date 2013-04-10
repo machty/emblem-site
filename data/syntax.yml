@@ -258,6 +258,46 @@
       <p>Something else!</p>
     {{/if}}
 
+-
+  title: Condensed Nesting with Colon Separator (NEW)
+
+  docs: |
+    You can condense nested HTML or block mustache content into a single line by using `:` to terminate the present element or block mustache declaration.
+
+    Whatever comes after a statement-terminating `:` will be interpreted as if it were moved to the line below and indented. This allows you to quickly alternate between nesting HTML elements and mustache blocks on a single line when it makes sense.
+
+    This should come in handy for scaffolding frameworks like Twitter Bootstrap (the first part of the example on the right is Bootstrap scaffolding code).
+
+  emblem: |
+    #content-frame: .container: .row:
+      .span4: render "sidebar"
+      .span8: render "main"
+
+    footer: ul.menu-items: each menu_items: li: a.menu-link href=url: link_text
+
+  html: |
+    <div id="content-frame">
+      <div class="container">
+        <div class="row">
+          <div class="span4">
+            {{render "sidebar"}}
+          </div>
+          <div class="span8">
+            {{render "main"}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <ul class="menu-items">
+        {{#each menu_items}}
+          <li>
+            <!-- of course, in an Ember.js context, href will be set via a bindAttr -->
+            <a class="menu-link" href="{{url}}">{{link_text}}</a>
+          </li>
+        {{/each}}
+      </ul>
+    </footer>
 
 -
   title: Views
@@ -276,7 +316,6 @@
       {{view Ember.TextField valueBinding="firstName"}}
     </div>
 
-
 -
   title: Implicit Bind Attributes
 
@@ -285,13 +324,19 @@
   docs: |
     Emblem.js makes binding expression attributes (via `bindAttr`) clean and simple.
 
-
   emblem: |
     img src=logoUrl alt="Logo"
+
+    div class=condition:whenTrue:whenFalse
+
+    div class={ condition1:whenTrue:whenFalse condition2:whenTrue:whenFalse }
 
   html: |
     <img {{bindAttr src="logoUrl"}} alt="Logo">
 
+    <div {{bindAttr class="condition:whenTrue:whenFalse"}}></div>
+
+    <div {{bindAttr class="condition1:whenTrue:whenFalse condition2:whenTrue:whenFalse"}}></div>
 
 -
   title: Implicit Event Handlers
@@ -299,18 +344,22 @@
   ember: true
 
   docs: |
-    Emblem.js makes handling expression attributes (such as `bindAttr` and `action`) clean and easy.
+    Like with HTML5 elements, Emblem is aware of common Ember action names, such as `click`, `submit`, `mouseEnter`, etc. When you use these as attributes, they'll be converted to `action` helpers.
 
   emblem: |
     a click="toggleHeader" x
 
     a click="toggleHeader this" x
 
+    form submit="submitTheForm foo"
+      p Hello
+
   html: |
-    <a {{action "toggleHeader" on="click"}}>x</a>
+    <a {{action toggleHeader on="click"}}>x</a>
 
-    <a {{action "toggleHeader" this on="click"}}>x</a>
+    <a {{action toggleHeader this on="click"}}>x</a>
 
+    <form {{action submitTheForm foo on="submit"}}><p>Hello</p></form>
 -
   title: Explicit Attribute Expressions
 
@@ -335,6 +384,19 @@
 
     <a {{bindAttr class="isActive"}} {{action "toggleHeader"}}>x</a>
 
+-
+  title: In-Tag Mustache
+
+  docs: |
+    Occasionally, you'll want to put mustache content inside the opening tag of an HTML element. You can do this by immediately following the tag content with curly braces.
+
+    Note: instead of using this for Ember's `bindAttr`, you can use Emblem's `bindAttr` syntax described below in Implicit Bind Attributes.
+
+  emblem: |
+    span.some-class{ someHelper } Hello
+
+  html: |
+    <span class="some-class" someHelperOutput="foo">Hello</span>
 
 -
   title: Vanilla Handlebars Partials
