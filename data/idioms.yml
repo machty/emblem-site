@@ -52,6 +52,34 @@
     </ul>
 
 -
+  title: Colon Syntax for Inlining Nested Content
+
+  docs: |
+    The colon separator is a way of nesting content on a single line. It's essentially an alternative to a newline followed by indented content.
+
+  emblem: |
+    / You could write something like this:
+    .container
+      .row
+        .span12
+          p Hello
+
+    / Or you could write something like this:
+    .container: .row: .span12: p Hello
+
+    / It works for mustache blocks too:
+    li
+      linkTo 'posts'
+        span = linkText
+
+    / With colons:
+    li: linkTo 'posts': span: linkText
+        
+    / You can consistently use it, even for simple cases.
+    legend: title 
+    legend = title
+
+-
   title: HTML Attribute Shorthand for Ember Helpers
 
   docs: |
