@@ -1,11 +1,14 @@
 docs: |
   ## Editors
 
-  At the moment, Emblem.js is close enough to [Slim](http://slim-lang.com) that you can reuse most of the editor tools for Slim.
+  At the moment, [vim-emblem](https://github.com/heartsentwined/vim-emblem) is the only editor plugin available for Emblem, but otherwise, Emblem.js is close enough to [Slim](http://slim-lang.com) that you can reuse most of the editor tools for Slim.
 
   We've forked the Textmate/Sublime Text bundles so we can make improvements in the future.
 
 shell: |
+
+  # vim-emblem
+  Follow the instructions at https://github.com/heartsentwined/vim-emblem
 
   # Sublime Text 2
   Install "Ruby Slim" via Package Control and map it to .emblem files
