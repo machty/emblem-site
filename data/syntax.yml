@@ -136,16 +136,18 @@
 
     Plain text can include handlebars output tags `{{}}` and `{{{}}}`. You can also use `#{}` as an alias for `{{}}`.
 
+    Block helpers within text blocks can also be used if you're using the `:` colon or `|` pipe syntax.
+
     Use an apostrophe `'` instead of `|` to append a single trailing whitespace at the end of the text block.
 
   emblem: |
     | Some content
 
     p
-      | Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-        nisi ut aliquip ex ea commodo consequat.
+      | Lorem #{linkTo 'something' | ipsum} dolor sit amet, consectetur 
+        adipisicing elit, sed do eiusmod tempor incididunt ut labore et 
+        dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud 
+        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
     span.name Your name is {{name}}
               and my name is #{author}
@@ -157,10 +159,11 @@
     Some content
 
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-      nisi ut aliquip ex ea commodo consequat.
+      Lorem {{#linkTo something}}ipsum{{/linkTo}} dolor sit amet, 
+      consectetur adipisicing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua.  Ut enim ad minim veniam, 
+      quis nostrud exercitation ullamco laboris nisi ut aliquip 
+      ex ea commodo consequat.
     </p>
 
     <span class="name">Your name is {{name}} and my name is {{author}}</span>
@@ -317,7 +320,7 @@
     </div>
 
 -
-  title: Implicit Bind Attributes
+  title: bindAttr Shorthand
 
   ember: true
 
@@ -339,7 +342,7 @@
     <div {{bindAttr class="condition1:whenTrue:whenFalse condition2:whenTrue:whenFalse"}}></div>
 
 -
-  title: Implicit Event Handlers
+  title: Action / Events Shorthand
 
   ember: true
 
