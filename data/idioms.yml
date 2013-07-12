@@ -17,7 +17,7 @@
 
   html: |
     <ul>
-      {{#each}}
+      {{#each items}}
         <li>Item name: {{name}}
       {{/each}}
     </ul>
@@ -101,7 +101,7 @@
     <div class="field">
       {{#view Ember.View tagName="p" elementId="the-id" class="some-class"}}Nested content{{/view}}
 
-      {{#view Ember.View tagName="p" elementId="the-id" class="some-class"}}Adding a space before % also works.{{/view}}
+      {{#view Ember.View tagName="span" elementId="the-id" class="some-class"}}Adding a space before % also works.{{/view}}
     </div>
 
 -
