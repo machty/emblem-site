@@ -362,7 +362,7 @@
   html: |
     <a {{action toggleHeader on="click"}}>x</a>
     
-    <a {{action toggleHeader target="view"}}>x</a>
+    <a {{action toggleHeader on="click" target="view"}}>x</a>
 
     <a {{action toggleHeader this on="click"}}>x</a>
 
