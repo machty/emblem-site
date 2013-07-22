@@ -352,6 +352,8 @@
   emblem: |
     a click="toggleHeader" x
 
+    a click="toggleHeader target='view'" x
+
     a click="toggleHeader this" x
 
     form submit="submitTheForm foo"
@@ -359,6 +361,8 @@
 
   html: |
     <a {{action toggleHeader on="click"}}>x</a>
+    
+    <a {{action toggleHeader on="click" target="view"}}>x</a>
 
     <a {{action toggleHeader this on="click"}}>x</a>
 
