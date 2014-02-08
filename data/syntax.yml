@@ -144,7 +144,7 @@
     | Some content
 
     p
-      | Lorem #{linkTo 'something' | ipsum} dolor sit amet, consectetur 
+      | Lorem #{link-to 'something' | ipsum} dolor sit amet, consectetur 
         adipisicing elit, sed do eiusmod tempor incididunt ut labore et 
         dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud 
         exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -159,7 +159,7 @@
     Some content
 
     <p>
-      Lorem {{#linkTo something}}ipsum{{/linkTo}} dolor sit amet, 
+      Lorem {{#link-to something}}ipsum{{/link-to}} dolor sit amet, 
       consectetur adipisicing elit, sed do eiusmod tempor incididunt
       ut labore et dolore magna aliqua.  Ut enim ad minim veniam, 
       quis nostrud exercitation ullamco laboris nisi ut aliquip 
@@ -223,7 +223,7 @@
       each person in people
         li = person
 
-    linkTo "home" | Link Text
+    link-to "home" | Link Text
 
     list nav id="nav-bar" class="top"
       a href="url" = title
@@ -243,9 +243,9 @@
       {{/each}}
     </ul>
 
-    {{#linkTo "home"}}
+    {{#link-to "home"}}
       Link Text
-    {{/linkTo}}
+    {{/link-to}}
 
     {{list nav id="nav-bar" class="top"}}
       <a href="{{url}}">{{title}}</a>

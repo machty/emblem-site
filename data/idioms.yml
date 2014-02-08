@@ -23,32 +23,32 @@
     </ul>
 
 -
-  title: linkTo (Text Content for Block Expressions)
+  title: link-to (Text Content for Block Expressions)
 
   docs: |
-    Some block helpers, such as Ember's `linkTo`, are often used with a small chunk of text as the content of the block. Emblem provides a shorthand in these instance: use a pipe '|' to separate a block helper declaration from its text content.
+    Some block helpers, such as Ember's `link-to`, are often used with a small chunk of text as the content of the block. Emblem provides a shorthand in these instance: use a pipe '|' to separate a block helper declaration from its text content.
 
   emblem: |
 
     / The following three are equivalent
-    = linkTo "home"
+    = link-to "home"
       | Home
 
-    = linkTo "home" | Home
+    = link-to "home" | Home
 
-    linkTo "home" | Home
+    link-to "home" | Home
 
     ul
-      li = linkTo "index" | Home
-      li = linkTo "about" | About Us
+      li = link-to "index" | Home
+      li = link-to "about" | About Us
 
 
   html: |
-    {{#linkTo "home"}}Home{{/linkTo}}
+    {{#link-to "home"}}Home{{/link-to}}
 
     <ul>
-      <li>{{#linkTo "index"}}Home{{/linkTo}}</li>
-      <li>{{#linkTo "about"}}About Us{{/linkTo}}</li>
+      <li>{{#link-to "index"}}Home{{/link-to}}</li>
+      <li>{{#link-to "about"}}About Us{{/link-to}}</li>
     </ul>
 
 -
@@ -69,11 +69,11 @@
 
     / It works for mustache blocks too:
     li
-      linkTo 'posts'
+      link-to 'posts'
         span = linkText
 
     / With colons:
-    li: linkTo 'posts': span: linkText
+    li: link-to 'posts': span: linkText
         
     / You can consistently use it, even for simple cases.
     legend: title 
