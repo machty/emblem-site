@@ -4,7 +4,7 @@ gem "middleman"
 gem "middleman-bourbon"
 gem "sass"
 gem "slim"
-gem "debugger"
+#gem "debugger"
 
 gem "textpow"
 gem "ultraviolet"
