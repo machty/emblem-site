@@ -295,7 +295,7 @@
       <ul class="menu-items">
         {{#each menu_items}}
           <li>
-            <!-- of course, in an Ember.js context, href will be set via a bindAttr -->
+            <!-- of course, in an Ember.js context, href will be set via a bind-attr -->
             <a class="menu-link" href="{{url}}">{{link_text}}</a>
           </li>
         {{/each}}
@@ -320,12 +320,12 @@
     </div>
 
 -
-  title: bindAttr Shorthand
+  title: bind-attr Shorthand
 
   ember: true
 
   docs: |
-    Emblem.js makes binding expression attributes (via `bindAttr`) clean and simple.
+    Emblem.js makes binding expression attributes (via `bind-attr`) clean and simple.
 
   emblem: |
     img src=logoUrl alt="Logo"
@@ -335,11 +335,11 @@
     div class={ condition1:whenTrue:whenFalse condition2:whenTrue:whenFalse }
 
   html: |
-    <img {{bindAttr src="logoUrl"}} alt="Logo">
+    <img {{bind-attr src="logoUrl"}} alt="Logo">
 
-    <div {{bindAttr class="condition:whenTrue:whenFalse"}}></div>
+    <div {{bind-attr class="condition:whenTrue:whenFalse"}}></div>
 
-    <div {{bindAttr class="condition1:whenTrue:whenFalse condition2:whenTrue:whenFalse"}}></div>
+    <div {{bind-attr class="condition1:whenTrue:whenFalse condition2:whenTrue:whenFalse"}}></div>
 
 -
   title: Action / Events Shorthand
@@ -373,23 +373,22 @@
   ember: true
 
   docs: |
-    To use expressions within the element attributes (often used in Ember with `bindAttr` and `action`), use the `{}` syntax after the element.
+    To use expressions within the element attributes (often used in Ember with `bind-attr` and `action`), use the `{}` syntax after the element.
 
     Multiple attribute expressions are also supported.
 
   emblem: |
     button{action "delete"} Delete
 
-    img{bindAttr src="logoUrl"} alt="logo"
-
-    a{bindAttr class="isActive"}{action 'toggleHeader'} x
+    img{bind-attr src="logoUrl"} alt="logo"
+    a{bind-attr class="isActive"}{action 'toggleHeader'} x
 
   html: |
     <button {{action "delete"}}>Delete</button>
 
-    <img {{bindAttr src="logoUrl"}} alt="logo">
+    <img {{bind-attr src="logoUrl"}} alt="logo">
 
-    <a {{bindAttr class="isActive"}} {{action "toggleHeader"}}>x</a>
+    <a {{bind-attr class="isActive"}} {{action "toggleHeader"}}>x</a>
 
 -
   title: In-Tag Mustache
@@ -397,7 +396,7 @@
   docs: |
     Occasionally, you'll want to put mustache content inside the opening tag of an HTML element. You can do this by immediately following the tag content with curly braces.
 
-    Note: instead of using this for Ember's `bindAttr`, you can use Emblem's `bindAttr` syntax described below in Implicit Bind Attributes.
+    Note: instead of using this for Ember's `bind-attr`, you can use Emblem's `bind-attr` syntax described below in Implicit Bind Attributes.
 
   emblem: |
     span.some-class{ someHelper } Hello
