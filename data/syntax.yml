@@ -144,9 +144,9 @@
     | Some content
 
     p
-      | Lorem #{link-to 'something' | ipsum} dolor sit amet, consectetur 
-        adipisicing elit, sed do eiusmod tempor incididunt ut labore et 
-        dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud 
+      | Lorem #{link-to 'something' | ipsum} dolor sit amet, consectetur
+        adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+        dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud
         exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
     span.name Your name is {{name}}
@@ -159,10 +159,10 @@
     Some content
 
     <p>
-      Lorem {{#link-to something}}ipsum{{/link-to}} dolor sit amet, 
+      Lorem {{#link-to something}}ipsum{{/link-to}} dolor sit amet,
       consectetur adipisicing elit, sed do eiusmod tempor incididunt
-      ut labore et dolore magna aliqua.  Ut enim ad minim veniam, 
-      quis nostrud exercitation ullamco laboris nisi ut aliquip 
+      ut labore et dolore magna aliqua.  Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip
       ex ea commodo consequat.
     </p>
 
@@ -308,15 +308,25 @@
   ember: true
 
   docs: |
-    You can quickly and easily include an Ember.js view by starting a line with a capitalized letter. This will automatically wrap the line with a `{{view}}` helper.
+    Just like in Handlebars, you include an Ember.js view by enclosing the lower-case view name in quotes. Note that input form fields are something of a special case, as the associated view classes are accessed via the "input" helper.
 
   emblem: |
     .field
-      Ember.TextField valueBinding="firstName"
+      = view "my-custom" someParam="foo"
+    .field
+      = view "select" content=options
+    .field
+      = input valueBinding="firstName"
 
   html: |
     <div class="field">
-      {{view Ember.TextField valueBinding="firstName"}}
+      {{view "my-custom" someParam="foo"}}
+    </div>
+    <div class="field">
+      {{view "select" content=options}}
+    </div>
+    <div class="field">
+      {{input valueBinding="firstName"}}
     </div>
 
 -
@@ -361,7 +371,7 @@
 
   html: |
     <a {{action toggleHeader on="click"}}>x</a>
-    
+
     <a {{action toggleHeader on="click" target="view"}}>x</a>
 
     <a {{action toggleHeader this on="click"}}>x</a>
@@ -414,7 +424,7 @@
 
     Also note that there's no good way to precompile partials other than to precompile them as templates and then run `Handlebars.partials = Handlebars.templates` before any rendering has taken place.
 
-    If you're not precompiling, and you want to directly register an Emblem template, you can use `Emblem.registerPartial`. 
+    If you're not precompiling, and you want to directly register an Emblem template, you can use `Emblem.registerPartial`.
 
   emblem: |
     > partialName
