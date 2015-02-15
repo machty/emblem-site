@@ -1,0 +1,112 @@
+/* line 1, syntax.css.scss */
+pre.blackboard .LatexSupport {
+  color: #FBDE2D; }
+
+/* line 4, syntax.css.scss */
+pre.blackboard .OcamlInfixOperator {
+  color: #8DA6CE; }
+
+/* line 7, syntax.css.scss */
+pre.blackboard .MetaFunctionCallPy {
+  color: #BECDE6; }
+
+/* line 10, syntax.css.scss */
+pre.blackboard .Superclass {
+  color: #FF6400;
+  font-style: italic; }
+
+/* line 14, syntax.css.scss */
+pre.blackboard .Constant {
+  color: #D8FA3C; }
+
+/* line 17, syntax.css.scss */
+pre.blackboard {
+  /*background-color: #0C1021;*/
+  color: #F8F8F8; }
+
+/* line 21, syntax.css.scss */
+pre.blackboard .OcamlFPConstant {
+  text-decoration: underline; }
+
+/* line 24, syntax.css.scss */
+pre.blackboard .OcamlFPInfixOperator {
+  text-decoration: underline; }
+
+/* line 27, syntax.css.scss */
+pre.blackboard .Support {
+  color: #8DA6CE; }
+
+/* line 30, syntax.css.scss */
+pre.blackboard .OcamlOperator {
+  color: #F8F8F8; }
+
+/* line 33, syntax.css.scss */
+pre.blackboard .Storage {
+  color: #FBDE2D; }
+
+/* line 36, syntax.css.scss */
+pre.blackboard .line-numbers {
+  background-color: #253B76;
+  color: #FFFFFF; }
+
+/* line 40, syntax.css.scss */
+pre.blackboard .StringInterpolation {
+  color: #FF6400; }
+
+/* line 43, syntax.css.scss */
+pre.blackboard .InvalidIllegal {
+  background-color: #9D1E15;
+  color: #F8F8F8; }
+
+/* line 47, syntax.css.scss */
+pre.blackboard .PlistUnquotedString {
+  color: #FFFFFF; }
+
+/* line 50, syntax.css.scss */
+pre.blackboard .OcamlVariant {
+  color: #D5E0F3; }
+
+/* line 53, syntax.css.scss */
+pre.blackboard .MetaTag {
+  color: #7F90AA; }
+
+/* line 56, syntax.css.scss */
+pre.blackboard .LatexEnvironment {
+  background-color: #F7F7F8; }
+
+/* line 59, syntax.css.scss */
+pre.blackboard .OcamlFPPrefixOperator {
+  text-decoration: underline; }
+
+/* line 62, syntax.css.scss */
+pre.blackboard .OcamlPrefixOperator {
+  color: #8DA6CE; }
+
+/* line 65, syntax.css.scss */
+pre.blackboard .EntityNameSection {
+  color: #FFFFFF; }
+
+/* line 68, syntax.css.scss */
+pre.blackboard .String {
+  color: #61CE3C; }
+
+/* line 71, syntax.css.scss */
+pre.blackboard .Keyword {
+  color: #FBDE2D; }
+
+/* line 74, syntax.css.scss */
+pre.blackboard .LatexEnvironmentNested {
+  background-color: #7691F3; }
+
+/* line 77, syntax.css.scss */
+pre.blackboard .InvalidDeprecated {
+  color: #AB2A1D;
+  font-style: italic; }
+
+/* line 83, syntax.css.scss */
+pre.blackboard .Entity {
+  color: #FF6400; }
+
+/* line 86, syntax.css.scss */
+pre.blackboard .Comment {
+  color: #AEAEAE; }

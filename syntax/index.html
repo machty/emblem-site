@@ -1,0 +1,260 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><title>Emblem.js  : Syntax</title><link href="/images/favicon.png" rel="shortcut icon" type="image/png" /><link href="../stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" /></head><body><a href="https://github.com/machty/emblem.js"><img alt="Fork me on GitHub" src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" style="position: absolute; top: 0; right: 0; border: 0; z-index: 400;" /></a><a href="../" id="back">← back</a><div id="container"><div id="background"></div><table cellpadding="0" cellspacing="0"><thead><tr><th class="docs"><h1 class="logo"><a href="../">Emblem.js</a></h1></th><th class="code"></th></tr></thead><tbody><tr class="docs-intro"><td class="docs"><h2>Syntax</h2></td><td class="code"></td></tr><tr class="syntax"><td class="docs"><a name="tags"></a><h3>Tags</h3><p>You can wrap content within an html5 element by just writing the element name at the beginning of a line.</p>
+
+<p>This is supported for all valid html5 tags (list <a href='https://developer.mozilla.org/en-US/docs/HTML/HTML5/HTML5_element_list'>here</a>.)</p>
+
+<p>To use a non-html5 tag, just start the line with <code>%</code>.</p></td><td class="code"><div class="code-block emblem"><label>Emblem</label><pre class="blackboard"><span class="Entity">h1 </span>Welcome to Emblem
+
+%blink buy it on Kozmo.com
+</pre></div><div class="code-block html"><label>Handlebars</label><pre class="blackboard"><span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">h1</span><span class="MetaTag">&gt;</span></span>Welcome to Emblem<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">h1</span><span class="MetaTag">&gt;</span></span>
+
+<span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">blink</span><span class="MetaTag">&gt;</span></span>buy it on Kozmo.com<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">blink</span><span class="MetaTag">&gt;</span></span>
+</pre></div></td></tr><tr class="syntax"><td class="docs"><a name="indentation-wrapping"></a><h3>Indentation Wrapping</h3><p>To wrap one element in another, just indent and place the element below.</p></td><td class="code"><div class="code-block emblem"><label>Emblem</label><pre class="blackboard"><span class="Entity">footer</span>
+<span class="Entity">  ul</span>
+<span class="Entity">    li </span>Hello
+<span class="Entity">    li </span>Goodbye
+</pre></div><div class="code-block html"><label>Handlebars</label><pre class="blackboard"><span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">footer</span><span class="MetaTag">&gt;</span></span>
+  <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">ul</span><span class="MetaTag">&gt;</span></span>
+    <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">li</span><span class="MetaTag">&gt;</span></span>Hello<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">li</span><span class="MetaTag">&gt;</span></span>
+    <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">li</span><span class="MetaTag">&gt;</span></span>Goodbye<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">li</span><span class="MetaTag">&gt;</span></span>
+  <span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">ul</span><span class="MetaTag">&gt;</span></span>
+<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">footer</span><span class="MetaTag">&gt;</span></span>
+</pre></div></td></tr><tr class="syntax"><td class="docs"><a name="css-classes"></a><h3>CSS Classes</h3><p>CSS classes can added to elements by using a (<code>.</code>) with the class name afterwards. You can place this after an element name (<code>div</code> is the default tag name).</p>
+
+<p>You can chain multiple class names.</p></td><td class="code"><div class="code-block emblem"><label>Emblem</label><pre class="blackboard"><span class="Entity">.title </span>Title
+
+<span class="Entity">h1.logo </span>Law Blog
+
+<span class="Entity">button.btn.btn-large </span>Submit
+</pre></div><div class="code-block html"><label>Handlebars</label><pre class="blackboard"><span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">div</span> <span class="MetaTag">class</span>=<span class="String"><span class="String">&quot;</span>title<span class="String">&quot;</span></span><span class="MetaTag">&gt;</span></span>Title<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">div</span><span class="MetaTag">&gt;</span></span>
+
+<span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">h1</span> <span class="MetaTag">class</span>=<span class="String"><span class="String">&quot;</span>logo<span class="String">&quot;</span></span><span class="MetaTag">&gt;</span></span>Law Blog<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">h1</span><span class="MetaTag">&gt;</span></span>
+
+<span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">button</span> <span class="MetaTag">class</span>=<span class="String"><span class="String">&quot;</span>btn btn-large<span class="String">&quot;</span></span><span class="MetaTag">&gt;</span></span>Submit<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">button</span><span class="MetaTag">&gt;</span></span>
+</pre></div></td></tr><tr class="syntax"><td class="docs"><a name="ids"></a><h3>IDs</h3><p>Element IDs can be added to elements by using <code>#</code> before the element id. Like CSS classes, you can provide an element name (<code>div</code> is the default tag name).</p></td><td class="code"><div class="code-block emblem"><label>Emblem</label><pre class="blackboard"><span class="Entity">#page-content </span>Content
+
+<span class="Entity">span#name </span>Bob Lablah
+</pre></div><div class="code-block html"><label>Handlebars</label><pre class="blackboard"><span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">div</span> <span class="MetaTag"><span class="MetaTag">id</span><span class="MetaTag">=</span><span class="String"><span class="String">&quot;</span><span class="String">page-content</span><span class="String">&quot;</span></span></span><span class="MetaTag">&gt;</span></span>Content<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">div</span><span class="MetaTag">&gt;</span></span>
+
+<span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">span</span> <span class="MetaTag"><span class="MetaTag">id</span><span class="MetaTag">=</span><span class="String"><span class="String">&quot;</span><span class="String">name</span><span class="String">&quot;</span></span></span><span class="MetaTag">&gt;</span></span>Bob Lablah<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">span</span><span class="MetaTag">&gt;</span></span>
+</pre></div></td></tr><tr class="syntax"><td class="docs"><a name="html-attributes"></a><h3>HTML Attributes</h3><p>HTML attributes can be added right after the element, using <code>key=&quot;value&quot;</code> pairs.</p>
+
+<p>HTML attributes can also have mustaches embedded in them, though make sure to use the <code>unbound</code> helper in an Ember setting. Note the exclamation mark shorthand for setting an HTML attribute to an unbound property in an Ember setting.</p></td><td class="code"><div class="code-block emblem"><label>Emblem</label><pre class="blackboard"><span class="Entity">button.close </span><span class="Entity">data-dismiss=</span><span class="String"><span class="String">&quot;</span><span class="String">modal</span><span class="String">&quot;</span></span> x
+
+<span class="Comment"><span class="Comment">/</span> For Vanilla Handlebars mode only</span>
+<span class="Entity">button </span><span class="Entity">class=</span><span class="String"><span class="String">&quot;</span><span class="String">large {{foo}}</span><span class="String">&quot;</span></span> x
+
+<span class="Comment"><span class="Comment">/</span> For Ember Handlebars</span>
+<span class="Entity">button </span><span class="Entity">class=</span><span class="String"><span class="String">&quot;</span><span class="String">large {{unbound foo}}</span><span class="String">&quot;</span></span> x
+
+<span class="Comment"><span class="Comment">/</span> Shorthand for Ember</span>
+<span class="Entity">button </span><span class="Entity">class=</span>foo! x
+</pre></div><div class="code-block html"><label>Handlebars</label><pre class="blackboard"><span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">button</span> <span class="MetaTag">class</span>=<span class="String"><span class="String">&quot;</span>close<span class="String">&quot;</span></span> <span class="MetaTag">data-dismiss</span>=<span class="String"><span class="String">&quot;</span>dropdown<span class="String">&quot;</span></span><span class="MetaTag">&gt;</span></span>x<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">button</span><span class="MetaTag">&gt;</span></span>
+
+<span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">button</span> <span class="MetaTag">class</span>=<span class="String"><span class="String">&quot;</span>large <span class="String">{{foo}}</span><span class="String">&quot;</span></span><span class="MetaTag">&gt;</span></span>x<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">button</span><span class="MetaTag">&gt;</span></span>
+
+<span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">button</span> <span class="MetaTag">class</span>=<span class="String"><span class="String">&quot;</span>large <span class="String">{{unbound foo}}</span><span class="String">&quot;</span></span><span class="MetaTag">&gt;</span></span>x<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">button</span><span class="MetaTag">&gt;</span></span>
+
+<span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">button</span> <span class="MetaTag">class</span>=<span class="String"><span class="String">&quot;</span><span class="String">{{unbound foo}}</span><span class="String">&quot;</span></span><span class="MetaTag">&gt;</span></span>x<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">button</span><span class="MetaTag">&gt;</span></span>
+</pre></div></td></tr><tr class="syntax"><td class="docs"><a name="comments"></a><h3>Comments</h3><p>Start a line with <code>/</code> to add a comment. These lines will be ignored completely.</p>
+
+<p>Multiline comments are supported by indenting your comment underneath.</p></td><td class="code"><div class="code-block emblem"><label>Emblem</label><pre class="blackboard"><span class="Comment"><span class="Comment">/</span> Some comment</span>
+
+<span class="Comment"><span class="Comment">/</span> A long long</span>
+<span class="Entity">  multiline </span>comment
+</pre></div></td></tr><tr class="syntax"><td class="docs"><a name="plain-text"></a><h3>Plain Text</h3><p>To output content without an element wrapper, start the line with pipe <code>|</code>.</p>
+
+<p>Multiline plaintext content is supported by indenting underneath the tag or <code>|</code>.</p>
+
+<p>Plain text can include handlebars output tags <code>{{}}</code> and <code>{{{}}}</code>. You can also use <code>#{}</code> as an alias for <code>{{}}</code>.</p>
+
+<p>Block helpers within text blocks can also be used if you&#8217;re using the <code>:</code> colon or <code>|</code> pipe syntax.</p>
+
+<p>Use an apostrophe <code>&#39;</code> instead of <code>|</code> to append a single trailing whitespace at the end of the text block.</p></td><td class="code"><div class="code-block emblem"><label>Emblem</label><pre class="blackboard">| Some content
+
+<span class="Entity">p</span>
+  | Lorem #{link<span class="Keyword">-</span>to <span class="String"><span class="String">&#39;</span>something<span class="String">&#39;</span></span> <span class="Keyword">|</span> ipsum} dolor sit amet, consectetur 
+<span class="Entity">    adipisicing </span>elit, sed do eiusmod tempor incididunt ut labore et 
+<span class="Entity">    dolore </span>magna aliqua.  Ut enim ad minim veniam, quis nostrud 
+<span class="Entity">    exercitation </span>ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+<span class="Entity">span.name </span>Your name is {{name}}
+<span class="Entity">          and </span>my name is #{author}
+
+<span class="Entity">span</span>
+  &#39; Trailing space
+</pre></div><div class="code-block html"><label>Handlebars</label><pre class="blackboard">Some content
+
+<span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">p</span><span class="MetaTag">&gt;</span></span>
+  Lorem {{#link-to something}}ipsum{{/link-to}} dolor sit amet, 
+  consectetur adipisicing elit, sed do eiusmod tempor incididunt
+  ut labore et dolore magna aliqua.  Ut enim ad minim veniam, 
+  quis nostrud exercitation ullamco laboris nisi ut aliquip 
+  ex ea commodo consequat.
+<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">p</span><span class="MetaTag">&gt;</span></span>
+
+<span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">span</span> <span class="MetaTag">class</span>=<span class="String"><span class="String">&quot;</span>name<span class="String">&quot;</span></span><span class="MetaTag">&gt;</span></span>Your name is {{<span class="Entity">name</span>}} and my name is {{<span class="Entity">author</span>}}<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">span</span><span class="MetaTag">&gt;</span></span>
+
+<span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">span</span><span class="MetaTag">&gt;</span></span>Trailing space <span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">span</span><span class="MetaTag">&gt;</span></span>
+</pre></div></td></tr><tr class="syntax"><td class="docs"><a name="handlebars-expressions"></a><h3>Handlebars Expressions</h3><p>To output a handlebars expression, use <code>=</code> before expression.</p>
+
+<p>NOTE: You have the option to omit the <code>=</code> unless the expression begins with a <a href='https://developer.mozilla.org/en-US/docs/HTML/HTML5/HTML5_element_list'>known HTML5 tag name</a>.</p></td><td class="code"><div class="code-block emblem"><label>Emblem</label><pre class="blackboard"><span class="Entity">h1 </span>= name
+<span class="Entity">p</span>
+  = intro
+  = highlight name
+</pre></div><div class="code-block html"><label>Handlebars</label><pre class="blackboard"><span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">h1</span><span class="MetaTag">&gt;</span></span>{{<span class="Entity">name</span>}}<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">h1</span><span class="MetaTag">&gt;</span></span>
+<span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">p</span><span class="MetaTag">&gt;</span></span>
+  {{<span class="Entity">intro</span>}}
+  {{<span class="Entity">hightlight</span> <span class="Entity">name</span>}}
+<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">p</span><span class="MetaTag">&gt;</span></span>
+</pre></div></td></tr><tr class="syntax"><td class="docs"><a name="unescaped-expressions"></a><h3>Unescaped Expressions</h3><p>By default Handlebars html escapes output from expressions. To include html without escaping, use <code>==</code> which will output Handlebars &#8220;triple-stash&#8221; expressions <code>{{{}}}</code>.</p></td><td class="code"><div class="code-block emblem"><label>Emblem</label><pre class="blackboard"><span class="Entity">body</span>
+  == outlet
+</pre></div><div class="code-block html"><label>Handlebars</label><pre class="blackboard"><span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">body</span><span class="MetaTag">&gt;</span></span>
+  {{{outlet}}}
+<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">body</span><span class="MetaTag">&gt;</span></span>
+</pre></div></td></tr><tr class="syntax"><td class="docs"><a name="handlebars-block-helpers"></a><h3>Handlebars Block Helpers</h3><p>Handlebars block statements follow a syntax similar to HTML5 elements, in that indented content on the lines below get wrapped in the block form of the helper.</p>
+
+<p>To use a block helper with the same name as an HTML5 element, you can explicitly use a handlebars block helper by starting the line with <code>=</code>.</p>
+
+<p>Block helpers with only text content can be succinctly written on a single line using a <code>|</code> pipe to separate the helper code from the text.</p></td><td class="code"><div class="code-block emblem"><label>Emblem</label><pre class="blackboard"><span class="Entity">ul</span>
+<span class="Entity">  each </span>person in people
+<span class="Entity">    li </span>= person
+
+<span class="Entity">link-to </span>&quot;home&quot; | Link Text
+
+<span class="Entity">list </span>nav <span class="Entity">id=</span><span class="String"><span class="String">&quot;</span><span class="String">nav-bar</span><span class="String">&quot;</span></span> <span class="Entity">class=</span><span class="String"><span class="String">&quot;</span><span class="String">top</span><span class="String">&quot;</span></span>
+<span class="Entity">  a </span><span class="Entity">href=</span><span class="String"><span class="String">&quot;</span><span class="String">url</span><span class="String">&quot;</span></span> = title
+
+= strong
+  = something
+
+<span class="Entity">if </span>something
+<span class="Entity">  p </span>Something!
+<span class="Entity">else</span>
+<span class="Entity">  p </span>Something else!
+</pre></div><div class="code-block html"><label>Handlebars</label><pre class="blackboard"><span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">ul</span><span class="MetaTag">&gt;</span></span>
+  {{#each person in people}}
+    <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">li</span><span class="MetaTag">&gt;</span></span>{{<span class="Entity">person</span>}}<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">li</span><span class="MetaTag">&gt;</span></span>
+  {{/each}}
+<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">ul</span><span class="MetaTag">&gt;</span></span>
+
+{{#link-to <span class="String"><span class="String">&quot;</span>home<span class="String">&quot;</span></span>}}
+  Link Text
+{{/link-to}}
+
+{{<span class="Entity">list</span> <span class="Entity">nav</span> <span class="Entity">id</span>=<span class="String"><span class="String">&quot;</span><span class="String">nav-bar</span><span class="String">&quot;</span></span> <span class="Entity">class</span>=<span class="String"><span class="String">&quot;</span>top<span class="String">&quot;</span></span>}}
+  <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">a</span> <span class="MetaTag">href</span>=<span class="String"><span class="String">&quot;</span><span class="String">{{url}}</span><span class="String">&quot;</span></span><span class="MetaTag">&gt;</span></span>{{<span class="Entity">title</span>}}<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">a</span><span class="MetaTag">&gt;</span></span>
+{{/list}}
+
+{{#strong}}
+  {{<span class="Entity">something</span>}}
+{{/strong}}
+
+{{#<span class="Keyword">if</span> something}}
+  <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">p</span><span class="MetaTag">&gt;</span></span>Something!<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">p</span><span class="MetaTag">&gt;</span></span>
+{{<span class="Entity">else</span>}}
+  <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">p</span><span class="MetaTag">&gt;</span></span>Something else!<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">p</span><span class="MetaTag">&gt;</span></span>
+{{/<span class="Keyword">if</span>}}
+</pre></div></td></tr><tr class="syntax"><td class="docs"><a name="condensed-nesting-with-colon-separator-new"></a><h3>Condensed Nesting with Colon Separator (NEW)</h3><p>You can condense nested HTML or block mustache content into a single line by using <code>:</code> to terminate the present element or block mustache declaration.</p>
+
+<p>Whatever comes after a statement-terminating <code>:</code> will be interpreted as if it were moved to the line below and indented. This allows you to quickly alternate between nesting HTML elements and mustache blocks on a single line when it makes sense.</p>
+
+<p>This should come in handy for scaffolding frameworks like Twitter Bootstrap (the first part of the example on the right is Bootstrap scaffolding code).</p></td><td class="code"><div class="code-block emblem"><label>Emblem</label><pre class="blackboard"><span class="Entity">#content-frame:</span> <span class="Entity">.container:</span> <span class="Entity">.row:</span>
+  <span class="Entity">.span4:</span> <span class="Entity">render</span> &quot;sidebar&quot;
+  <span class="Entity">.span8:</span> <span class="Entity">render</span> &quot;main&quot;
+
+<span class="Entity">footer:</span> <span class="Entity">ul.menu-items:</span> <span class="Entity">each</span> <span class="Entity">menu_items:</span> <span class="Entity">li:</span> <span class="Entity">a.menu-link</span> <span class="Entity">href=</span><span class="Entity">url:</span> <span class="Entity">link_text</span>
+</pre></div><div class="code-block html"><label>Handlebars</label><pre class="blackboard"><span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">div</span> <span class="MetaTag"><span class="MetaTag">id</span><span class="MetaTag">=</span><span class="String"><span class="String">&quot;</span><span class="String">content-frame</span><span class="String">&quot;</span></span></span><span class="MetaTag">&gt;</span></span>
+  <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">div</span> <span class="MetaTag">class</span>=<span class="String"><span class="String">&quot;</span>container<span class="String">&quot;</span></span><span class="MetaTag">&gt;</span></span>
+    <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">div</span> <span class="MetaTag">class</span>=<span class="String"><span class="String">&quot;</span>row<span class="String">&quot;</span></span><span class="MetaTag">&gt;</span></span>
+      <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">div</span> <span class="MetaTag">class</span>=<span class="String"><span class="String">&quot;</span>span4<span class="String">&quot;</span></span><span class="MetaTag">&gt;</span></span>
+        {{<span class="Entity">render</span> <span class="String"><span class="String">&quot;</span>sidebar<span class="String">&quot;</span></span>}}
+      <span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">div</span><span class="MetaTag">&gt;</span></span>
+      <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">div</span> <span class="MetaTag">class</span>=<span class="String"><span class="String">&quot;</span>span8<span class="String">&quot;</span></span><span class="MetaTag">&gt;</span></span>
+        {{<span class="Entity">render</span> <span class="String"><span class="String">&quot;</span>main<span class="String">&quot;</span></span>}}
+      <span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">div</span><span class="MetaTag">&gt;</span></span>
+    <span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">div</span><span class="MetaTag">&gt;</span></span>
+  <span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">div</span><span class="MetaTag">&gt;</span></span>
+<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">div</span><span class="MetaTag">&gt;</span></span>
+<span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">footer</span><span class="MetaTag">&gt;</span></span>
+  <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">ul</span> <span class="MetaTag">class</span>=<span class="String"><span class="String">&quot;</span>menu-items<span class="String">&quot;</span></span><span class="MetaTag">&gt;</span></span>
+    {{#each menu_items}}
+      <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">li</span><span class="MetaTag">&gt;</span></span>
+        <span class="Comment"><span class="Comment">&lt;!--</span> of course, in an Ember.js context, href will be set via a bind-attr <span class="Comment">--&gt;</span></span>
+        <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">a</span> <span class="MetaTag">class</span>=<span class="String"><span class="String">&quot;</span>menu-link<span class="String">&quot;</span></span> <span class="MetaTag">href</span>=<span class="String"><span class="String">&quot;</span><span class="String">{{url}}</span><span class="String">&quot;</span></span><span class="MetaTag">&gt;</span></span>{{link_text}}<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">a</span><span class="MetaTag">&gt;</span></span>
+      <span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">li</span><span class="MetaTag">&gt;</span></span>
+    {{/each}}
+  <span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">ul</span><span class="MetaTag">&gt;</span></span>
+<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">footer</span><span class="MetaTag">&gt;</span></span>
+</pre></div></td></tr><tr class="syntax"><td class="docs"><a name="views"></a><h3>Views<a class="ember-link" href="http://www.emberjs.com">Ember.js only</a></h3><p>You can quickly and easily include an Ember.js view by starting a line with a capitalized letter. This will automatically wrap the line with a <code>{{view}}</code> helper.</p></td><td class="code"><div class="code-block emblem"><label>Emblem</label><pre class="blackboard"><span class="Entity">.field</span>
+<span class="Entity">  Ember.TextField </span><span class="Entity">valueBinding=</span><span class="String"><span class="String">&quot;</span><span class="String">firstName</span><span class="String">&quot;</span></span>
+</pre></div><div class="code-block html"><label>Handlebars</label><pre class="blackboard"><span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">div</span> <span class="MetaTag">class</span>=<span class="String"><span class="String">&quot;</span>field<span class="String">&quot;</span></span><span class="MetaTag">&gt;</span></span>
+  {{<span class="Entity">view</span> <span class="Variable">Ember.TextField</span> <span class="Entity">valueBinding</span>=<span class="String"><span class="String">&quot;</span>firstName<span class="String">&quot;</span></span>}}
+<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">div</span><span class="MetaTag">&gt;</span></span>
+</pre></div></td></tr><tr class="syntax"><td class="docs"><a name="bind-attr-shorthand"></a><h3>bind-attr Shorthand<a class="ember-link" href="http://www.emberjs.com">Ember.js only</a></h3><p>Emblem.js makes binding expression attributes (via <code>bind-attr</code>) clean and simple.</p></td><td class="code"><div class="code-block emblem"><label>Emblem</label><pre class="blackboard"><span class="Entity">img </span><span class="Entity">src=</span>logoUrl <span class="Entity">alt=</span><span class="String"><span class="String">&quot;</span><span class="String">Logo</span><span class="String">&quot;</span></span>
+
+<span class="Entity">div </span><span class="Entity">class=</span>condition:whenTrue:whenFalse
+
+<span class="Entity">div </span><span class="Entity">class=</span>{ condition1:whenTrue:whenFalse condition2:whenTrue:whenFalse }
+</pre></div><div class="code-block html"><label>Handlebars</label><pre class="blackboard"><span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">img</span> <span class="MetaTag">{{bind-attr <span class="MetaTag">src=</span><span class="String"><span class="String">&quot;</span>logoUrl<span class="String">&quot;</span></span>}}</span> <span class="MetaTag">alt</span>=<span class="String"><span class="String">&quot;</span>Logo<span class="String">&quot;</span></span><span class="MetaTag">&gt;</span></span>
+
+<span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">div</span> <span class="MetaTag">{{bind-attr <span class="MetaTag">class=</span><span class="String"><span class="String">&quot;</span>condition:whenTrue:whenFalse<span class="String">&quot;</span></span>}}</span><span class="MetaTag">&gt;<span class="MetaTag">&lt;</span>/</span><span class="MetaTag">div</span><span class="MetaTag">&gt;</span></span>
+
+<span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">div</span> <span class="MetaTag">{{bind-attr <span class="MetaTag">class=</span><span class="String"><span class="String">&quot;</span>condition1:whenTrue:whenFalse condition2:whenTrue:whenFalse<span class="String">&quot;</span></span>}}</span><span class="MetaTag">&gt;<span class="MetaTag">&lt;</span>/</span><span class="MetaTag">div</span><span class="MetaTag">&gt;</span></span>
+</pre></div></td></tr><tr class="syntax"><td class="docs"><a name="action-events-shorthand"></a><h3>Action &#47; Events Shorthand<a class="ember-link" href="http://www.emberjs.com">Ember.js only</a></h3><p>Like with HTML5 elements, Emblem is aware of common Ember action names, such as <code>click</code>, <code>submit</code>, <code>mouseEnter</code>, etc. When you use these as attributes, they&#8217;ll be converted to <code>action</code> helpers.</p></td><td class="code"><div class="code-block emblem"><label>Emblem</label><pre class="blackboard"><span class="Entity">a </span><span class="Entity">click=</span><span class="String"><span class="String">&quot;</span><span class="String">toggleHeader</span><span class="String">&quot;</span></span> x
+
+<span class="Entity">a </span><span class="Entity">click=</span><span class="String"><span class="String">&quot;</span><span class="String">toggleHeader target=&#39;view&#39;</span><span class="String">&quot;</span></span> x
+
+<span class="Entity">a </span><span class="Entity">click=</span><span class="String"><span class="String">&quot;</span><span class="String">toggleHeader this</span><span class="String">&quot;</span></span> x
+
+<span class="Entity">form </span><span class="Entity">submit=</span><span class="String"><span class="String">&quot;</span><span class="String">submitTheForm foo</span><span class="String">&quot;</span></span>
+<span class="Entity">  p </span>Hello
+</pre></div><div class="code-block html"><label>Handlebars</label><pre class="blackboard"><span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">a</span> <span class="MetaTag">{{action toggleHeader <span class="MetaTag">on=</span><span class="String"><span class="String">&quot;</span>click<span class="String">&quot;</span></span>}}</span><span class="MetaTag">&gt;</span></span>x<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">a</span><span class="MetaTag">&gt;</span></span>
+
+<span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">a</span> <span class="MetaTag">{{action toggleHeader <span class="MetaTag">on=</span><span class="String"><span class="String">&quot;</span>click<span class="String">&quot;</span></span> <span class="MetaTag">target=</span><span class="String"><span class="String">&quot;</span>view<span class="String">&quot;</span></span>}}</span><span class="MetaTag">&gt;</span></span>x<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">a</span><span class="MetaTag">&gt;</span></span>
+
+<span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">a</span> <span class="MetaTag">{{action toggleHeader this <span class="MetaTag">on=</span><span class="String"><span class="String">&quot;</span>click<span class="String">&quot;</span></span>}}</span><span class="MetaTag">&gt;</span></span>x<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">a</span><span class="MetaTag">&gt;</span></span>
+
+<span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">form</span> <span class="MetaTag">{{action submitTheForm foo <span class="MetaTag">on=</span><span class="String"><span class="String">&quot;</span>submit<span class="String">&quot;</span></span>}}</span><span class="MetaTag">&gt;</span></span><span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">p</span><span class="MetaTag">&gt;</span></span>Hello<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">p</span><span class="MetaTag">&gt;</span></span><span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">form</span><span class="MetaTag">&gt;</span></span>
+</pre></div></td></tr><tr class="syntax"><td class="docs"><a name="explicit-attribute-expressions"></a><h3>Explicit Attribute Expressions<a class="ember-link" href="http://www.emberjs.com">Ember.js only</a></h3><p>To use expressions within the element attributes (often used in Ember with <code>bind-attr</code> and <code>action</code>), use the <code>{}</code> syntax after the element.</p>
+
+<p>Multiple attribute expressions are also supported.</p></td><td class="code"><div class="code-block emblem"><label>Emblem</label><pre class="blackboard"><span class="Entity">button</span>{action <span class="String"><span class="String">&quot;</span>delete<span class="String">&quot;</span></span>} Delete
+
+<span class="Entity">img</span>{bind<span class="Keyword">-</span><span class="Keyword">attr</span> src<span class="Keyword">=</span><span class="String"><span class="String">&quot;</span>logoUrl<span class="String">&quot;</span></span>} <span class="Entity">alt=</span><span class="String"><span class="String">&quot;</span><span class="String">logo</span><span class="String">&quot;</span></span>
+<span class="Entity">a</span>{bind<span class="Keyword">-</span><span class="Keyword">attr</span> <span class="Keyword">class</span><span class="Keyword">=</span><span class="String"><span class="String">&quot;</span>isActive<span class="String">&quot;</span></span>}{action <span class="String"><span class="String">&#39;</span>toggleHeader<span class="String">&#39;</span></span>} x
+</pre></div><div class="code-block html"><label>Handlebars</label><pre class="blackboard"><span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">button</span> <span class="MetaTag">{{action <span class="String"><span class="String">&quot;</span>delete<span class="String">&quot;</span></span>}}</span><span class="MetaTag">&gt;</span></span>Delete<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">button</span><span class="MetaTag">&gt;</span></span>
+
+<span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">img</span> <span class="MetaTag">{{bind-attr <span class="MetaTag">src=</span><span class="String"><span class="String">&quot;</span>logoUrl<span class="String">&quot;</span></span>}}</span> <span class="MetaTag">alt</span>=<span class="String"><span class="String">&quot;</span>logo<span class="String">&quot;</span></span><span class="MetaTag">&gt;</span></span>
+
+<span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">a</span> <span class="MetaTag">{{bind-attr <span class="MetaTag">class=</span><span class="String"><span class="String">&quot;</span>isActive<span class="String">&quot;</span></span>}}</span> <span class="MetaTag">{{action <span class="String"><span class="String">&quot;</span>toggleHeader<span class="String">&quot;</span></span>}}</span><span class="MetaTag">&gt;</span></span>x<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">a</span><span class="MetaTag">&gt;</span></span>
+</pre></div></td></tr><tr class="syntax"><td class="docs"><a name="in-tag-mustache"></a><h3>In-Tag Mustache</h3><p>Occasionally, you&#8217;ll want to put mustache content inside the opening tag of an HTML element. You can do this by immediately following the tag content with curly braces.</p>
+
+<p>Note: instead of using this for Ember&#8217;s <code>bind-attr</code>, you can use Emblem&#8217;s <code>bind-attr</code> syntax described below in Implicit Bind Attributes.</p></td><td class="code"><div class="code-block emblem"><label>Emblem</label><pre class="blackboard"><span class="Entity">span.some-class</span>{ someHelper } Hello
+</pre></div><div class="code-block html"><label>Handlebars</label><pre class="blackboard"><span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">span</span> <span class="MetaTag">class</span>=<span class="String"><span class="String">&quot;</span>some-class<span class="String">&quot;</span></span> <span class="MetaTag">someHelperOutput</span>=<span class="String"><span class="String">&quot;</span>foo<span class="String">&quot;</span></span><span class="MetaTag">&gt;</span></span>Hello<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">span</span><span class="MetaTag">&gt;</span></span>
+</pre></div></td></tr><tr class="syntax"><td class="docs"><a name="vanilla-handlebars-partials"></a><h3>Vanilla Handlebars Partials</h3><p>To invoke partials with non-Emberized Handlebars, you can use the <code>&gt;</code> syntax.</p>
+
+<p>Note that you&#8217;ll never really use this for Ember apps; rather, in those cases, you&#8217;d use the <code>partial</code> helper.</p>
+
+<p>Also note that there&#8217;s no good way to precompile partials other than to precompile them as templates and then run <code>Handlebars.partials = Handlebars.templates</code> before any rendering has taken place.</p>
+
+<p>If you&#8217;re not precompiling, and you want to directly register an Emblem template, you can use <code>Emblem.registerPartial</code>.</p></td><td class="code"><div class="code-block emblem"><label>Emblem</label><pre class="blackboard">&gt; partialName
+
+<span class="Entity">p </span>Check out this <span class="Entity">partial:</span> <span class="Entity">#</span>{&gt; partialName}
+
+&gt; partialName foo
+</pre></div><div class="code-block html"><label>Handlebars</label><pre class="blackboard">{{&gt;partialName}}
+
+<span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">p</span><span class="MetaTag">&gt;</span></span>Check out this partial: {{&gt;partialName}}<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">p</span><span class="MetaTag">&gt;</span></span>
+
+{{&gt;partialName foo}}
+</pre></div></td></tr><tr class="syntax"><td class="docs"><a name="anything-wrong-or-missing-here"></a><h3>Anything wrong or missing here?</h3><p>These docs are <a href='https://github.com/machty/emblem-site'>open source</a>, so help us tweak and refine them!</p>
+
+<p>If you&#8217;re feeling particularly lazy and want to just report an error, <a href='https://github.com/machty/emblem-site/issues/new?title=emblem.js%20plz%20help'>Submit a docs issue</a> for some clarification on how Emblem.js can be used.</p></td><td class="code"></td></tr><tr class="syntax"><td class="docs"><p>To see some other really cool stuff that Emblem is capable of, see the <a href="/idioms">Idioms</a> docs.</p></td><td class="code"></td></tr></tbody></table></div><script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38594562-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script></body></html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><title>Emblem.js  : Installation</title><link href="/images/favicon.png" rel="shortcut icon" type="image/png" /><link href="../stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" /></head><body><a href="https://github.com/machty/emblem.js"><img alt="Fork me on GitHub" src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" style="position: absolute; top: 0; right: 0; border: 0; z-index: 400;" /></a><a href="../" id="back">← back</a><div id="container"><div id="background"></div><table cellpadding="0" cellspacing="0"><thead><tr><th class="docs"><h1 class="logo"><a href="../">Emblem.js</a></h1></th><th class="code"></th></tr></thead><tbody><tr><td class="docs"><h2>Installation Instructions</h2></td><td class="code"></td></tr><tr class="install"><td class="docs"><a name="ruby-on-rails"></a><h3>Ruby on Rails</h3><p>To install Emblem on a Rails 3 project, just use add the following lines to your <code>Gemfile</code> and run <code>bundle</code>.</p>
+
+<p>Define your templates in <code>app/assets/javascripts/templates</code> with the file extension <code>.emblem</code>. These will be automatically compiled and made available as Ember templates. Templates with the <code>.raw.emblem</code> extension will be compiled as vanilla Handlebars templates.</p>
+
+<p>For a working sample project, check out:<br /><a href='https://github.com/machty/emblem-rails-demo'>github.com/machty/emblem-rails-demo</a></p></td><td class="code install"><div class="code-block"><pre class="blackboard"><span class="Comment"><span class="Comment">#</span> Step 1: edit your application&#39;s Gemfile</span>
+gem <span class="String"><span class="String">&#39;</span>ember-rails<span class="String">&#39;</span></span>
+gem <span class="String"><span class="String">&#39;</span>emblem-rails<span class="String">&#39;</span></span>
+
+<span class="Comment"><span class="Comment">#</span> Optional, use the older pre4 version of ember (the default is rc1)</span>
+<span class="Comment"><span class="Comment">#</span>gem &#39;ember-source&#39;, &#39;1.0.0.pre4.2&#39;</span>
+
+<span class="Comment"><span class="Comment">#</span> Step 2: rebundle and restart your dev server</span>
+bundle
+
+<span class="Comment"><span class="Comment">#</span> Step 3: create your .emblem templates in app/assets/javascripts/templates/</span>
+</pre></div></td></tr><tr class="install"><td class="docs"><a name="inline-html-javascript"></a><h3>Inline HTML &#47; Javascript</h3><p>You can easily test Emblem in the browser (works great for sites like jsbin.com) by just including the Emblem compiler script and wrapping your Emblem templates with <code>&lt;script type=&quot;text/x-emblem&quot;&gt;</code>.</p>
+
+<p>Your emblem script tags can also include <code>data-template-name</code> similar to inline Handlebars templates.</p>
+
+<p>See a working JSBin <a href='http://jsbin.com/ulegec/17/edit'>demo here</a>.</p></td><td class="code install"><div class="code-block html"><pre class="blackboard"><span class="Comment"><span class="Comment">&lt;!--</span> Step 1: Add Emblem.js <span class="Comment">--&gt;</span></span>
+<span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">script</span> <span class="MetaTag">src</span>=<span class="String"><span class="String">&quot;</span>https://github.com/machty/emblem.js/raw/master/dist/emblem.js<span class="String">&quot;</span></span><span class="MetaTag">&gt;<span class="MetaTag">&lt;</span>/</span><span class="MetaTag">script</span><span class="MetaTag">&gt;</span></span>
+
+<span class="Comment"><span class="Comment">&lt;!--</span> Step 2: define templates <span class="Comment">--&gt;</span></span>
+&lt;<span class="Entity">script</span> <span class="Entity">type</span>=<span class="String"><span class="String">&quot;</span>text/x-emblem<span class="String">&quot;</span></span> <span class="Entity">data-template-name</span>=<span class="String"><span class="String">&quot;</span>application<span class="String">&quot;</span></span>&gt;
+  h1 Welcome to my App
+  <span class="Keyword">=</span> outlet
+&lt;/<span class="Entity">script</span>&gt;
+</pre></div></td></tr><tr class="install"><td class="docs"><a name="brunch-io"></a><h3>Brunch.io</h3><p>Emblem is supported in <a href='http://brunch.io'>Brunch.io</a> via the <a href='https://github.com/machty/emblem-brunch'>emblem-brunch</a> plugin.</p></td><td class="code install"><div class="instructions"><p>Follow <a href='https://github.com/machty/emblem-brunch'>these instructions</a> to get started with Brunch.</p></div></td></tr><tr class="install"><td class="docs"><a name="grunt-and-yeoman"></a><h3>Grunt (and Yeoman)</h3><p>Emblem is supported in <a href='http://gruntjs.com'>Grunt</a> via the <a href='https://github.com/wordofchristian/grunt-emblem'>grunt-emblem</a> plugin.</p></td><td class="code install"><div class="instructions"><p>Follow <a href='https://github.com/wordofchristian/grunt-emblem'>these instructions</a> to get started with Grunt.</p></div></td></tr><tr class="install"><td class="docs"><a name="mimosa"></a><h3>Mimosa</h3><p>Emblem is supported in <a href='http://mimosajs.com/'>Mimosa</a> since version 0.10.1.</p></td><td class="code install"><div class="instructions"><p>Follow <a href='http://mimosajs.com/started.html'>these instructions</a> to get started with Mimosa.</p>
+
+<p>Once you&#8217;re setup, files ending in .emblem or .embl will be compiled as Emblem templates. If you&#8217;ve enabled Ember in your project, they&#8217;ll be compiled as Ember-ized templates.</p></div></td></tr><tr class="install"><td class="docs"><a name="ember-tools"></a><h3>Ember Tools</h3></td><td class="code install"><div class="instructions"><p><a href='https://github.com/rpflorence/ember-tools'>Ember Tools</a> support coming soon!</p></div></td></tr><tr class="install"><td class="docs"><a name="meteorjs"></a><h3>MeteorJS</h3></td><td class="code install"><div class="instructions"><p><a href='https://meteor.com'>MeteorJS</a> support coming soon!</p></div></td></tr><tr class="install"><td class="docs"><a name="editors"></a><h2 id='editors'>Editors</h2>
+
+<p>At the moment, you can use <a href='https://github.com/heartsentwined/vim-emblem'>vim-emblem</a> or <a href='https://github.com/johanobergman/sublime-emblem-syntax'>sublime-emblem-syntax</a> for Emblem syntax highlighting, but if you use a different editor, Emblem.js is close enough to <a href='http://slim-lang.com'>Slim</a> that you can reuse most of the editor tools for Slim.</p></td><td class="code install"><div class="code-block"><pre class="blackboard">
+<span class="Comment"><span class="Comment">#</span> vim-emblem</span>
+Follow the instructions at https://github.com/heartsentwined/vim-emblem
+
+<span class="Comment"><span class="Comment">#</span> Sublime Text 2</span>
+Follow the instructions at https://github.com/johanobergman/sublime-emblem-syntax
+
+<span class="Comment"><span class="Comment">#</span> Textmate 1.x</span>
+cd <span class="Keyword">~</span>/Library/Application<span class="Constant">\ </span>Support/TextMate/Bundles/
+git clone git://github.com/slim-template/ruby-slim.tmbundle.git Ruby<span class="Constant">\ </span>Slim.tmbundle
+osascript -e <span class="String"><span class="String">&#39;</span>tell app &quot;TextMate&quot; to reload bundles<span class="String">&#39;</span></span>
+
+
+<span class="Comment"><span class="Comment">#</span> Textmate 2.x</span>
+cd <span class="Keyword">~</span>/Library/Application<span class="Constant">\ </span>Support/TextMate/Managed/Bundles/
+git clone git://github.com/slim-template/ruby-slim.tmbundle.git Ruby<span class="Constant">\ </span>Slim.tmbundle
+
+
+<span class="Comment"><span class="Comment">#</span> Vim users with Slim Syntax highlighting</span>
+au BufNewFile,BufRead *.emblem set filetype=slim
+</pre></div></td></tr></tbody></table></div><script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38594562-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script></body></html>
