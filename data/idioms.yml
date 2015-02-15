@@ -125,6 +125,20 @@
     {{/each}}
 
 -
+  title: Ember input helper
+
+  docs: |
+    Keep in mind that the `input` helper provided by Ember must be used with preceding `=`. If you use it like a normal tag, the `value` will be bound read only and the bound object won't be changed when typing.
+    
+  emblem: |
+
+    input value=name id="noEmberHelper" class="wrong possible-headache"
+    
+    = input value=name id="withEmberHelper" class="right"
+
+  html: |
+    <input value="Wayne" id="..."/>
+-
   title: More on the way...
 
   docs: |
