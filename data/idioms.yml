@@ -138,6 +138,22 @@
 
   html: |
     <input value="Wayne" id="..."/>
+
+-
+  title: Ember select helper
+
+  docs: |
+    
+  emblem: |
+
+    view 'select' contentBinding='selectContent' optionValuePath='content.value' optionLabelPath='content.name' valueBinding='selectedOption'
+
+  html: |
+    <select ...>
+      <option value="value">Name</option>
+      ...
+    </select>
+
 -
   title: More on the way...
 
