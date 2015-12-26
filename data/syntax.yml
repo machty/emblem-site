@@ -262,7 +262,7 @@
     {{/if}}
 
 -
-  title: Condensed Nesting with Colon Separator (NEW)
+  title: Condensed Nesting with Colon Separator
 
   docs: |
     You can condense nested HTML or block mustache content into a single line by using `:` to terminate the present element or block mustache declaration.
@@ -272,7 +272,7 @@
     This should come in handy for scaffolding frameworks like Twitter Bootstrap (the first part of the example on the right is Bootstrap scaffolding code).
 
   emblem: |
-    #content-frame: .container: .row:
+    #content-frame: .container: .row
       .span4: render "sidebar"
       .span8: render "main"
 
