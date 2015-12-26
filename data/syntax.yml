@@ -359,6 +359,10 @@
   docs: |
     Like with HTML5 elements, Emblem is aware of common Ember action names, such as `click`, `submit`, `mouseEnter`, etc. When you use these as attributes, they'll be converted to `action` helpers.
 
+    If the action helper is a multi-word string, use the contents of that string exactly.
+
+    Use single quotes `'` to designate an unbound action.
+
   emblem: |
     a click="toggleHeader" x
 
@@ -369,6 +373,8 @@
     form submit="submitTheForm foo"
       p Hello
 
+    button click="'unboundAction' item"
+
   html: |
     <a {{action toggleHeader on="click"}}>x</a>
 
@@ -377,6 +383,9 @@
     <a {{action toggleHeader this on="click"}}>x</a>
 
     <form {{action submitTheForm foo on="submit"}}><p>Hello</p></form>
+
+    <button {{action 'unboundAction' item on="click"}}></button>
+
 -
   title: Explicit Attribute Expressions
 
@@ -391,6 +400,7 @@
     button{action "delete"} Delete
 
     img{bind-attr src="logoUrl"} alt="logo"
+
     a{bind-attr class="isActive"}{action 'toggleHeader'} x
 
   html: |
