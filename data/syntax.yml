@@ -104,7 +104,7 @@
 
 
   html: |
-    <button class="close" data-dismiss="dropdown">x</button>
+    <button class="close" data-dismiss="modal">x</button>
 
     <button class="large {{foo}}">x</button>
 
