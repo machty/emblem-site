@@ -188,7 +188,7 @@
     <h1>{{name}}</h1>
     <p>
       {{intro}}
-      {{hightlight name}}
+      {{highlight name}}
     </p>
 
 
