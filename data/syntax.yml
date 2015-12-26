@@ -370,6 +370,8 @@
 
     a click="toggleHeader this" x
 
+    a click="actionWithParam 'fixedParamString'" x
+
     form submit="submitTheForm foo"
       p Hello
 
@@ -381,6 +383,8 @@
     <a {{action toggleHeader on="click" target="view"}}>x</a>
 
     <a {{action toggleHeader this on="click"}}>x</a>
+
+    <a {{action actionWithParam 'fixedParamString' on="click"}}>x</a>
 
     <form {{action submitTheForm foo on="submit"}}><p>Hello</p></form>
 
