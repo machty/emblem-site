@@ -108,7 +108,7 @@
   title: each/else
 
   docs: |
-    This isn't strictly an Emblem pattern, but keep in mind that the `each` helper excepts an optional `else` portion that will be displayed when the list is empty or nonexistent.
+    This isn't strictly an Emblem pattern, but keep in mind that the `each` helper accepts an optional `else` portion that will be displayed when the list is empty or nonexistent.
 
   emblem: |
 
