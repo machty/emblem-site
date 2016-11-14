@@ -220,7 +220,7 @@
 
   emblem: |
     ul
-      each person in people
+      each people as |person|
         li = person
 
     link-to "home" | Link Text
@@ -238,7 +238,7 @@
 
   html: |
     <ul>
-      {{#each person in people}}
+      {{#each people as |person|}}
         <li>{{person}}</li>
       {{/each}}
     </ul>
