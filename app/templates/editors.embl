@@ -1,0 +1,26 @@
+// docs: |
+//   ## Editors
+
+//   At the moment, you can use [vim-emblem](https://github.com/heartsentwined/vim-emblem) or [sublime-emblem-syntax](https://github.com/johanobergman/sublime-emblem-syntax) for Emblem syntax highlighting, but if you use a different editor, Emblem.js is close enough to [Slim](http://slim-lang.com) that you can reuse most of the editor tools for Slim.
+
+// shell: |
+
+//   # vim-emblem
+//   Follow the instructions at https://github.com/heartsentwined/vim-emblem
+
+//   # Sublime Text 2
+//   Follow the instructions at https://github.com/johanobergman/sublime-emblem-syntax
+
+//   # Textmate 1.x
+//   cd ~/Library/Application\ Support/TextMate/Bundles/
+//   git clone git://github.com/slim-template/ruby-slim.tmbundle.git Ruby\ Slim.tmbundle
+//   osascript -e 'tell app "TextMate" to reload bundles'
+
+
+//   # Textmate 2.x
+//   cd ~/Library/Application\ Support/TextMate/Managed/Bundles/
+//   git clone git://github.com/slim-template/ruby-slim.tmbundle.git Ruby\ Slim.tmbundle
+
+
+//   # Vim users with Slim Syntax highlighting
+//   au BufNewFile,BufRead *.emblem set filetype=slim

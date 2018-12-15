@@ -1,0 +1,40 @@
+.grid-x
+  .small-12.medium-4.large-3.cell.left-side
+    .navigation
+      ul.nav
+        li = link-to 'Installation' 'installation'
+        li = link-to 'Syntax' 'syntax'
+        li = link-to 'Idioms' 'idioms'
+
+        // li
+        //   a href="http://machty.github.com/blog/2013/01/27/emblem-dot-js-indented-templating-targeting-handlebars-dot-js-and-ember-dot-js/"
+        //     | About
+
+        li
+          a href="http://www.embercasts.com/episodes/2"
+            'Embercast
+            = fa-icon 'external-link'
+
+        li
+          a href="http://emblem-test.herokuapp.com/"
+            'Live Demo
+            = fa-icon 'external-link'
+
+        <br>
+        <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=machty&repo=emblem.js&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+        <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=machty&repo=emblem.js&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="102px" height="20px"></iframe>
+
+    .authors
+      ul
+        li
+          'built by
+          a href='http://twitter.com/machty' @machty
+        li
+          'docs originally by
+          a href='http://twitter.com/railsjedi' @railsjedi
+        li
+          'maintained by
+          a href='http://github.com/thec0keman' @thec0keman
+
+  .small-12.medium-8.large-9.cell.right-side
+    = highlighted-emblem code=introCode

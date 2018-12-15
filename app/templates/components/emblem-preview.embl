@@ -1,0 +1,21 @@
+= if showingEditor
+  = if (not-eq code currentCode)
+    a.undo-icon onclick={ action 'reset'}
+      = fa-icon 'undo'
+      |  Undo
+
+  textarea value=currentCode oninput={ action 'textChanged' value='target.value' } rows=8
+
+.results class={ if error 'error' }
+  = if compiler.lastError
+    .error ERROR: #{ compiler.lastError }
+
+  = else if glimmerError
+    .error GLIMMER ERROR: #{ glimmerError }
+
+  = else if result
+    pre.handlebars
+      code = result
+
+= if showingEditor
+  em Emblem Version #{ compiler.version }
