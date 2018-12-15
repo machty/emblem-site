@@ -1,36 +1,44 @@
 <!DOCTYPE html><html><head><meta charset="utf-8" /><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><title>Emblem.js  : Idioms</title><link href="/images/favicon.png" rel="shortcut icon" type="image/png" /><link href="../stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" /></head><body><a href="https://github.com/machty/emblem.js"><img alt="Fork me on GitHub" src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" style="position: absolute; top: 0; right: 0; border: 0; z-index: 400;" /></a><a href="../" id="back">← back</a><div id="container"><div id="background"></div><table cellpadding="0" cellspacing="0"><thead><tr><th class="docs"><h1 class="logo"><a href="../">Emblem.js</a></h1></th><th class="code"></th></tr></thead><tbody><tr class="docs-intro"><td class="docs"><h2>Idioms</h2><p>Some tips/tricks and common patterns that you may find useful while writing your Emblem.js templates.</p><p>To see the basic syntax of Emblem.js,<br>see the <a href="/syntax/">Syntax</a> docs.</p></td><td class="code"></td></tr><tr class="syntax"><td class="docs"><a name="lists-block-expression-shorthand"></a><h3>Lists (Block Expression Shorthand)</h3><p>Emblem allows you to use <code>=</code> shorthand with block expressions. Because of this, you can achieve pretty succinct list declarations.</p></td><td class="code"><div class="code-block emblem"><label>Emblem</label><pre class="blackboard">
 <span class="Entity">ul</span>
-<span class="Entity">  each </span>items
-<span class="Entity">    li </span>Item <span class="Entity">name:</span> <span class="Entity">#</span>{name}
+  = each items as <span class="Keyword">|</span>item|
+<span class="Entity">    li </span>Item <span class="Entity">name:</span> <span class="Entity">#</span>{item.name}
 
 <span class="Comment"><span class="Comment">/</span> Shorter version:</span>
 
-<span class="Entity">ul </span>= each items
-<span class="Entity">  li </span>Item <span class="Entity">name:</span> <span class="Entity">#</span>{name}
+<span class="Entity">ul </span>= each items as <span class="Keyword">|</span>item|
+<span class="Entity">  li </span>Item <span class="Entity">name:</span> <span class="Entity">#</span>{item.name}
 </pre></div><div class="code-block html"><label>Handlebars</label><pre class="blackboard"><span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">ul</span><span class="MetaTag">&gt;</span></span>
-  {{#each items}}
-    <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">li</span><span class="MetaTag">&gt;</span></span>Item name: {{<span class="Entity">name</span>}}
+  {{#each items as |item|}}
+    <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">li</span><span class="MetaTag">&gt;</span></span>Item name: {{<span class="Entity">item</span>.<span class="Entity">name</span>}}
   {{/each}}
 <span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">ul</span><span class="MetaTag">&gt;</span></span>
 </pre></div></td></tr><tr class="syntax"><td class="docs"><a name="link-to-text-content-for-block-expressions"></a><h3>link-to (Text Content for Block Expressions)</h3><p>Some block helpers, such as Ember&#8217;s <code>link-to</code>, are often used with a small chunk of text as the content of the block. Emblem provides a shorthand in these instance: use a pipe &#8217;|&#8217; to separate a block helper declaration from its text content.</p></td><td class="code"><div class="code-block emblem"><label>Emblem</label><pre class="blackboard">
 <span class="Comment"><span class="Comment">/</span> The following three are equivalent</span>
-= link<span class="Keyword">-</span>to <span class="String"><span class="String">&quot;</span>home<span class="String">&quot;</span></span>
+= link<span class="Keyword">-</span>to <span class="String"><span class="String">&quot;</span>home.index<span class="String">&quot;</span></span>
   | Home
 
-= link<span class="Keyword">-</span>to <span class="String"><span class="String">&quot;</span>home<span class="String">&quot;</span></span> <span class="Keyword">|</span> <span class="Variable">Home</span>
+= link<span class="Keyword">-</span>to <span class="String"><span class="String">&quot;</span>Home<span class="String">&quot;</span></span> <span class="String"><span class="String">&quot;</span>home.index<span class="String">&quot;</span></span>
 
-<span class="Entity">link-to </span>&quot;home&quot; | Home
+= link<span class="Keyword">-</span>to <span class="String"><span class="String">&quot;</span>home.index<span class="String">&quot;</span></span> <span class="Keyword">|</span> <span class="Variable">Home</span>
+
+= link<span class="Keyword">-</span>to <span class="String"><span class="String">&quot;</span>items.list<span class="String">&quot;</span></span> (query<span class="Keyword">-</span>params page<span class="Keyword">=</span><span class="Constant">2</span>) <span class="Keyword">|</span> <span class="Variable">Go</span> to page 2
 
 <span class="Entity">ul</span>
 <span class="Entity">  li </span>= link<span class="Keyword">-</span>to <span class="String"><span class="String">&quot;</span>index<span class="String">&quot;</span></span> <span class="Keyword">|</span> <span class="Variable">Home</span>
 <span class="Entity">  li </span>= link<span class="Keyword">-</span>to <span class="String"><span class="String">&quot;</span>about<span class="String">&quot;</span></span> <span class="Keyword">|</span> <span class="Variable">About</span> <span class="Variable">Us</span>
-</pre></div><div class="code-block html"><label>Handlebars</label><pre class="blackboard">{{#link-to <span class="String"><span class="String">&quot;</span>home<span class="String">&quot;</span></span>}}Home{{/link-to}}
+</pre></div><div class="code-block html"><label>Handlebars</label><pre class="blackboard">{{#link-to <span class="String"><span class="String">&quot;</span>home.index<span class="String">&quot;</span></span>}}Home{{/link-to}}
+
+{{#link-to <span class="String"><span class="String">&quot;</span>items.list<span class="String">&quot;</span></span> (query-params page=2)}}Go to page 2{{/link-to}}
 
 <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">ul</span><span class="MetaTag">&gt;</span></span>
   <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">li</span><span class="MetaTag">&gt;</span></span>{{#link-to <span class="String"><span class="String">&quot;</span>index<span class="String">&quot;</span></span>}}Home{{/link-to}}<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">li</span><span class="MetaTag">&gt;</span></span>
   <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">li</span><span class="MetaTag">&gt;</span></span>{{#link-to <span class="String"><span class="String">&quot;</span>about<span class="String">&quot;</span></span>}}About Us{{/link-to}}<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">li</span><span class="MetaTag">&gt;</span></span>
 <span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">ul</span><span class="MetaTag">&gt;</span></span>
-</pre></div></td></tr><tr class="syntax"><td class="docs"><a name="colon-syntax-for-inlining-nested-content"></a><h3>Colon Syntax for Inlining Nested Content</h3><p>The colon separator is a way of nesting content on a single line. It&#8217;s essentially an alternative to a newline followed by indented content.</p></td><td class="code"><div class="code-block emblem"><label>Emblem</label><pre class="blackboard"><span class="Comment"><span class="Comment">/</span> You could write something like this:</span>
+</pre></div></td></tr><tr class="syntax"><td class="docs"><a name="colon-syntax-for-inlining-nested-content"></a><h3>Colon Syntax for Inlining Nested Content</h3><p>The colon separator is a way of nesting content on a single line. It&#8217;s essentially an alternative to a newline followed by indented content.</p>
+
+<p>Whatever comes after a statement-terminating <code>:</code> will be interpreted as if it were moved to the line below and indented. This allows you to quickly alternate between nesting HTML elements and mustache blocks on a single line when it makes sense.</p>
+
+<p>This should come in handy for scaffolding frameworks like Twitter Bootstrap (the first part of the example on the right is Bootstrap scaffolding code).</p></td><td class="code"><div class="code-block emblem"><label>Emblem</label><pre class="blackboard"><span class="Comment"><span class="Comment">/</span> You could write something like this:</span>
 <span class="Entity">.container</span>
 <span class="Entity">  .row</span>
 <span class="Entity">    .span12</span>
@@ -46,10 +54,15 @@
 
 <span class="Comment"><span class="Comment">/</span> With colons:</span>
 <span class="Entity">li:</span> <span class="Entity">link-to</span> &#39;posts&#39;: <span class="Entity">span:</span> <span class="Entity">linkText</span>
-    
+
 <span class="Comment"><span class="Comment">/</span> You can consistently use it, even for simple cases.</span>
-<span class="Entity">legend:</span> <span class="Entity">title</span> 
+<span class="Entity">legend:</span> <span class="Entity">title</span>
 <span class="Entity">legend </span>= title
+
+<span class="Comment"><span class="Comment">/</span> You can nest groups</span>
+<span class="Entity">#content-frame:</span> <span class="Entity">.container:</span> <span class="Entity">.row</span>
+  <span class="Entity">.span4:</span> = list<span class="Keyword">-</span>item <span class="String"><span class="String">&quot;</span>sidebar<span class="String">&quot;</span></span>
+  <span class="Entity">.span8:</span> = list<span class="Keyword">-</span>item <span class="String"><span class="String">&quot;</span>main<span class="String">&quot;</span></span>
 </pre></div></td></tr><tr class="syntax"><td class="docs"><a name="html-attribute-shorthand-for-ember-helpers"></a><h3>HTML Attribute Shorthand for Ember Helpers</h3><p><em>*when using with <a href='http://emberjs.com'>Ember.js</a></em></p>
 
 <p>You can use <code>%</code>, <code>#</code>, and <code>.</code> to set hash values for <code>tagName</code>, <code>elementId</code>, and <code>class</code>, respectively, on a Handlebars helper invocation.</p>
@@ -65,7 +78,7 @@
 
   {{#<span class="Entity">view</span> <span class="Variable">Ember.View</span> <span class="Entity">tagName</span>=<span class="String"><span class="String">&quot;</span>span<span class="String">&quot;</span></span> <span class="Entity">elementId</span>=<span class="String"><span class="String">&quot;</span>the-id<span class="String">&quot;</span></span> <span class="Entity">class</span>=<span class="String"><span class="String">&quot;</span>some-class<span class="String">&quot;</span></span>}}Adding a space before % also works.{{/<span class="Entity">view</span>}}
 <span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">div</span><span class="MetaTag">&gt;</span></span>
-</pre></div></td></tr><tr class="syntax"><td class="docs"><a name="each-else"></a><h3>each&#47;else</h3><p>This isn&#8217;t strictly an Emblem pattern, but keep in mind that the <code>each</code> helper excepts an optional <code>else</code> portion that will be displayed when the list is empty or nonexistent.</p></td><td class="code"><div class="code-block emblem"><label>Emblem</label><pre class="blackboard">
+</pre></div></td></tr><tr class="syntax"><td class="docs"><a name="each-else"></a><h3>each&#47;else</h3><p>This isn&#8217;t strictly an Emblem pattern, but keep in mind that the <code>each</code> helper accepts an optional <code>else</code> portion that will be displayed when the list is empty or nonexistent.</p></td><td class="code"><div class="code-block emblem"><label>Emblem</label><pre class="blackboard">
 <span class="Entity">each </span>things
 <span class="Entity">  p </span>= name
 <span class="Entity">else</span>

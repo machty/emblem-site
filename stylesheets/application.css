@@ -448,7 +448,7 @@ body tr.syntax td.code, body tr.install td.code {
     body tr.syntax td.code .code-block pre, body tr.install td.code .code-block pre {
       padding: 20px;
       margin: 5px 0;
-      max-width: 650px;
+      max-width: 75%;
       overflow: auto; }
     /* line 146, application.css.sass */
     body tr.syntax td.code .code-block.emblem, body tr.install td.code .code-block.emblem {
