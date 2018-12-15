@@ -120,6 +120,25 @@
       {{#view Ember.View tagName="span" elementId="the-id" class="some-class"}}Adding a space before % also works.{{/view}}
     </div>
 
+-
+  title: each/else
+
+  docs: |
+    This isn't strictly an Emblem pattern, but keep in mind that the `each` helper accepts an optional `else` portion that will be displayed when the list is empty or nonexistent.
+
+  emblem: |
+
+    each things
+      p = name
+    else
+      p There are no things!
+
+  html: |
+    {{#each things}}
+      <p>{{name}}</p>
+    {{else}}
+      <p>There are no things!</p>
+    {{/each}}
 
 -
   title: Ember input helper
@@ -142,4 +161,3 @@
     We'll be updating this section periodically as the patterns come in from the wild.
 
     Know a great Emblem trick? [Submit one!](https://github.com/machty/emblem-site/issues/new?title=an%20awesome%20emblem.js%20trick&labels=website%20tweak)
-
