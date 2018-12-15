@@ -1,3 +1,14 @@
+# Ember CLI
+-
+  title: Ember CLI
+  docs: |
+    [ember-cli-emblem](https://github.com/Vestorly/ember-cli-emblem) will automatically parse any of your Emblem templates with either the `.emblem` or `.embl` extensions into raw handlebars.
+
+    For a new Ember CLI application, you will only need to add the `ember-cli-emblem` addon.  However, if your project includes `broccoli-emblem-compiler`, it should first be removed: `npm uninstall --save-dev broccoli-emblem-compiler`.
+
+  shell: |
+    ember install ember-cli-emblem
+
 # Rails
 -
   title: Ruby on Rails
@@ -71,7 +82,7 @@
   instructions: |
     Follow [these instructions](http://mimosajs.com/started.html) to get started with Mimosa.
 
-    Once you're setup, files ending in .emblem or .embl will be compiled as Emblem templates. If you've enabled Ember in your project, they'll be compiled as Ember-ized templates. 
+    Once you're setup, files ending in .emblem or .embl will be compiled as Emblem templates. If you've enabled Ember in your project, they'll be compiled as Ember-ized templates.
 
 # Ember Tools
 -

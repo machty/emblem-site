@@ -25,6 +25,8 @@
   docs: |
     To wrap one element in another, just indent and place the element below.
 
+    Emblem assumes that indentation is with two spaces.
+
   emblem: |
     footer
       ul
@@ -47,7 +49,9 @@
   docs: |
     CSS classes can added to elements by using a (`.`) with the class name afterwards. You can place this after an element name (`div` is the default tag name).
 
-    You can chain multiple class names.
+    You can chain multiple class names, and Emblem will combine all class definitions into a single `class` HTML5 attribute.
+
+    NOTE: see use of bindings below and the inline if for more complex examples.
 
   emblem: |
     .title Title
@@ -56,12 +60,16 @@
 
     button.btn.btn-large Submit
 
+    div.foo class='bar'
+
   html: |
     <div class="title">Title</div>
 
     <h1 class="logo">Law Blog</h1>
 
     <button class="btn btn-large">Submit</button>
+
+    <div class="foo bar">
 
 
 -
@@ -126,6 +134,7 @@
     / A long long
       multiline comment
 
+
 -
   title: Plain Text
 
@@ -170,11 +179,12 @@
 
     <span>Trailing space </span>
 
+
 -
   title: Handlebars Expressions
 
   docs: |
-    To output a handlebars expression, use `=` before expression.
+    To output a handlebars expression, use `=` before an expression.
 
     NOTE: You have the option to omit the `=` unless the expression begins with a [known HTML5 tag name](https://developer.mozilla.org/en-US/docs/HTML/HTML5/HTML5_element_list).
 
@@ -193,37 +203,97 @@
 
 
 -
-  title: Unescaped Expressions
+  title: HTML Attributes
 
   docs: |
-    By default Handlebars html escapes output from expressions. To include html without escaping, use `==` which will output Handlebars "triple-stash" expressions `{{{}}}`.
+    HTML attributes can be added right after the element using `key="value"` pairs.
+
+    HTML attributes can also have mustaches embedded in them.
+
+    For an HTML element with multiple attribute definitions, to improve readability you can wrap all of them in brackets `[]` and nest them under the element, one definitino per line.
 
   emblem: |
-    body
-      == outlet
+    button.close data-dismiss="modal" x
+
+    button class="large {{foo}}" x
+
+    button [
+      data-hint='Click me for more information'
+      class='info'
+      data-dismiss='modal'
+    ]
 
   html: |
-    <body>
-      {{{outlet}}}
-    </body>
+    <button class="close" data-dismiss="modal">x</button>
+
+    <button class="large {{foo}}">x</button>
+
+    <button data-hint="Click me for more information" class="info" data-dismiss="modal">
+
+
+-
+  title: Attribute Bindings
+
+  ember: true
+
+  docs: |
+    Bound attributes can be added to either an HTML Element or Ember component using `key=value` pairs.
+
+    If you define a bound value for a class, Emblem will combine these with any other class attributes into a single class attribute definition.
+
+    To define a binding as mutable using the Ember `mut` helper, wrap the definition in a single curley `{}`.
+
+    Emblem provides the `!` helper to flag a bound value as unbound.  (NOTE: this feature is not supported in Ember after 1.13).
+
+    NOTE: As of version 6.0, Emblem supports HTMLBars bound attributes, so `bind-attr` is no longer automatically added.
+
+  emblem: |
+    img src=logoUrl alt="Logo"
+
+    div.foo class=activeClass
+
+    = my-form name={ mut model.name }
+
+    button class="large {{unbound foo}}" x
+
+    button class=foo! x
+
+    / Only supported Ember pre 1.13
+    = my-form name={ bind-attr model.name }
+
+
+  html: |
+    <img src={{"logoUrl"}} alt="Logo">
+
+    <div class="foo {{activeClass}}">
+
+    <button class="large {{unbound foo}}">x</button>
+
+    <button class="{{unbound foo}}">x</button>
+
+    <my-form name={{mut model.name}}>
+
+    <my-form name={{bind-attr model.name}}>
 
 
 -
   title: Handlebars Block Helpers
 
   docs: |
-    Handlebars block statements follow a syntax similar to HTML5 elements, in that indented content on the lines below get wrapped in the block form of the helper.
+    Handlebars block statements follow a syntax similar to HTML5 elements.  Indented content on the lines below get wrapped in the block form of the helper.
 
-    To use a block helper with the same name as an HTML5 element, you can explicitly use a handlebars block helper by starting the line with `=`.
+    Block helpers support Ember's block param syntax `as |item index|`.
 
     Block helpers with only text content can be succinctly written on a single line using a `|` pipe to separate the helper code from the text.
 
+    To use a block helper with the same name as an HTML5 element, you can explicitly use a handlebars block helper by starting the line with `=`.
+
   emblem: |
     ul
-      each people as |person|
+      = each people as |person|
         li = person
 
-    link-to "home" | Link Text
+    = link-to "home" | Link Text
 
     list nav id="nav-bar" class="top"
       a href="url" = title
@@ -231,9 +301,9 @@
     = strong
       = something
 
-    if something
+    = if something
       p Something!
-    else
+    = else
       p Something else!
 
   html: |
@@ -267,89 +337,118 @@
   docs: |
     You can condense nested HTML or block mustache content into a single line by using `:` to terminate the present element or block mustache declaration.
 
-    Whatever comes after a statement-terminating `:` will be interpreted as if it were moved to the line below and indented. This allows you to quickly alternate between nesting HTML elements and mustache blocks on a single line when it makes sense.
+- title: Conditionals
 
-    This should come in handy for scaffolding frameworks like Twitter Bootstrap (the first part of the example on the right is Bootstrap scaffolding code).
+  docs: |
+    Conditionals are a subset of block expressions and support all of the Handlebars / Ember expressions (e.g. `else if`, `unless`, `each`, etc.).
 
   emblem: |
-    #content-frame: .container: .row
-      .span4: render "sidebar"
-      .span8: render "main"
 
-    footer: ul.menu-items: each menu_items: li: a.menu-link href=url: link_text
+    = if isActive
+      .item Active
+    = else
+      .item Inactive
+
+    = unless isActive
+      .item Inactive
+    = else
+      .item Active
+
+    = if firstThing
+      .item First
+    = else if secondThing
+      .item Second
+    = else if otherThing
+      .item
+        = if isBlue
+          p Blue
+        = else
+          p NotBlue
+    = else
+      .item Unknown
 
   html: |
-    <div id="content-frame">
-      <div class="container">
-        <div class="row">
-          <div class="span4">
-            {{render "sidebar"}}
-          </div>
-          <div class="span8">
-            {{render "main"}}
-          </div>
-        </div>
+    {{#if isActive}}
+      <div class="item">Active</div>
+    {{#else}}
+      <div class="item">Inactive</div>
+    {{/if}}
+
+    {{#unless isActive}}
+      <div class="item">Inactive</div>
+    {{#else}}
+      <div class="item">Active</div>
+    {{/if}}
+
+    {{#if firstThing}}
+      <div class="item">First</div>
+    {{#else if secondThing}}
+      <div class="item">Second</div>
+    {{#else if otherThing}}
+      <div class="item">
+        {{#if isBlue}}
+          <p>Blue</p>
+        {{else}}
+          <p>NotBlue</p>
+        {{/if}}
       </div>
+    {{#else}}
+      <div class="item">Unknown</div>
+    {{/if}}
+
+
+-
+  title: Components
+
+  ember: true
+
+  docs: |
+    You can quickly and easily include an Ember.js component by starting a line with an equals sign and following it with any parameters.
+
+    Components can have block params and blocks.
+
+    As with HTML elements, components  can have their attributes wrapped in brackets `[]` for easier readability.
+
+  emblem: |
+    .field
+      = my-component value='firstName'
+
+    .field
+      ul
+        = each items as |item|
+          = my-component value=item
+
+    = my-list as |list index|
+      = list-item list=list index=index
+
+    = my-component [
+      value='firstName'
+      title='Name'
+      model=model
+      changed=(action 'nameChanged')
+    ]
+
+  html: |
+    <div class="field">
+      {{ my-component value="firstName" }}
     </div>
-    <footer>
-      <ul class="menu-items">
-        {{#each menu_items}}
-          <li>
-            <!-- of course, in an Ember.js context, href will be set via a bind-attr -->
-            <a class="menu-link" href="{{url}}">{{link_text}}</a>
-          </li>
-        {{/each}}
+
+    <div class="field">
+      <ul>
+        {{#each items as |item| }}
+          {{ my-component value=item }}
+          {{ my-component value=item }}
+          {{ my-component value=item }}
+        {{/each }}
       </ul>
-    </footer>
-
--
-  title: Views
-
-  ember: true
-
-  docs: |
-    Just like in Handlebars, you include an Ember.js view by enclosing the lower-case view name in quotes. Note that input form fields are something of a special case, as the associated view classes are accessed via the "input" helper.
-
-  emblem: |
-    .field
-      = view "my-custom" someParam="foo"
-    .field
-      = view "select" content=options
-    .field
-      = input valueBinding="firstName"
-
-  html: |
-    <div class="field">
-      {{view "my-custom" someParam="foo"}}
-    </div>
-    <div class="field">
-      {{view "select" content=options}}
-    </div>
-    <div class="field">
-      {{input valueBinding="firstName"}}
     </div>
 
--
-  title: bind-attr Shorthand
+    {{#my-component as |list index}}
+      {{list-item list=list index=index}}
+    {{/my-component}}
 
-  ember: true
+    {{ my-component value="firstName" title="Name" model=model changed=(action 'nameChanged') }}
 
-  docs: |
-    Emblem.js makes binding expression attributes (via `bind-attr`) clean and simple.
-
-  emblem: |
-    img src=logoUrl alt="Logo"
-
-    div class=condition:whenTrue:whenFalse
-
-    div class={ condition1:whenTrue:whenFalse condition2:whenTrue:whenFalse }
-
-  html: |
-    <img {{bind-attr src="logoUrl"}} alt="Logo">
-
-    <div {{bind-attr class="condition:whenTrue:whenFalse"}}></div>
-
-    <div {{bind-attr class="condition1:whenTrue:whenFalse condition2:whenTrue:whenFalse"}}></div>
 
 -
   title: Action / Events Shorthand
@@ -363,70 +462,97 @@
 
     Use single quotes `'` to designate an unbound action.
 
+    Emblem also supports the new closure actions released in Ember 1.13.  For more complex action expressions, wrap them in a single curly `{}`.
+
   emblem: |
     a click="toggleHeader" x
 
-    a click="toggleHeader target='view'" x
+    button click="'unboundAction' boundItem"
+    button click="'unboundAction' 'unbountItem'"
 
-    a click="toggleHeader this" x
+    a click="'toggleHeader' target='view'" x
 
-    a click="actionWithParam 'fixedParamString'" x
-
-    form submit="submitTheForm foo"
+    form submit="'submitTheForm' foo"
       p Hello
 
-    button click="'unboundAction' item"
+    = my-component itemChanged=(action 'itemChanged')
+
+    = my-form submit={ action (mut model.name) }
+      button
 
   html: |
     <a {{action toggleHeader on="click"}}>x</a>
 
-    <a {{action toggleHeader on="click" target="view"}}>x</a>
+    <button {{action 'unboundAction' boundItem on="click"}}></button>
+    <button {{action 'unboundAction' 'unboundItem' on="click"}}></button>
 
-    <a {{action toggleHeader this on="click"}}>x</a>
+    <a {{action 'toggleHeader' on="click" target="view"}}>x</a>
 
-    <a {{action actionWithParam 'fixedParamString' on="click"}}>x</a>
+    <form {{action 'submitTheForm' foo on="submit"}}><p>Hello</p></form>
 
-    <form {{action submitTheForm foo on="submit"}}><p>Hello</p></form>
+    {{my-component itemChanged=(action 'itemChanged')}}
 
-    <button {{action 'unboundAction' item on="click"}}></button>
+    <my-form submit={{action (mut model.name)}}></my-component>
 
--
-  title: Explicit Attribute Expressions
 
+- title: Inline If
   ember: true
-
   docs: |
-    To use expressions within the element attributes (often used in Ember with `bind-attr` and `action`), use the `{}` syntax after the element.
+    Emblem supports the inline if syntax introduced in Ember 1.11.  Expressions should be wrapped inside a single curley block `{}`.
 
-    Multiple attribute expressions are also supported.
+    Emblem will map any uses of the colon syntax to the inline if syntax.
 
   emblem: |
-    button{action "delete"} Delete
+    div value={ if isTrue 'one' activeItem }
 
-    img{bind-attr src="logoUrl"} alt="logo"
+    div class=condition:whenTrue:whenFalse
 
-    a{bind-attr class="isActive"}{action 'toggleHeader'} x
+    .foo class={ isHovering condition1:whenTrue:whenFalse condition2:whenTrue:whenFalse }
 
   html: |
-    <button {{action "delete"}}>Delete</button>
+    <div value={{if isTrue 'one' activeItem}}
 
-    <img {{bind-attr src="logoUrl"}} alt="logo">
+    <div class="{{if condition 'whenTrue' 'whenFalse'}}"></div>
 
-    <a {{bind-attr class="isActive"}} {{action "toggleHeader"}}>x</a>
+    <div class="foo {{isHovering}} {{if condition1 'whenTrue' 'whenFalse'}} {{if condition2 'whenTrue' 'whenFalse'}}">
+
+
+-
+  title: Unescaped Expressions
+
+  docs: |
+    By default Handlebars html escapes output from expressions. To include html without escaping, use `==` which will output Handlebars "triple-stash" expressions `{{{}}}`.
+
+  emblem: |
+    body
+      == outlet
+
+  html: |
+    <body>
+      {{{outlet}}}
+    </body>
+
 
 -
   title: In-Tag Mustache
 
   docs: |
-    Occasionally, you'll want to put mustache content inside the opening tag of an HTML element. You can do this by immediately following the tag content with curly braces.
-
-    Note: instead of using this for Ember's `bind-attr`, you can use Emblem's `bind-attr` syntax described below in Implicit Bind Attributes.
+    Occasionally, you'll want to add custom mustache, either inside the opening tag of an HTML5 element or as an assignment for an attribute. You can do this by immediately following the tag content with a single curly brace.
 
   emblem: |
     span.some-class{ someHelper } Hello
 
+    button{ action 'delete' } Delete
+
+    button name={ capitalize-string model.name } Delete
+
   html: |
     <span class="some-class" someHelperOutput="foo">Hello</span>
+
+    <button {{action "delete"}}>Delete</button>
+
+    <button name={{capitalize-string model.name}}>
+
 
 -
   title: Vanilla Handlebars Partials
@@ -434,7 +560,7 @@
   docs: |
     To invoke partials with non-Emberized Handlebars, you can use the `>` syntax.
 
-    Note that you'll never really use this for Ember apps; rather, in those cases, you'd use the `partial` helper.
+    Note that you'll never really use this for Ember apps; rather, in those cases, you'd use the `= partial` helper.
 
     Also note that there's no good way to precompile partials other than to precompile them as templates and then run `Handlebars.partials = Handlebars.templates` before any rendering has taken place.
 

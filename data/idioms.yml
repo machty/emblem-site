@@ -7,20 +7,21 @@
   emblem: |
 
     ul
-      each items
-        li Item name: #{name}
+      = each items as |item|
+        li Item name: #{item.name}
 
     / Shorter version:
 
-    ul = each items
-      li Item name: #{name}
+    ul = each items as |item|
+      li Item name: #{item.name}
 
   html: |
     <ul>
-      {{#each items}}
-        <li>Item name: {{name}}
+      {{#each items as |item|}}
+        <li>Item name: {{item.name}}
       {{/each}}
     </ul>
+
 
 -
   title: link-to (Text Content for Block Expressions)
@@ -31,12 +32,14 @@
   emblem: |
 
     / The following three are equivalent
-    = link-to "home"
+    = link-to "home.index"
       | Home
 
-    = link-to "home" | Home
+    = link-to "Home" "home.index"
 
-    link-to "home" | Home
+    = link-to "home.index" | Home
+
+    = link-to "items.list" (query-params page=2) | Go to page 2
 
     ul
       li = link-to "index" | Home
@@ -44,18 +47,25 @@
 
 
   html: |
-    {{#link-to "home"}}Home{{/link-to}}
+    {{#link-to "home.index"}}Home{{/link-to}}
+
+    {{#link-to "items.list" (query-params page=2)}}Go to page 2{{/link-to}}
 
     <ul>
       <li>{{#link-to "index"}}Home{{/link-to}}</li>
       <li>{{#link-to "about"}}About Us{{/link-to}}</li>
     </ul>
 
+
 -
   title: Colon Syntax for Inlining Nested Content
 
   docs: |
     The colon separator is a way of nesting content on a single line. It's essentially an alternative to a newline followed by indented content.
+
+    Whatever comes after a statement-terminating `:` will be interpreted as if it were moved to the line below and indented. This allows you to quickly alternate between nesting HTML elements and mustache blocks on a single line when it makes sense.
+
+    This should come in handy for scaffolding frameworks like Twitter Bootstrap (the first part of the example on the right is Bootstrap scaffolding code).
 
   emblem: |
     / You could write something like this:
@@ -74,10 +84,16 @@
 
     / With colons:
     li: link-to 'posts': span: linkText
-        
+
     / You can consistently use it, even for simple cases.
-    legend: title 
+    legend: title
     legend = title
+
+    / You can nest groups
+    #content-frame: .container: .row
+      .span4: = list-item "sidebar"
+      .span8: = list-item "main"
+
 
 -
   title: HTML Attribute Shorthand for Ember Helpers
@@ -129,11 +145,11 @@
 
   docs: |
     Keep in mind that the `input` helper provided by Ember must be used with preceding `=`. If you use it like a normal tag, the `value` will be bound read only and the bound object won't be changed when typing.
-    
+
   emblem: |
 
     input value=name id="noEmberHelper" class="wrong possible-headache"
-    
+
     = input value=name id="withEmberHelper" class="right"
 
   html: |
@@ -145,4 +161,3 @@
     We'll be updating this section periodically as the patterns come in from the wild.
 
     Know a great Emblem trick? [Submit one!](https://github.com/machty/emblem-site/issues/new?title=an%20awesome%20emblem.js%20trick&labels=website%20tweak)
-
