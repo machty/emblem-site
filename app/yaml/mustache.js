@@ -15,6 +15,19 @@ const yaml = `
 
 
 -
+  title: Handlebars Helpers
+
+  docs: |
+    You can embed Handlebars within strings or text by wrapping it in mustache tags \`{{}}\` and \`{{{}}}\`. You can also use \`#{}\` as an alias for \`{{}}\`.
+
+  emblem: |
+    span.name Your name is {{name}}
+              and my name is #{author}
+
+    input value='My name is #{ name }'
+
+
+-
   title: HTML Attributes
 
   docs: |
@@ -34,6 +47,22 @@ const yaml = `
 
 
 -
+  title: Multi-line parameters
+
+  docs: |
+    As with HTML elements, mustache expressions support the \`[]\` syntax for multi-line parameters.
+
+    **NOTE:** It is required that all paremeters are inside of the blocks.
+
+  emblem: |
+    = my-component [
+      alertable
+      class='alert'
+    ]
+      span Click me!
+
+
+-
   title: Unescaped Expressions
 
   docs: |
@@ -50,6 +79,8 @@ const yaml = `
   docs: |
     Occasionally, you'll want to add custom mustache, either inside the opening tag of an HTML5 element or as an assignment for an attribute. You can do this by immediately following the tag content with a single curly brace.
 
+    **NOTE:** It is required that the opening \`{\` immedaitely follow the element without any whitespace.
+
   emblem: |
     span.some-class{ someHelper } Hello
 
@@ -59,34 +90,22 @@ const yaml = `
 
 
 -
-  title: Handlebars Block Helpers
+  title: Block Statements
 
   docs: |
     Handlebars block statements follow a syntax similar to HTML5 elements.  Indented content on the lines below get wrapped in the block form of the helper.
 
-    Block helpers support Ember's block param syntax \`as |item index|\`.
-
     Block helpers with only text content can be succinctly written on a single line using a \`|\` pipe to separate the helper code from the text.
 
-    To use a block helper with the same name as an HTML5 element, you can explicitly use a handlebars block helper by starting the line with \`=\`.
-
   emblem: |
-    ul
-      = each people as |person|
-        li = person
-
-    = link-to "home" | Link Text
-
-    list nav id="nav-bar" class="top"
-      a href="url" = title
-
-    = strong
-      = something
+    = link-to "home"
+      | Link Text
 
     = if something
       p Something!
     = else
       p Something else!
+
 
 - title: Conditionals
 
@@ -105,6 +124,12 @@ const yaml = `
     = else
       .item Active
 
+
+- title: Nested Conditionals
+
+  docs: Conditionals can be nested, however pay attention to your nesting to make sure everything lines up correctly.
+
+  emblem: |
     = if firstThing
       .item First
     = else if secondThing
@@ -130,25 +155,6 @@ const yaml = `
       p = name
     = else
       p There are no things!
-
--
-  title: Vanilla Handlebars Partials
-
-  docs: |
-    To invoke partials with non-Emberized Handlebars, you can use the \`>\` syntax.
-
-    Note that there's no good way to precompile partials other than to precompile them as templates and then run \`Handlebars.partials = Handlebars.templates\` before any rendering has taken place.
-
-    If you're not precompiling, and you want to directly register an Emblem template, you can use \`Emblem.registerPartial\`.
-
-    **Note:**  you'll never really use this for Ember apps; rather, in those cases, you'd use the \`= partial\` helper.
-
-  emblem: |
-    > partialName
-
-    p Check out this partial: #{> partialName}
-
-    > partialName foo
 `;
 
 export default yaml;

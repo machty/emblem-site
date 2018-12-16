@@ -2,7 +2,7 @@ import Component from '@ember/component';
 import { action } from '@ember-decorators/object';
 import { service } from '@ember-decorators/service';
 import { isPresent } from '@ember/utils';
-import { set, setProperties } from '@ember/object';
+import { set } from '@ember/object';
 import { tagName } from '@ember-decorators/component';
 
 @tagName('span')

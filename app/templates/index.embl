@@ -1,5 +1,5 @@
 .grid-x
-  .small-12.medium-4.large-3.cell.left-side
+  .small-12.medium-5.large-4.cell.left-side
     .navigation
       ul.nav
         li = link-to 'Installation' 'installation'
@@ -8,6 +8,7 @@
         li = link-to 'Mustache' 'mustache'
         li = link-to 'Ember' 'ember'
         li = link-to 'Glimmer' 'glimmer'
+        li = link-to 'Deprecations' 'deprecations'
         li.divider
         li = link-to 'Editor Support' 'editors'
         li
@@ -35,5 +36,5 @@
           'maintained by
           a href='http://github.com/thec0keman' @thec0keman
 
-  .small-12.medium-8.large-9.cell.right-side
+  .small-12.medium-7.large-8.cell.right-side
     = highlighted-emblem code=introCode

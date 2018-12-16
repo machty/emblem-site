@@ -2,15 +2,24 @@
 @import 'foundation-sites/foundation';
 @include foundation-everything;
 
+$code-background: #0a0f25;
+$emblem-background: #06211f;
+$emblem-badge: #006400;
+$handlebars-background: #2b1924;
+$handlebars-badge: #993c10;
+
+.logo {
+  color: $secondary-color;
+}
 pre {
   padding: 10px;
 
   &.emblem {
-    background-color: #06211f;
+    background-color: $emblem-background;
   }
 
   &.handlebars {
-    background-color: #2b1924;
+    background-color: $handlebars-background;
     white-space: pre-wrap;
   }
 
@@ -24,11 +33,18 @@ pre {
 
 .left-side {
   padding-left: 30px;
+  padding-right: 10px;
   margin-top: 15px;
 }
 .right-side {
-  background-color: #0a0f25;
+  background-color: $code-background;
   padding: 35px;
+}
+
+.navigation {
+  li {
+    font-size: 18px;
+  }
 }
 
 .undo-icon {
@@ -37,7 +53,7 @@ pre {
 
 .results {
   .error {
-    background-color: rgb(124, 22, 22);
+    background-color: $alert-color;
     color: #fff;
   }
 }
@@ -80,12 +96,15 @@ pre {
 
 .footer {
   background-color: #bbb5b5;
+  padding: 15px;
+  padding-top: 35px;
+  font-size: 13px;
 
   h5 {
-    color: #01667d;
+    color: $primary-color;
     font-weight: bold;
+    font-size: 15px;
   }
-  padding: 15px;
 }
 
 .emblem-handlebars-display {
@@ -107,10 +126,10 @@ pre {
       margin: auto;
       height: 19px;
       line-height: 13px;
-      background: #993c10;
+      background: $handlebars-badge;
 
       &.emblem {
-        background: #006400;
+        background: $emblem-badge;
       }
     }
   }

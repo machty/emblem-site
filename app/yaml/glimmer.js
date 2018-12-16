@@ -73,10 +73,11 @@ const yaml = `
 
     emblem: |
       % x-modal
-        % @header as |@title|
+        % @header as |title|
           |Header #{title}
-        % @body
+        % @body as |c|
           |Body
+          button onclick={ c.close } Close
         % @footer
           |Footer
 `;

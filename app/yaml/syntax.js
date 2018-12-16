@@ -14,18 +14,67 @@ const yaml = `
 
 
 -
-  title: Indentation Wrapping
+  title: Nested Elements
 
   docs: |
     To wrap one element in another, just indent and place the element below.
 
-    Emblem assumes that indentation is with two spaces.
+    De-indenting will close the nesting for the previous element.
+
+    Emblem assumes that indentation is with two spaces, though more can be used as long as the indentation is maintaned consistently.
 
   emblem: |
     footer
       ul
         li Hello
         li Goodbye
+
+      form#my-form
+        label
+          |First Name
+          input name='first-name'
+
+        label
+          |Last Name
+          input name='last-name'
+
+
+-
+  title: Plain Text
+
+  docs: |
+    Frequently lines will begin with either mustache or an HTML element.  In these cases you can just include the text after the wrapping element.
+
+    However there are times when this will not work.  For example, you may need a larger block of text, or you may need more control over the spacing and alignment of the text with neighboring elements.  Or, it is possible that the syntax of the wrapping element (such as mustache) cause ambiguity on where the text begins.
+
+    Emblem offers several helpers:
+
+    - to signify that a line of text is beginning, use the \`|\` helper.  This works both for a line of Emblem on its own, and when following an HTML element.
+
+    - multiline blocks of text are possible through the \`|\` helper as well, simply indent subsequent lines.I
+
+    - to append whitespace after a line of text, begin the text with the \`'\` helper.
+
+    - to prepend whitespace before a line of text, begin the line with the \`|\` helper and some additional spaces: \`|  \`
+
+  emblem: |
+    | Some content
+
+    div name="foo"  My text
+
+    = my-component foo bar | Baz
+
+    p
+      | Lorem ipsum
+        dolor sit amet, consectetur
+        adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+
+    ' Trailing space
+    i.fa-icon
+
+    i.fa-icon
+    |  Preceeding space
+
 
 
 -
@@ -60,53 +109,6 @@ const yaml = `
     span#name Bob Lablah
 
 
-
--
-  title: Comments
-
-  docs: |
-    Start a line with '/' to add a comment. These lines will be ignored completely.
-
-    Multiline comments are supported by indenting your comment underneath.
-
-  emblem: |
-    / Some comment
-
-    / A long long
-      multiline comment
-
-
--
-  title: Plain Text
-
-  docs: |
-    To output content without an element wrapper, start the line with pipe \`|\`.
-
-    Multiline plaintext content is supported by indenting underneath the tag or \`|\`.
-
-    Plain text can include handlebars output tags \`{{}}\` and \`{{{}}}\`. You can also use \`#{}\` as an alias for \`{{}}\`.
-
-    Block helpers within text blocks can also be used if you're using the \`:\` colon or \`|\` pipe syntax.
-
-    Use an apostrophe \`'\` instead of \`|\` to append a single trailing whitespace at the end of the text block.
-
-  emblem: |
-    | Some content
-
-    p
-      | Lorem
-      = link-to 'something' | ipsum
-      | dolor sit amet, consectetur
-        adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-        dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud
-        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-    span.name Your name is {{name}}
-              and my name is #{author}
-
-    span
-      ' Trailing space
-
 -
   title: HTML Attributes
 
@@ -122,11 +124,51 @@ const yaml = `
 
     button class="large {{foo}}" x
 
+
+-
+  title: Multi-line parameters
+
+  docs: |
+    More advanced mustache statements or HTML elements can get rather verbose.  Emblem supports using multiline parameters by the use of \`[]\`.
+
+    The closing bracket can either be on the same line as the final parameter, or de-indented on the next line.
+
+    Note that block content can work with both approaches.
+
+    **NOTE:** It is required that all paremeters are inside of the blocks.
+
+  emblem: |
+    div [
+      class='alert'
+      data-dismiss='modal'
+    ]
+
     button [
       data-hint='Click me for more information'
       class='info'
-      data-dismiss='modal'
     ]
+      |My button
+
+    button [
+      data-hint='Click me for more information'
+      class='info' ]
+      |My button
+
+
+-
+  title: Comments
+
+  docs: |
+    Start a line with '/' to add a comment. These lines will be ignored completely.
+
+    Multiline comments are supported by indenting your comment underneath.
+
+  emblem: |
+    / Some comment
+
+    / A long long
+      multiline comment
+
 
 -
   title: Colon Syntax for Inlining Nested Content
@@ -152,11 +194,11 @@ const yaml = `
 
     / It works for mustache blocks too:
     li
-      link-to 'posts'
+      = link-to 'posts'
         span = linkText
 
     / With colons:
-    li: link-to 'posts': span: linkText
+    li: = link-to 'posts': span: linkText
 
     / You can consistently use it, even for simple cases.
     legend: title
@@ -166,7 +208,6 @@ const yaml = `
     #content-frame: .container: .row
       .span4: = list-item "sidebar"
       .span8: = list-item "main"
-
 
 `;
 

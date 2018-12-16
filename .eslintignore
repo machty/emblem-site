@@ -4,10 +4,12 @@
 
 # compiled output
 /dist/
+/_site/
 /tmp/
 
 # dependencies
 /bower_components/
+/node_modules/
 
 # misc
 /coverage/

@@ -3,7 +3,7 @@
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
-  let app = new EmberApp(defaults, {
+  const app = new EmberApp(defaults, {
     babel: {
       plugins: [
         '@babel/plugin-transform-async-to-generator'
@@ -17,17 +17,8 @@ module.exports = function(defaults) {
 
   app.import('vendor/prism.js');
   app.import('vendor/prism.css');
-
-  // app.import('node_modules/prettier/standalone.js', {
-  //   using: [
-  //     { transformation: 'amd', as: 'prettier' }
-  //   ]
-  // });
-  // app.import('node_modules/prettier/parser-glimmer.js', {
-  //   using: [
-  //     { transformation: 'amd', as: 'prettier-glimmer' }
-  //   ]
-  // });
+  app.import('vendor/prism-markup-templating.js');
+  app.import('vendor/prism-handlebars.js');
 
   return app.toTree();
 };

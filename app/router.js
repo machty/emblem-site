@@ -13,6 +13,7 @@ Router.map(function() {
   this.route('mustache');
   this.route('ember');
   this.route('glimmer');
+  this.route('deprecations');
 });
 
 export default Router;

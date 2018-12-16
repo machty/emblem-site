@@ -21,6 +21,87 @@ const yaml = `
     = my-form name=(bind-attr model.name)
 
 
+-
+  title: Legacy Components
+
+  docs: |
+    You can quickly and easily include an Ember.js component by starting a line with an equals sign, the name of the component, and following it with any parameters.  Multi-line parameters are supported just as with other mustache / HTML elements.
+
+    **NOTE:** Ember does require that components have a \`-\` in their name
+
+  emblem: |
+    = my-component value='firstName'
+
+    = my-component [
+      value='firstName'
+      title='Name'
+      model=model
+      changed=(action 'nameChanged')
+    ]
+
+
+-
+  title: Blocks
+
+  docs: |
+    As with other mustache / HTML elements, Ember components can be yielded a block, as well as accept an \`else\` statement.  As with HTML elements, Emblem will automatically close the block with the components name.
+
+    Components can return block parameters by using the \`as |item index|\` syntax.
+
+    Block params work for either single-line components or multi-line.
+
+  emblem: |
+    = my-greeter
+      div Hello
+    = else
+      div Goodbye
+
+    ul
+      = each people as |person|
+        li = person
+
+    = my-component [
+      foo
+      bar=baz
+    ] as |left right|
+      span class={ left } = right
+
+
+-
+  title: link-to Examples
+
+  docs: |
+    Using a combination of various Emblem features, you can express any Handlebars expression.
+
+  emblem: |
+    / The following three are equivalent
+    = link-to "home.index"
+      | Home
+
+    = link-to "Home" "home.index"
+
+    = link-to "home.index" | Home
+
+    = link-to "items.list" (query-params page=2) | Go to page 2
+
+    ul
+      li = link-to "index" | Home
+      li = link-to "about" | About Us
+
+
+-
+  title: Ember input helper
+
+  docs: |
+    Keep in mind that the use of \`=\` is important for distinguishing components and helpers from HTML elements.
+
+  emblem: |
+    input value=name oninput={ action (mut myValue) value='target.value' }
+
+    = input value=name itemChanged=(action (mut myValue))
+
+
+
 - title: Inline If
   docs: |
     For more complex attribute bindings, Emblem supports the inline if syntax introduced in Ember 1.11.  Expressions should be wrapped inside a single curley block '{}'.
@@ -40,37 +121,6 @@ const yaml = `
     <div class="{{if condition 'whenTrue' 'whenFalse'}}"></div>
 
     <div class="foo {{isHovering}} {{if condition1 'whenTrue' 'whenFalse'}} {{if condition2 'whenTrue' 'whenFalse'}}">
-
-
--
-  title: Components
-
-  docs: |
-    You can quickly and easily include an Ember.js component by starting a line with an equals sign and following it with any parameters.
-
-    Components can have block params and blocks.
-
-    As with HTML elements, components  can have their attributes wrapped in brackets '[]' for easier readability.
-
-  emblem: |
-    .field
-      = my-component value='firstName'
-
-    .field
-      ul
-        = each items as |item|
-          = my-component value=item
-
-    = my-list as |list index|
-      = list-item list=list index=index
-
-    = my-component [
-      value='firstName'
-      title='Name'
-      model=model
-      changed=(action 'nameChanged')
-    ] as |foo|
-      li You picked #{ foo }
 
 
 -
@@ -128,57 +178,6 @@ const yaml = `
     p Hello
 
     a click='toggleHeader foo bar target="view"' x
-
-
--
-  title: link-to Examples
-
-  docs: |
-    Using a combination of various Emblem features, you can express any Handlebars expression.
-
-  emblem: |
-    / The following three are equivalent
-    = link-to "home.index"
-      | Home
-
-    = link-to "Home" "home.index"
-
-    = link-to "home.index" | Home
-
-    = link-to "items.list" (query-params page=2) | Go to page 2
-
-    ul
-      li = link-to "index" | Home
-      li = link-to "about" | About Us
-
--
-  title: Lists (Block Expression Shorthand)
-
-  docs: |
-    Emblem allows you to use '=' shorthand with block expressions. Because of this, you can achieve pretty succinct list declarations.
-
-  emblem: |
-
-    ul
-      = each items as |item|
-        li Item name: #{ item.name }
-
-    / Shorter version:
-
-    ul = each items as |item|
-      li Item name: #{ item.name }
-
-
--
-  title: Ember input helper
-
-  docs: |
-    Keep in mind that the use of \`=\` is important for distinguishing components and helpers from HTML elements.
-
-  emblem: |
-    input value=name oninput={ action (mut myValue) value='target.value' }
-
-    = input value=name itemChanged=(action (mut myValue))
 `;
 
 export default yaml;
