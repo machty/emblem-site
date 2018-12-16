@@ -3,8 +3,10 @@
     .navigation
       ul.nav
         li = link-to 'Installation' 'installation'
-        li = link-to 'Syntax' 'syntax'
-        li = link-to 'Idioms' 'idioms'
+        li = link-to 'Basic Syntax' 'syntax'
+        li = link-to 'Mustache' 'mustache'
+        li = link-to 'Ember' 'ember'
+        li = link-to 'Glimmer' 'glimmer'
 
         // li
         //   a href="http://machty.github.com/blog/2013/01/27/emblem-dot-js-indented-templating-targeting-handlebars-dot-js-and-ember-dot-js/"

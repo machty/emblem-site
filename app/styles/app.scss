@@ -24,6 +24,7 @@ pre {
 
 .left-side {
   padding-left: 30px;
+  margin-top: 15px;
 }
 .right-side {
   background-color: #0a0f25;
@@ -75,4 +76,14 @@ pre {
       }
     }
   }
+}
+
+.footer {
+  background-color: #bbb5b5;
+
+  h5 {
+    color: #01667d;
+    font-weight: bold;
+  }
+  padding: 15px;
 }

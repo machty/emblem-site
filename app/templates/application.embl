@@ -13,9 +13,25 @@ a href="https://github.com/machty/emblem.js"
       h1.logo
         = link-to 'Emblem.js' 'index' classNames='logo h3'
 
-      p
-        | a concise, beautiful, and fully compatible<br>templating alternative for <a href="http://handlebarsjs.com">Handlebars.js</a>
+      = if canGoBack
+        h5 = capitalize-string router.currentRouteName
+      = else
+        p
+          | a concise, beautiful, and fully compatible<br>templating alternative for <a href="http://handlebarsjs.com">Handlebars.js</a>
 
   .small-12.medium-8.large-9.cell.right-side
 
 = outlet
+
+.footer
+  h5 Anything wrong or missing here?
+
+  p
+    'These docs are
+    a href='https://github.com/machty/emblem-site' open source
+    |, so help us tweak and refine them!
+
+  p
+    'If you're feeling particularly lazy and want to just report an error,
+    a href='https://github.com/machty/emblem-site/issues/new?title=emblem.js%20plz%20help' Submit a docs issue
+    |  for some clarification on how Emblem.js can be used.

@@ -9,8 +9,9 @@ const Router = EmberRouter.extend({
 Router.map(function() {
   this.route('installation');
   this.route('syntax');
-  this.route('idioms');
-  this.route('about');
+  this.route('mustache');
+  this.route('ember');
+  this.route('glimmer');
 });
 
 export default Router;
