@@ -8,6 +8,7 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('installation');
+  this.route('editors');
   this.route('syntax');
   this.route('mustache');
   this.route('ember');

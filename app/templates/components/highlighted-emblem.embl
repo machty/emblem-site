@@ -1,3 +1,6 @@
-pre.emblem
-  code
-    = code
+.code-wrapper
+  .code-badge.emblem Emblem
+
+  pre.emblem
+    code.language-emblem
+      == highlighted

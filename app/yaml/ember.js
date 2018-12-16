@@ -3,23 +3,22 @@ const yaml = `
   title: Attribute Bindings
 
   docs: |
-    Emblem provides some additional helpers for attribute bindings in Ember.
-
-    To define a binding as mutable using the Ember 'mut' helper, wrap the definition in a single curley \`{}\`.
+    Emblem provides some additional helpers for attribute bindings in Ember.  You can bind attributes for both mustache (e.g. components or helpers) as well as HTML elements.
 
     Emblem provides the '!' helper to flag a bound value as unbound.  (**NOTE:** this feature is not supported in Ember after 1.13).
 
-    **NOTE:** As of version 6.0, Emblem supports HTMLBars bound attributes, so 'bind-attr' is no longer automatically added.
+    **NOTE:** As of version 0.6.0, Emblem supports HTMLBars bound attributes, so 'bind-attr' is no longer automatically added.
 
   emblem: |
-    = my-form name={ mut model.name }
+    = my-form name=(mut model.name)
 
-    button class="large {{unbound foo}}" x
+    button class="large {{foo}}" x
 
+    / Only supported Ember pre 1.13
     button class=foo! x
 
     / Only supported Ember pre 1.13
-    = my-form name={ bind-attr model.name }
+    = my-form name=(bind-attr model.name)
 
 
 - title: Inline If

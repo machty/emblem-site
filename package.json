@@ -30,7 +30,8 @@
     "emblem": "^0.10.0",
     "js-yaml": "^3.12.0",
     "markdown": "^0.5.0",
-    "prettier": "^1.15.3"
+    "prettier": "^1.15.3",
+    "prismjs": "^1.15.0"
   },
   "devDependencies": {
     "@ember/jquery": "^0.5.2",

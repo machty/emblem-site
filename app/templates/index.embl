@@ -3,20 +3,17 @@
     .navigation
       ul.nav
         li = link-to 'Installation' 'installation'
+        li.divider
         li = link-to 'Basic Syntax' 'syntax'
         li = link-to 'Mustache' 'mustache'
         li = link-to 'Ember' 'ember'
         li = link-to 'Glimmer' 'glimmer'
-
-        // li
-        //   a href="http://machty.github.com/blog/2013/01/27/emblem-dot-js-indented-templating-targeting-handlebars-dot-js-and-ember-dot-js/"
-        //     | About
-
+        li.divider
+        li = link-to 'Editor Support' 'editors'
         li
           a href="http://www.embercasts.com/episodes/2"
             'Embercast
             = fa-icon 'external-link'
-
         li
           a href="http://emblem-test.herokuapp.com/"
             'Live Demo

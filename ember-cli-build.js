@@ -15,6 +15,9 @@ module.exports = function(defaults) {
     },
   });
 
+  app.import('vendor/prism.js');
+  app.import('vendor/prism.css');
+
   // app.import('node_modules/prettier/standalone.js', {
   //   using: [
   //     { transformation: 'amd', as: 'prettier' }

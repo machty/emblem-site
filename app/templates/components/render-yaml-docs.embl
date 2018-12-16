@@ -7,12 +7,13 @@
     .small-12.medium-4.large-3.cell.left-side
       h5 = doc.title
 
-      = if doc.ember
-        h5 Ember!
-
       = each (split-into-paragraphs doc.docs) as |paragraph|
         p == parse-markdown paragraph
 
     .small-12.medium-8.large-9.cell.right-side
       = if doc.emblem
         = emblem-handlebars code=doc.emblem
+      = if doc.shell
+        pre
+          code.emblem
+            = doc.shell

@@ -14,8 +14,7 @@
     .error GLIMMER ERROR: #{ glimmerError }
 
   = else if result
-    pre.handlebars
-      code = result
+    = highlighted-handlebars code=result
 
 = if showingEditor
   em Emblem Version #{ compiler.version }
