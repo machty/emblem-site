@@ -79,7 +79,7 @@ const code = [
     docs: `
       Emblem is supported in [Brunch.io](http://brunch.io) via the [emblem-brunch](https://github.com/machty/emblem-brunch) plugin.
     `,
-    shell: `
+    instructions: `
       Follow [these instructions](https://github.com/machty/emblem-brunch) to get started with Brunch.
     `
   },
@@ -88,7 +88,7 @@ const code = [
     docs: `
       Emblem is supported in [Grunt](http://gruntjs.com) via the [grunt-emblem](https://github.com/wordofchristian/grunt-emblem) plugin.
     `,
-    shell: `
+    instructions: `
       Follow [these instructions](https://github.com/wordofchristian/grunt-emblem) to get started with Grunt.
     `
   },
@@ -97,7 +97,7 @@ const code = [
     docs: `
       Emblem is supported in [Mimosa](http://mimosajs.com/) since version 0.10.1.
     `,
-    shell: `
+    instructions: `
       Follow [these instructions](http://mimosajs.com/started.html) to get started with Mimosa.
 
       Once you're setup, files ending in .emblem or .embl will be compiled as Emblem templates. If you've enabled Ember in your project, they'll be compiled as Ember-ized templates.

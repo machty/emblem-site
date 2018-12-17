@@ -7,7 +7,6 @@
     .small-12.medium-5.large-4.cell.left-side
       h5 = doc.title
 
-      = log doc.docs
       = each (split-into-paragraphs doc.docs) as |paragraph|
         p == parse-markdown paragraph
 
@@ -17,4 +16,9 @@
       = if doc.shell
         pre
           code.emblem
-            = doc.shell
+            = each (split-into-paragraphs doc.shell) as |paragraph|
+              = paragraph
+              br
+      = if doc.instructions
+        = each (split-into-paragraphs doc.instructions) as |paragraph|
+          == parse-markdown paragraph
