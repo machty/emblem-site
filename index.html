@@ -1,46 +1,41 @@
-<!DOCTYPE html><html><head><meta charset="utf-8" /><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><title>Emblem.js  : a concise, indented alternative Handlebars syntax</title><link href="/images/favicon.png" rel="shortcut icon" type="image/png" /><link href="stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" /></head><body><a href="https://github.com/machty/emblem.js"><img alt="Fork me on GitHub" src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" style="position: absolute; top: 0; right: 0; border: 0; z-index: 400;" /></a><div id="container"><div id="background"></div></div><div class="intro"><h1 class="logo"><a href="./">Emblem.js</a></h1><p>a concise, beautiful, and fully compatible<br>templating alternative for <a href="http://handlebarsjs.com">Handlebars.js</a></p><ul class="nav"><li><a href="./syntax/">Syntax</a></li><li><a href="./idioms/">Idioms</a></li><li><a href="./installation/">Installation</a></li><li><a href="http://machty.github.com/blog/2013/01/27/emblem-dot-js-indented-templating-targeting-handlebars-dot-js-and-ember-dot-js/">About</a></li><li><a href="http://www.embercasts.com/episodes/2">Embercast</a></li><li><a href="http://emblem-test.herokuapp.com/">Live Demo</a></li><li><br>
-<iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=machty&repo=emblem.js&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
-<iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=machty&repo=emblem.js&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="102px" height="20px"></iframe></li></ul></div><div class="authors"><p>built by <a href="http://twitter.com/machty">@machty</a>,  docs by <a href="http://twitter.com/railsjedi">@railsjedi</a></p></div><div class="intro-example"><pre class="blackboard intro-example-code"><span class="Entity">p </span>Introducing <span class="logo">Emblem.js</span>: a new templating language
-<span class="         ">  that </span>compiles to Handlebars.js
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Emblem.js: a concise, indented alternative Handlebars syntax</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
 
-<span class="Entity">ul</span>
-<span class="Entity">  li </span>Indentation-based (like Slim, Jade, HAML, etc.)
-<span class="Entity">  li </span>Compiles to Handlebars; full compatibility with
-<span class="      ">     both </span>custom and built-in Handlebars helpers
-<span class="Entity">  li </span>Ember.js-friendly syntax and full compatibility
-<span class="      ">     with </span>auto-updating functionality.
+    
+<meta name="emblem-site/config/environment" content="%7B%22modulePrefix%22%3A%22emblem-site%22%2C%22environment%22%3A%22production%22%2C%22rootURL%22%3A%22/%22%2C%22locationType%22%3A%22auto%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%2C%22EXTEND_PROTOTYPES%22%3A%7B%22Date%22%3Afalse%7D%7D%2C%22APP%22%3A%7B%7D%2C%22exportApplicationGlobal%22%3Afalse%7D" />
 
-<span class="Comment"><span class="Comment">/</span> Emblem is HTML5-aware; Render HTML if a line starts with</span>
-<span class="Comment">  known HTML tag, else invoke HB helper or perform property lookup.</span>
-<span class="Comment">  These defaults are easily overridable when necessary.</span>
-<span class="Entity">ul</span>
-<span class="Keyword">  each </span>person <span class="Keyword">as</span> |people|
-<span class="Entity">    li </span>= person.name
+    <link integrity="" rel="stylesheet" href="/assets/vendor-7569dad2a38668ce7ac95a6dd486204c.css">
+    <link integrity="" rel="stylesheet" href="/assets/emblem-site-fd6042b7e3b6eb9ab0058e1cb91d2668.css">
 
-<span class="Entity">section.ember-features</span>
-<span class="Comment">  <span class="Comment">/</span> easy, natural Ember bindAttr support</span>
-<span class="Entity">  h1 </span><span class="MetaTag">class</span><span class="Entity">=</span><span class="String">foo</span> The class name of this element is bound to `foo`
-<span class="Entity">  p </span><span class="MetaTag">class</span><span class="Entity">=</span><span class="String">isActive:flashing:inactive</span> Ember.js bound css classes
+    
+  </head>
+  <body>
+    
 
-<span class="Comment">  <span class="Comment">/</span> implicit Ember action handlers</span>
-<span class="Entity">  a </span><span class="MetaTag">click</span><span class="Entity">=</span><span class="String"><span class="String">"</span><span class="String">doIt</span><span class="String">"</span></span> <span class="MetaTag">href</span><span class="Entity">=</span><span class="String"><span class="String">"</span><span class="String">#</span><span class="String">"</span></span> Hello, how are you doing, <span class="Entity">#{</span><span class="MetaTag">name</span><span class="Entity">}</span>?
+    <script src="/assets/vendor-e42985c87f4e59dd35bce4eb31500c73.js" integrity="sha256-YHt+hVbTJX93FcBaeiC/a4qjqWuxl4N4SGddRu4RdP8= sha512-bmH5yBhq+OFSvSsWnfcpvXLJGAQgyOWhXCZr2NV5UImrcvmQj7HdR7T2hi+AcROnZRxlOUtYZ96i/W0D4KjB4A==" ></script>
+    <script src="/assets/emblem-site-29e55016eff0d82868c5124dce9881f2.js" integrity="sha256-s0m2QzSr3UBDaoa4Krhq741r8TmImHScdjRDO90bdys= sha512-Lf3UvcNbLKhLpvmYLQCOwtNRY0TQjhFsPrxtWlWMGuFUoJNxR0H0Y12HowYZM9Z/r2ry92v+Pz0kBtHH+0iNMA==" ></script>
 
-<span class="Comment"><span class="Comment">/</span> condense nested content into a single line if that's how you roll</span>
-<span class="Entity">#footer</span>: <span class="Entity">ul.menu-items</span>: <span class="Keyword">each </span>menu_items: <span class="Entity">li</span>: <span class="Entity">a.menu-link</span> <span class="MetaTag">href</span><span class="Entity">=</span><span class="String">url</span>: <span class="Keyword">link_text</span>
+    <script src="https://cdn.jsdelivr.net/npm/prettier@1.15.3/standalone.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prettier@1.15.3/parser-glimmer.js"></script>
 
-<span class="Keyword">if </span>something
-<span class="Entity">  p </span>something was true!
-<span class="Keyword">else </span>
-<span class="Entity">  p </span>something was false!
+    
+  </body>
 
-</pre>
-</div><script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-38594562-1']);
-  _gaq.push(['_trackPageview']);
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script></body></html>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-38594562-1']);
+    _gaq.push(['_trackPageview']);
+    (function () {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</html>
