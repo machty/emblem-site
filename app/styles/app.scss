@@ -1,6 +1,5 @@
 @import "settings";
-@import 'foundation-sites/foundation';
-@include foundation-everything;
+@import "foundation_imports";
 
 $code-background: #0a0f25;
 $emblem-background: #06211f;

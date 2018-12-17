@@ -1,4 +1,4 @@
-= each parsedDocs as |doc|
+= each docs as |doc|
   .grid-x
     .small-12.medium-5.large-4.cell.divider
     .small-12.medium-7.large-8.cell.right-side.divider
@@ -7,6 +7,7 @@
     .small-12.medium-5.large-4.cell.left-side
       h5 = doc.title
 
+      = log doc.docs
       = each (split-into-paragraphs doc.docs) as |paragraph|
         p == parse-markdown paragraph
 

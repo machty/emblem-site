@@ -5,7 +5,7 @@ export function splitIntoParagraphs(params) {
   const value = params[0];
 
   if (isPresent(value)) {
-    const paragraphs = value.split(/\r?\n/);
+    const paragraphs = value.split(/\r?\n/).map(a => a.trim());
 
     return paragraphs;
   }

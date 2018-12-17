@@ -1,5 +1,6 @@
 import Component from '@ember/component';
 import { computed } from '@ember-decorators/object';
+import trimEmblem from 'emblem-site/lib/trim-emblem';
 
 export default class HighlightedEmblemComponent extends Component {
   // Passed in
@@ -7,6 +8,8 @@ export default class HighlightedEmblemComponent extends Component {
 
   @computed('code')
   get highlighted() {
-    return Prism.highlight(this.code, Prism.languages.emblem, 'emblem');
+    const code = trimEmblem(this.code);
+
+    return Prism.highlight(code, Prism.languages.emblem, 'emblem');
   }
 }

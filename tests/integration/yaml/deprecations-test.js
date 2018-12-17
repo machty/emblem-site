@@ -1,16 +1,13 @@
-import Parser from 'js-yaml';
-import Yaml from 'emblem-site/yaml/deprecations';
+import docs from 'emblem-site/docs/deprecations';
 import { setupRenderingTest } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 import { module, test } from 'qunit';
 import { render } from '@ember/test-helpers';
 
-const parsed = Parser.load(Yaml);
-
-module('integration - yaml - deprecations', function(hooks) {
+module('integration - docs - deprecations', function(hooks) {
   setupRenderingTest(hooks);
 
-  parsed.forEach(group => {
+  docs.forEach(group => {
     test(`group: ${ group.title }`, async function(assert) {
       this.code = group.emblem;
 

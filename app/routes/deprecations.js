@@ -1,6 +1,6 @@
-import Route from 'emblem-site/routes/mixins/yaml-route';
-import Yaml from 'emblem-site/yaml/deprecations';
+import Route from 'emblem-site/routes/mixins/docs-route';
+import Docs from 'emblem-site/docs/deprecations';
 
 export default class DeprecationsRoute extends Route {
-  yaml = Yaml
+  docs = Docs
 }
