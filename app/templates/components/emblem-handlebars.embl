@@ -1,0 +1,24 @@
+= if showingEditor
+  a click={ action 'toggleShowEditor' }
+    = fa-icon 'arrow-left'
+    |  Back
+
+  = emblem-preview code=code showEditor=true
+
+= else
+  span.switch
+    input.switch-input type='checkbox' checked=showingCode
+    label.switch-paddle click={ action 'toggleShowResult' }
+      span.switch-active Em
+      span.switch-inactive Hbs
+
+  span.edit-emblem
+    a click={ action 'toggleShowEditor' }
+      = fa-icon 'edit'
+      |  Let me to try!
+
+  = if showingCode
+    = highlighted-emblem code=code
+
+  = else
+    = emblem-preview code=code showingEditor=false

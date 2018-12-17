@@ -1,3 +1,14 @@
+- Installation in Ember
+- Blueprints in Ember
+
+- Standard installation
+- CLI
+
+- New features in Ember
+  * Angle bracket components
+
+
+
 # Emblem.JS Website
 
 This is the website docs that power <http://emblemjs.com>. For the emblem.js src code go to [github.com/machty/emblem.js](http://github.com/machty/emblem.js).
@@ -37,4 +48,3 @@ To update the syntax docs, edit `data/syntax.yml`
 ### Installation docs
 
 To update the installation docs, edit `data/installation.yml`
-

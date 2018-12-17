@@ -1,0 +1,40 @@
+.grid-x
+  .small-12.medium-5.large-4.cell.left-side
+    .navigation
+      ul.nav
+        li = link-to 'Installation' 'installation'
+        li.divider
+        li = link-to 'Basic Syntax' 'syntax'
+        li = link-to 'Mustache' 'mustache'
+        li = link-to 'Ember' 'ember'
+        li = link-to 'Glimmer' 'glimmer'
+        li = link-to 'Deprecations' 'deprecations'
+        li.divider
+        li = link-to 'Editor Support' 'editors'
+        li
+          a href="http://www.embercasts.com/episodes/2"
+            'Embercast
+            = fa-icon 'external-link'
+        li
+          a href="http://emblem-test.herokuapp.com/"
+            'Live Demo
+            = fa-icon 'external-link'
+
+        <br>
+        <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=machty&repo=emblem.js&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+        <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=machty&repo=emblem.js&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="102px" height="20px"></iframe>
+
+    .authors
+      ul
+        li
+          'built by
+          a href='http://twitter.com/machty' @machty
+        li
+          'docs originally by
+          a href='http://twitter.com/railsjedi' @railsjedi
+        li
+          'maintained by
+          a href='http://github.com/thec0keman' @thec0keman
+
+  .small-12.medium-7.large-8.cell.right-side
+    = highlighted-emblem code=introCode

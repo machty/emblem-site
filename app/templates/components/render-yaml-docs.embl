@@ -1,0 +1,19 @@
+= each parsedDocs as |doc|
+  .grid-x
+    .small-12.medium-5.large-4.cell.divider
+    .small-12.medium-7.large-8.cell.right-side.divider
+
+  .grid-x
+    .small-12.medium-5.large-4.cell.left-side
+      h5 = doc.title
+
+      = each (split-into-paragraphs doc.docs) as |paragraph|
+        p == parse-markdown paragraph
+
+    .small-12.medium-7.large-8.cell.right-side
+      = if doc.emblem
+        = emblem-handlebars code=doc.emblem
+      = if doc.shell
+        pre
+          code.emblem
+            = doc.shell

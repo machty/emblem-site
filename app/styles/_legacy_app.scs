@@ -1,0 +1,202 @@
+// //= require "docco"
+// //= require "syntax"
+
+// @import "mixins"
+
+html body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  #back {
+    position: absolute;
+    left: 50px;
+    top: 20px;
+    text-decoration: none;
+    z-index: 100;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  h1.logo {
+    font-size: 40px;
+    line-height: 1.2;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  .logo {}
+
+  .intro {
+    padding: 10px 25px 1px 50px;
+    position: relative;
+    z-index: 100;
+    width: 350px;
+    p {
+      color: #333;
+      a {
+        text-decoration: none;
+        color: #000;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    ul.nav {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      margin-top: 20px;
+      li {
+        font-size: 20px;
+        line-height: 1.2;
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .authors {
+    position: fixed;
+    bottom: 10px;
+    left: 50px;
+    z-index: 1000;
+
+    p {
+      margin: 0;
+      font-size: 11px;
+      line-height: 1.2;
+      color: #555;
+      // font-family: Helvetica
+    }
+  }
+
+  .intro-example {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    pre {
+      margin: 30px;
+      margin-left: 426px;
+      padding: 31px 25px 25px 50px;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+  }
+
+  #background {
+    left: 425px;
+  }
+
+  .code, #background {
+    background: #0C1021;
+    pre {
+      font-size: 14px;
+      line-height: 1.3;
+    }
+  }
+
+  th.docs, td.docs {
+    max-width: 350px;
+    min-width: 350px;
+  }
+
+  tr.syntax, tr.install {
+    td.docs {
+      border-top: 1px solid rgba(#000, 0.2);
+      // +padding-vertical(20px);
+    }
+
+    td.code {
+      // +padding-vertical(20px);
+      border-top: 1px solid rgba(#fff, 0.2);
+
+      .instructions {
+        font-size: 16px;
+        margin-bottom: 10px;
+        padding: 10px;
+
+        a {
+          color: rgb(173, 216, 230);
+        }
+        p {
+          color: #fff;
+        }
+        code {
+          color: #000;
+          background: rgb(173, 216, 230);
+        }
+      }
+
+      .code-block {
+        margin-bottom: 10px;
+        position: relative;
+        label {
+          color: #fff;
+          text-transform: uppercase;
+          font-size: 11px;
+          font-family: Helvetica;
+          font-weight: bold;
+          padding: 3px 5px;
+          border-radius: 3px;
+          display: inline-block;
+          position: absolute;
+          right: 10px;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          height: 13px;
+          line-height: 13px;
+        }
+        pre {
+          padding: 20px;
+          margin: 5px 0;
+          max-width: 75%;
+          overflow: auto;
+        }
+        &.emblem {
+          background: rgba(darkgreen, 0.15);
+          label {
+            background: darkgreen;
+          }
+        }
+        &.html {
+          background: rgba(#993C10, 0.15);
+          label {
+            background: darken(#E96526, 20%);
+          }
+          pre {
+            background: none;
+          }
+        }
+      }
+    }
+  }
+}
+a.ember-link {
+  width: 45px;
+  height: 20px;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  margin-left: 15px;
+  background: url('/images/ember-icon.png');
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: top;
+}

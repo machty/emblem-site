@@ -1,0 +1,6 @@
+.code-wrapper
+  .code-badge.handlebars Handlebars
+
+  pre.handlebars
+    code.language-handlebars data-manual=true
+      == highlighted
