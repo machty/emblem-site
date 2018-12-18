@@ -39,6 +39,10 @@ pre {
   color: #fff;
   background-color: $code-background;
   padding: 35px;
+
+  textarea {
+    margin-top: 10px;
+  }
 }
 
 .navigation {
@@ -132,5 +136,21 @@ pre {
         background: $emblem-badge;
       }
     }
+  }
+}
+
+.reveal-overlay {
+  display: block;
+
+  .reveal {
+    display: block;
+    top: 30px;
+    height: 90%;
+  }
+}
+
+button, .button {
+  &.secondary {
+    color: #fff;
   }
 }
