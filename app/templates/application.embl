@@ -20,6 +20,8 @@ a href="https://github.com/machty/emblem.js"
           | a concise, beautiful, and fully compatible<br>templating alternative for <a href="http://handlebarsjs.com">Handlebars.js</a>
 
   .small-12.medium-7.large-8.cell.right-side
+    .text-center
+      = link-to 'sandbox' classNames='button secondary large' |Try it out!
 
 = outlet
 

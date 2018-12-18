@@ -1,0 +1,11 @@
+.grid-x
+  .small-12.medium-5.large-4.cell.left-side
+    textarea value=emblem oninput={ action 'textChanged' value='target.value' } rows=25
+
+  .small-12.medium-7.large-8.cell.right-side
+    .emblem-handlebars-display
+      = emblem-preview code=emblem showingEditor=false
+
+    hr
+    .text-right
+      em Emblem Version #{ compiler.version }

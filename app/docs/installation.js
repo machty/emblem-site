@@ -20,9 +20,7 @@ const code = [
       **NOTE:** When importing via Node, be sure to wrap the call in a \`try / catch\` statement, as Emblem will throw an exception if it has a compile error.
     `,
     shell: `
-      import Emblem from 'emblem';
-
-      const { compile, VERSION } = Emblem;
+      import { compile, VERSION } from 'emblem';
 
       export default function compileEmblem(template) {
         console.log(\`Compiled with \${ VERSION }\`);

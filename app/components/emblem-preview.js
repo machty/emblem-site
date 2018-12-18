@@ -20,12 +20,12 @@ export default class EmblemPreviewComponent extends Component {
     this.currentCode = this.code;
   }
 
-  didInsertElement() {
-    const code = this.currentCode;
+  didUpdateAttrs() {
+    this._setAndCompile();
+  }
 
-    if (isPresent(code)) {
-      this._compileText(code);
-    }
+  didInsertElement() {
+    this._setAndCompile();
   }
 
   @action
@@ -37,8 +37,15 @@ export default class EmblemPreviewComponent extends Component {
 
   @action
   reset() {
-    set(this, 'currentCode', this.code);
-    this._compileText(this.currentCode);
+    this._setAndCompile();
+  }
+
+  _setAndCompile() {
+    const code = this.code;
+
+    if (isPresent(code)) {
+      this._compileText(code);
+    }
   }
 
   _compileText(text) {

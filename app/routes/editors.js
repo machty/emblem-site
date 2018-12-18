@@ -1,6 +1,7 @@
 import Route from 'emblem-site/routes/mixins/docs-route';
 import Docs from 'emblem-site/docs/editors';
+import deIndentDocs from 'emblem-site/lib/de-indent-docs';
 
 export default class EditorsRoute extends Route {
-  docs = Docs
+  docs = deIndentDocs(Docs)
 }

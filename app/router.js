@@ -14,6 +14,7 @@ Router.map(function() {
   this.route('ember');
   this.route('glimmer');
   this.route('deprecations');
+  this.route('sandbox');
 });
 
 export default Router;
