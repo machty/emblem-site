@@ -42,13 +42,36 @@ const code = [
     `
   },
   {
+    title: 'Component attribute shorthand',
+    docs: `
+      Emblem provides several helpers for common component features.
+
+      The \`#\` helper will assign the \`elementId\` attribute on the component.  This is used by Ember to generate the \`id\` on the resulting HTML element.
+
+      **NOTE:** \`#\` must provide a unique value
+
+      The \`.\` helper is for adding CSS classes to the component.  This operates in a similar way to the HTML helper.
+
+      The \`%\` helper will assign the \`tagName\` to that component.
+    `,
+    emblem: `
+      = my-component .foo.bar
+
+      = my-other-component #foo
+
+      = special-component %span
+    `
+  },
+  {
     title: 'Blocks',
     docs: `
-      As with other mustache / HTML elements, Ember components can be yielded a block, as well as accept an \`else\` statement.  As with HTML elements, Emblem will automatically close the block with the components name.
+      As with other mustache / HTML elements, Ember components can be yielded a block, use bracket params, and accept an \`else\` statement.  As with HTML elements, Emblem will automatically close the block with the components name.
 
       Components can return block parameters by using the \`as |item index|\` syntax.
 
       Block params work for either single-line components or multi-line.
+
+      Note that when using bracket params, it is permitted to pass a single attribute before the opening bracket.
     `,
 
     emblem: `
@@ -65,6 +88,11 @@ const code = [
         foo
         bar=baz
       ] as |left right|
+        span class={ left } = right
+
+      = component 'my-component' [
+        foo
+        bar=baz ] as |left right|
         span class={ left } = right
     `
   },

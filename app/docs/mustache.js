@@ -84,6 +84,17 @@ const code = [
     `
   },
   {
+    title: 'Class shorthand',
+    docs: `
+      Emblem supports the  \`.\` helper for mustache statements, and this opperates in a similar way to the \`.\` helper for HTML elements.
+    `,
+    emblem: `
+      = my-component .foo
+
+      = other-component .foo class='bar'
+    `
+  },
+  {
     title: 'Block Statements',
     docs: `
       Handlebars block statements follow a syntax similar to HTML5 elements.  Indented content on the lines below get wrapped in the block form of the helper.
@@ -116,6 +127,18 @@ const code = [
       = else
         .item Active
     `,
+  },
+  {
+    title: 'Conditional Shorthand',
+    docs: `
+      Emblem provides a simple helper \`?\` for writing short conditionals
+    `,
+    emblem: `
+      = isActive?
+        span Active!
+      = else
+        span Not Active
+    `
   },
   {
     title: 'Nested Conditionals',
