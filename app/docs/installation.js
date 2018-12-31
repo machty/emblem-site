@@ -104,3 +104,57 @@ const code = [
 ];
 
 export default code;
+
+
+// Old Docs from Emblem README
+
+// ### Compiling in the Browser
+
+// For pre-0.5.0, follow the pattern in [this JSBin](http://jsbin.com/ulegec/337/edit):
+
+// 1. Include Handlebars
+// 2. Include Emblem
+// 3. Include Ember
+
+// A globals build of Emblem appropriate for JSBins should be completed
+// before 0.5.1 is released. See [#212](https://github.com/machty/emblem.js/issues/212).
+
+// ### Via Rails 3.1+
+
+// For pre-0.5.0, add the following to your Gemfile:
+
+// ```
+// gem 'emblem-rails'
+// ```
+
+// `emblem-rails` presently depends on `ember-rails`. With these
+// two gems, any templates ending in `.emblem` will be (pre)compiled
+// with Emblem.js.
+
+// Also, check out the [demo app](https://github.com/machty/emblem-rails-demo)
+// which uses the above configuration.
+
+// Updates to Emblem syntax do not require an update to `emblem-rails`. To
+// update to the latest Emblem, you can run:
+
+// ```
+// bundle update emblem-source
+// ```
+
+// ### Emblem Build Tools
+
+// Compatible with 0.5.0+:
+
+// 1. [ember-cli-emblem](https://github.com/Vestorly/ember-cli-emblem)
+// 2. [gulp-emblem-printer](https://github.com/kay-is/gulp-emblem-printer)
+
+// Compatible with pre-0.5.0:
+
+// 1. [emblem-rails](https://github.com/alexspeller/emblem-rails)
+// 2. [barber-emblem](https://github.com/machty/barber-emblem), a
+//    Precompilation library for Ruby (used in `ember-rails`)
+// 3. [emblem-brunch](https://github.com/machty/emblem-brunch), Emblem
+//    support for Brunch.io
+// 4. [Mimosa (support for Emblem since v 0.10.1)](https://github.com/dbashford/mimosa)
+// 5. [grunt-emblem](https://github.com/wordofchristian/grunt-emblem), Emblem support for Grunt (and Yeoman)
+// 6. [gulp-emblem](https://github.com/Aulito/gulp-emblem), Emblem support for gulp

@@ -22,3 +22,6 @@
       = if doc.instructions
         = each (split-into-paragraphs doc.instructions) as |paragraph|
           == parse-markdown paragraph
+
+      = if doc.link
+        a href={ link-to-github doc.link } target='_blank' rel='noopener noreferrer'  See more examples

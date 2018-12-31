@@ -20,7 +20,8 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
+    emblemGithub: 'https://github.com/machty/emblem.js/tree/master/tests/integration'
   };
 
   if (environment === 'development') {
