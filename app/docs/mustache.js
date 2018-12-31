@@ -11,7 +11,8 @@ const code = [
       p
         = intro
         = highlight name
-    `
+    `,
+    link: 'mustache/handlebars-expressions'
   },
   {
     title: 'Handlebars Helpers',
@@ -23,7 +24,8 @@ const code = [
                 and my name is #{author}
 
       input value='My name is #{ name }'
-    `
+    `,
+    link: 'mustache/handlebars-helpers'
   },
   {
     title: 'HTML Attributes',
@@ -41,6 +43,31 @@ const code = [
 
       / For Vanilla Handlebars mode only
       button class="large {{foo}}" x
+    `,
+    link: 'mustache/html-attributes'
+  },
+  {
+    title: 'Complex expressions',
+    docs: `
+      Frequently you will be assigning complex expressions to either an HTML element or a component.  With Emblem these contexts can look very similar.  However, they are very different contexts for the generated handlebars.  For HTML elements (or Glimmer components), the values are wrapped in mustache \`{{ }}\`, but for components or handlebars expressions the value is already inside the mustache.
+
+      Emblem enforces this distinction by using a slightly different syntax.  For HTML expressions be sure to wrap them in a single stash \`{ }\`.  For components / mustache expressions, use \`( )\`.  This holds true as well for bracketed params.
+    `,
+    emblem: `
+      a href={ generate-link foo.bar } Click!
+
+      = my-component value=(generate-link foo.bar)
+        |Click!
+
+      a [
+        href={ generate-link foo.bar }
+      ]
+        |Click!
+
+      = my-component [
+        value=(generate-link foo.bar)
+      ]
+        |Click!
     `
   },
   {
@@ -56,7 +83,8 @@ const code = [
         class='alert'
       ]
         span Click me!
-    `
+    `,
+    link: 'mustache/multi-line-parameters'
   },
   {
     title: 'Unescaped Expressions',
@@ -66,7 +94,8 @@ const code = [
     emblem: `
       body
         == outlet
-    `
+    `,
+    link: 'mustache/unescaped-expressions'
   },
   {
     title: 'In-Tag Mustache',
@@ -81,7 +110,8 @@ const code = [
       button{ action 'delete' } Delete
 
       button name={ capitalize-string model.name } Delete
-    `
+    `,
+    link: 'mustache/in-tag-mustache'
   },
   {
     title: 'Class shorthand',
@@ -92,7 +122,8 @@ const code = [
       = my-component .foo
 
       = other-component .foo class='bar'
-    `
+    `,
+    link: 'mustache/class-shorthand'
   },
   {
     title: 'Block Statements',
@@ -109,7 +140,8 @@ const code = [
         p Something!
       = else
         p Something else!
-    `
+    `,
+    link: 'mustache/block-statements'
   },
   {
     title: 'Conditionals',
@@ -127,6 +159,7 @@ const code = [
       = else
         .item Active
     `,
+    link: 'mustache/conditionals'
   },
   {
     title: 'Conditional Shorthand',
@@ -138,7 +171,8 @@ const code = [
         span Active!
       = else
         span Not Active
-    `
+    `,
+    link: 'mustache/conditional-shorthand'
   },
   {
     title: 'Nested Conditionals',
@@ -158,7 +192,8 @@ const code = [
             p NotBlue
       = else
         .item Unknown
-    `
+    `,
+    link: 'mustache/conditionals'
   },
   {
     title: 'each/else',
@@ -170,6 +205,11 @@ const code = [
         p = name
       = else
         p There are no things!
+
+      = my-component
+        p Foo
+      = else
+        p Bar
     `
   }
 ];

@@ -11,7 +11,10 @@ const code = [
     `,
     emblem: `
       h1 Welcome to Emblem
-    `
+
+      %Foo Hi!
+    `,
+    link: 'basic-syntax/tags'
   },
   {
     title: 'Nested Elements',
@@ -36,7 +39,8 @@ const code = [
           label
             |Last Name
             input name='last-name'
-    `
+    `,
+    link: 'basic-syntax/nested-elements'
   },
   {
     title: 'Plain Text',
@@ -53,7 +57,9 @@ const code = [
 
       - to append whitespace after a line of text, begin the text with the \`'\` helper.
 
-      - to prepend whitespace before a line of text, begin the line with the \`|\` helper and some additional spaces: \`|  \`
+      - to prepend whitespace before a line of text, begin the line with the \`+\` helper.
+
+      - to both append and prepend whitespaces, use the \`"\` helper.
     `,
     emblem: `
       | Some content
@@ -71,8 +77,11 @@ const code = [
       i.fa-icon
 
       i.fa-icon
-      |  Preceeding space
-    `
+      + Preceeding space
+
+      " Both preceeding and trailing spaces
+    `,
+    link: 'basic-syntax/plain-text'
   },
   {
     title: 'CSS Classes',
@@ -91,7 +100,8 @@ const code = [
       button.btn.btn-large Submit
 
       div.foo class='bar'
-    `
+    `,
+    link: 'basic-syntax/css-classes'
   },
   {
     title: 'IDs',
@@ -102,7 +112,8 @@ const code = [
       #page-content Content
 
       span#name Bob Lablah
-    `
+    `,
+    link: 'basic-syntax/ids'
   },
   {
     title: 'HTML Attributes',
@@ -110,19 +121,18 @@ const code = [
       HTML attributes can be added right after the element using \`key="value"\` pairs.
 
       HTML attributes can also have mustaches embedded in them.
-
-      For an HTML element with multiple attribute definitions, to improve readability you can wrap all of them in brackets \`[]\` and nest them under the element, one definitino per line.
     `,
     emblem: `
       button.close data-dismiss="modal" x
 
       button class="large {{foo}}" x
-    `
+    `,
+    link: 'basic-syntax/html-attributes'
   },
   {
     title: 'Multi-line parameters',
     docs: `
-      More advanced mustache statements or HTML elements can get rather verbose.  Emblem supports using multiline parameters by the use of \`[]\`.
+      More advanced mustache statements or HTML elements can get rather verbose.  Emblem supports using multiline parameters by the use of \`[]\` to improve readability.
 
       The closing bracket can either be on the same line as the final parameter, or de-indented on the next line.
 
@@ -146,7 +156,8 @@ const code = [
         data-hint='Click me for more information'
         class='info' ]
         |My button
-    `
+    `,
+    link: 'basic-syntax/multi-line-parameters'
   },
   {
     title: 'Comments',
@@ -160,7 +171,8 @@ const code = [
 
       / A long long
         multiline comment
-    `
+    `,
+    link: 'basic-syntax/comments'
   },
   {
     title: 'Colon Syntax for Inlining Nested Content',
@@ -199,7 +211,8 @@ const code = [
       #content-frame: .container: .row
         .span4: = list-item "sidebar"
         .span8: = list-item "main"
-    `
+    `,
+    link: 'basic-syntax/colon-syntax'
   }
 ];
 

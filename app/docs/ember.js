@@ -20,7 +20,8 @@ const code = [
 
       / Only supported Ember pre 1.13
       = my-form name=(bind-attr model.name)
-    `
+    `,
+    link: 'ember/attribute-bindings'
   },
   {
     title: 'Legacy Components',
@@ -39,7 +40,8 @@ const code = [
         model=model
         changed=(action 'nameChanged')
       ]
-    `
+    `,
+    link: 'ember/legacy-components'
   },
   {
     title: 'Component attribute shorthand',
@@ -94,7 +96,8 @@ const code = [
         foo
         bar=baz ] as |left right|
         span class={ left } = right
-    `
+    `,
+    link: 'ember/blocks'
   },
   {
     title: 'link-to Examples',
@@ -102,7 +105,6 @@ const code = [
       Using a combination of various Emblem features, you can express any Handlebars expression.
     `,
     emblem: `
-      / The following three are equivalent
       = link-to "home.index"
         | Home
 
@@ -142,15 +144,15 @@ const code = [
       div class=condition:whenTrue:whenFalse
 
       .foo class={ isHovering condition1:whenTrue:whenFalse condition2:whenTrue:whenFalse }
-    `
+    `,
+    link: 'ember/inline-if'
   },
   {
     title: 'Closure Actions',
     docs: `
       Emblem supports the full range of closure actions on both HTML elements and components.
 
-      For mustache / components, be sure to use \`()\` around your actions.  For HTML elements,
-      use \`{}\`.
+      **NOTE:** For mustache / components, be sure to use \`()\` around your actions.  For HTML elements, use \`{}\`.
     `,
     emblem: `
       = my-component eventChanged=(action 'foo' bar)
@@ -162,20 +164,26 @@ const code = [
         p = message
 
       a click={ action 'toggleOpen' } Open
-    `
+    `,
+    link: 'ember/closure-actions'
   },
   {
     title: 'Action Helpers',
     docs: `
-      For HTML5 elements Emblem is aware of common  action names, such as 'click', 'submit', 'mouseEnter', etc.
+      On HTML5 elements, you can add an action by adding \`{}\` immediately after the HTML element.
+
+      For HTML5 elements Emblem is also aware of common action names such as 'click', 'submit', 'mouseEnter', etc.
 
       You can pass either a string action or closure action to these, and they will automatically be converted to the appropriate Ember action.
     `,
     emblem: `
       a click={ action 'toggleHeader' } x
 
+      div{ action 'foo' }
+
       form submit={ action (mut model.name) }
-    `
+    `,
+    link: 'ember/action-helpers'
   },
   {
     title: 'Legacy Actions',
@@ -197,7 +205,8 @@ const code = [
       p Hello
 
       a click='toggleHeader foo bar target="view"' x
-    `
+    `,
+    link: 'ember/legacy-actions'
   }
 ];
 
